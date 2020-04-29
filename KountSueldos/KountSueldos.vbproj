@@ -88,6 +88,24 @@
     <Compile Include="Datos\Actividad.vb">
       <DependentUpon>ModelDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Datos\ADBanco.vb" />
+    <Compile Include="Datos\ADCategoriaC.vb" />
+    <Compile Include="Datos\ADConcepto.vb" />
+    <Compile Include="Datos\ADContrato.vb" />
+    <Compile Include="Datos\ADConvenio.vb" />
+    <Compile Include="Datos\ADEmpleado.vb" />
+    <Compile Include="Datos\ADEmpresa.vb" />
+    <Compile Include="Datos\ADEmpresaSuc.vb" />
+    <Compile Include="Datos\ADEstadoCivil.vb" />
+    <Compile Include="Datos\ADLocalidad.vb" />
+    <Compile Include="Datos\ADObraSocial.vb" />
+    <Compile Include="Datos\ADPeriodo.vb" />
+    <Compile Include="Datos\ADProvincia.vb" />
+    <Compile Include="Datos\ADRazonSocial.vb" />
+    <Compile Include="Datos\ADRemuneraciones.vb" />
+    <Compile Include="Datos\ADTipoConcepto.vb" />
+    <Compile Include="Datos\ADTipoContrato.vb" />
+    <Compile Include="Datos\ADUnidad.vb" />
     <Compile Include="Datos\Banco.vb">
       <DependentUpon>ModelDb.tt</DependentUpon>
     </Compile>
