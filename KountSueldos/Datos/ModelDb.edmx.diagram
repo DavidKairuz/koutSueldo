@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4179c9ab653f4a7ea070b2e164e02679" Name="Diagram1">
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Actividad" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Banco" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.CategoriaC" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Concepto" Width="1.5" PointX="10.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Contrato" Width="1.5" PointX="7.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Convenio" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Empleado" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Empresa" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Empresa_Sucursal" Width="1.5" PointX="8.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Estado_Civil" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Localidad" Width="1.5" PointX="8.25" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Obra_Social" Width="1.5" PointX="3" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Periodo" Width="1.5" PointX="8.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Provincia" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Razon_Social" Width="1.5" PointX="0.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Remuneraciones" Width="1.5" PointX="5.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Sueldo_Cab" Width="1.5" PointX="10.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Sueldo_Det" Width="1.5" PointX="12.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Tipo_Concepto" Width="1.5" PointX="8.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Tipo_Contrato" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SueldosLiquidadosModel.Unidad" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <AssociationConnector Association="SueldosLiquidadosModel.Actividades_Convenio" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_actividad_unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_Empleado_Actividad" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_Remuneraciones_Actividad" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_SueldoC_Banco" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_Categoria_Convenio" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_Concepto_TipoConcepto" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_Sueldo_Concepto" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_Contrato_Empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_Contrato_TipoContrato" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_Empleado_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_Empleado_EstadoCivil" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_Empleado_Obrasocial" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_SueldoC_Empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_Empresa_provincia" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_Empresa_razonS" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_Sucu_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_SueldoC_SucursalEmp" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_LOCALIDAD_PROV" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_SueldoC_Localidad" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_SueldoC_Perido" ManuallyRouted="false" />
+        <AssociationConnector Association="SueldosLiquidadosModel.FK_SueldoD_SueldoC" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
