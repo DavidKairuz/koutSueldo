@@ -1,0 +1,17 @@
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\bin\Debug\KountSueldos.exe.config
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\bin\Debug\KountSueldos.exe
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\bin\Debug\KountSueldos.pdb
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\bin\Debug\KountSueldos.xml
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\bin\Debug\EntityFramework.dll
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\bin\Debug\EntityFramework.xml
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.vbprojResolveAssemblyReference.cache
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.Resources.resources
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.Principal.resources
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.vbproj.GenerateResource.Cache
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.exe
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.xml
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.pdb
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.VTipoConvenio.resources
+C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.VTipoContrato.resources

@@ -103,6 +103,8 @@
     <Compile Include="Datos\ADProvincia.vb" />
     <Compile Include="Datos\ADRazonSocial.vb" />
     <Compile Include="Datos\ADRemuneraciones.vb" />
+    <Compile Include="Datos\ADSueldoCab.vb" />
+    <Compile Include="Datos\ADSueldoDet.vb" />
     <Compile Include="Datos\ADTipoConcepto.vb" />
     <Compile Include="Datos\ADTipoContrato.vb" />
     <Compile Include="Datos\ADUnidad.vb" />
@@ -181,6 +183,7 @@
     <Compile Include="Datos\Unidad.vb">
       <DependentUpon>ModelDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="MConfiguracionF.vb" />
     <Compile Include="Principal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +206,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Vistas\VTipoContrato.Designer.vb">
+      <DependentUpon>VTipoContrato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VTipoContrato.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VTipoConvenio.Designer.vb">
+      <DependentUpon>VTipoConvenio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VTipoConvenio.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -213,6 +228,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VTipoContrato.resx">
+      <DependentUpon>VTipoContrato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VTipoConvenio.resx">
+      <DependentUpon>VTipoConvenio.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -246,10 +267,23 @@
       <DependentUpon>ModelDb.edmx</DependentUpon>
       <LastGenOutput>ModelDb.vb</LastGenOutput>
     </Content>
+    <None Include="Resources\pdf1.png" />
+    <None Include="Resources\pdf.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\web.png" />
+    <None Include="Resources\tecnologia.png" />
+    <None Include="Resources\subir.png" />
+    <None Include="Resources\redes-sociales.png" />
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\icon.png" />
+    <None Include="Resources\icon %281%29.png" />
+    <None Include="Resources\computadora.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

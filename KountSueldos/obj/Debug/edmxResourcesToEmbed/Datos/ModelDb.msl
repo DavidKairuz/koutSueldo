@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SueldosLiquidadosModelStoreContainer" CdmEntityContainer="KoutSueldosEntities">
+    <EntitySetMapping Name="Actividad">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Actividad">
+        <MappingFragment StoreEntitySet="Actividad">
+          <ScalarProperty Name="id_actividad" ColumnName="id_actividad" />
+          <ScalarProperty Name="id_convenio" ColumnName="id_convenio" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="id_unidad" ColumnName="id_unidad" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banco">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Banco">
+        <MappingFragment StoreEntitySet="Banco">
+          <ScalarProperty Name="id_banco" ColumnName="id_banco" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="sucursalb" ColumnName="sucursalb" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoriaC">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.CategoriaC">
+        <MappingFragment StoreEntitySet="CategoriaC">
+          <ScalarProperty Name="id_convenio" ColumnName="id_convenio" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="basico" ColumnName="basico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Concepto">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Concepto">
+        <MappingFragment StoreEntitySet="Concepto">
+          <ScalarProperty Name="id_concepto" ColumnName="id_concepto" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="tipoconcepto" ColumnName="tipoconcepto" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contrato">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Contrato">
+        <MappingFragment StoreEntitySet="Contrato">
+          <ScalarProperty Name="id_contrato" ColumnName="id_contrato" />
+          <ScalarProperty Name="fechac" ColumnName="fechac" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="periodo" ColumnName="periodo" />
+          <ScalarProperty Name="fecha_emision" ColumnName="fecha_emision" />
+          <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+          <ScalarProperty Name="idempleado" ColumnName="idempleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Convenio">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Convenio">
+        <MappingFragment StoreEntitySet="Convenio">
+          <ScalarProperty Name="id_convenio" ColumnName="id_convenio" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleado">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+          <ScalarProperty Name="cuil" ColumnName="cuil" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="fecha_ing" ColumnName="fecha_ing" />
+          <ScalarProperty Name="fecha_egres" ColumnName="fecha_egres" />
+          <ScalarProperty Name="fecha_nac" ColumnName="fecha_nac" />
+          <ScalarProperty Name="estado_civil" ColumnName="estado_civil" />
+          <ScalarProperty Name="hijos" ColumnName="hijos" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+          <ScalarProperty Name="antiguedad" ColumnName="antiguedad" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="id_actividad" ColumnName="id_actividad" />
+          <ScalarProperty Name="obras" ColumnName="obras" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empresa">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Empresa">
+        <MappingFragment StoreEntitySet="Empresa">
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="nombrefantasia" ColumnName="nombrefantasia" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="cuitE" ColumnName="cuitE" />
+          <ScalarProperty Name="provincia" ColumnName="provincia" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+          <ScalarProperty Name="id_razonsocial" ColumnName="id_razonsocial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empresa_Sucursal">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Empresa_Sucursal">
+        <MappingFragment StoreEntitySet="Empresa_Sucursal">
+          <ScalarProperty Name="id_sucursal" ColumnName="id_sucursal" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estado_Civil">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Estado_Civil">
+        <MappingFragment StoreEntitySet="Estado_Civil">
+          <ScalarProperty Name="id_estadociv" ColumnName="id_estadociv" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Localidad">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Localidad">
+        <MappingFragment StoreEntitySet="Localidad">
+          <ScalarProperty Name="id_provincia" ColumnName="id_provincia" />
+          <ScalarProperty Name="id_localidad" ColumnName="id_localidad" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Obra_Social">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Obra_Social">
+        <MappingFragment StoreEntitySet="Obra_Social">
+          <ScalarProperty Name="id_obrasocial" ColumnName="id_obrasocial" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Periodo">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Periodo">
+        <MappingFragment StoreEntitySet="Periodo">
+          <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+          <ScalarProperty Name="mes" ColumnName="mes" />
+          <ScalarProperty Name="año" ColumnName="año" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provincia">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Provincia">
+        <MappingFragment StoreEntitySet="Provincia">
+          <ScalarProperty Name="id_provincia" ColumnName="id_provincia" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Razon_Social">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Razon_Social">
+        <MappingFragment StoreEntitySet="Razon_Social">
+          <ScalarProperty Name="id_razonsocial" ColumnName="id_razonsocial" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Remuneraciones">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Remuneraciones">
+        <MappingFragment StoreEntitySet="Remuneraciones">
+          <ScalarProperty Name="id_remuneraciones" ColumnName="id_remuneraciones" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="actividad" ColumnName="actividad" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sueldo_Cab">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Sueldo_Cab">
+        <MappingFragment StoreEntitySet="Sueldo_Cab">
+          <ScalarProperty Name="id_reciboC" ColumnName="id_reciboC" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="periodo" ColumnName="periodo" />
+          <ScalarProperty Name="periodoLiq" ColumnName="periodoLiq" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="empleado" ColumnName="empleado" />
+          <ScalarProperty Name="id_banco" ColumnName="id_banco" />
+          <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+          <ScalarProperty Name="id_provincia" ColumnName="id_provincia" />
+          <ScalarProperty Name="id_localidad" ColumnName="id_localidad" />
+          <ScalarProperty Name="sucursalemp" ColumnName="sucursalemp" />
+          <ScalarProperty Name="total_bruto" ColumnName="total_bruto" />
+          <ScalarProperty Name="total_neto" ColumnName="total_neto" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sueldo_Det">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Sueldo_Det">
+        <MappingFragment StoreEntitySet="Sueldo_Det">
+          <ScalarProperty Name="id_reciboc" ColumnName="id_reciboc" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id_recibo_det" ColumnName="id_recibo_det" />
+          <ScalarProperty Name="concepto" ColumnName="concepto" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Concepto">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Tipo_Concepto">
+        <MappingFragment StoreEntitySet="Tipo_Concepto">
+          <ScalarProperty Name="id_tipoconcepto" ColumnName="id_tipoconcepto" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estado_r_nor" ColumnName="estado_r_nor" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Contrato">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Tipo_Contrato">
+        <MappingFragment StoreEntitySet="Tipo_Contrato">
+          <ScalarProperty Name="id_tipocontrato" ColumnName="id_tipocontrato" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unidad">
+      <EntityTypeMapping TypeName="SueldosLiquidadosModel.Unidad">
+        <MappingFragment StoreEntitySet="Unidad">
+          <ScalarProperty Name="id_unidad" ColumnName="id_unidad" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

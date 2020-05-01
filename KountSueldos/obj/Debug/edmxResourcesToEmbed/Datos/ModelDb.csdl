@@ -1,0 +1,665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SueldosLiquidadosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Actividad">
+    <Key>
+      <PropertyRef Name="id_actividad" />
+    </Key>
+    <Property Name="id_actividad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_convenio" Type="Int32" />
+    <Property Name="descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="valor" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="id_unidad" Type="Int32" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Convenio" Relationship="Self.Actividades_Convenio" FromRole="Actividad" ToRole="Convenio" />
+    <NavigationProperty Name="Unidad" Relationship="Self.FK_actividad_unidad" FromRole="Actividad" ToRole="Unidad" />
+    <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_Actividad" FromRole="Actividad" ToRole="Empleado" />
+    <NavigationProperty Name="Remuneraciones" Relationship="Self.FK_Remuneraciones_Actividad" FromRole="Actividad" ToRole="Remuneraciones" />
+  </EntityType>
+  <EntityType Name="Banco">
+    <Key>
+      <PropertyRef Name="id_banco" />
+    </Key>
+    <Property Name="id_banco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="direccion" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="telefono" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="sucursalb" Type="Int32" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Sueldo_Cab" Relationship="Self.FK_SueldoC_Banco" FromRole="Banco" ToRole="Sueldo_Cab" />
+  </EntityType>
+  <EntityType Name="CategoriaC">
+    <Key>
+      <PropertyRef Name="id_convenio" />
+      <PropertyRef Name="id_categoria" />
+    </Key>
+    <Property Name="id_convenio" Type="Int32" Nullable="false" />
+    <Property Name="id_categoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <Property Name="descripcion" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="basico" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="Convenio" Relationship="Self.FK_Categoria_Convenio" FromRole="CategoriaC" ToRole="Convenio" />
+  </EntityType>
+  <EntityType Name="Concepto">
+    <Key>
+      <PropertyRef Name="id_concepto" />
+    </Key>
+    <Property Name="id_concepto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="tipoconcepto" Type="Int32" />
+    <Property Name="valor" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="codigo" Type="Int32" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Tipo_Concepto" Relationship="Self.FK_Concepto_TipoConcepto" FromRole="Concepto" ToRole="Tipo_Concepto" />
+    <NavigationProperty Name="Sueldo_Det" Relationship="Self.FK_Sueldo_Concepto" FromRole="Concepto" ToRole="Sueldo_Det" />
+  </EntityType>
+  <EntityType Name="Contrato">
+    <Key>
+      <PropertyRef Name="id_contrato" />
+      <PropertyRef Name="fechac" />
+    </Key>
+    <Property Name="id_contrato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fechac" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="periodo" Type="Int32" />
+    <Property Name="fecha_emision" Type="DateTime" Precision="0" />
+    <Property Name="fecha_vencimiento" Type="DateTime" Precision="0" />
+    <Property Name="tipo" Type="Int32" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <Property Name="idempleado" Type="Int32" />
+    <NavigationProperty Name="Empleado" Relationship="Self.FK_Contrato_Empleado" FromRole="Contrato" ToRole="Empleado" />
+    <NavigationProperty Name="Tipo_Contrato" Relationship="Self.FK_Contrato_TipoContrato" FromRole="Contrato" ToRole="Tipo_Contrato" />
+  </EntityType>
+  <EntityType Name="Convenio">
+    <Key>
+      <PropertyRef Name="id_convenio" />
+    </Key>
+    <Property Name="id_convenio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Actividad" Relationship="Self.Actividades_Convenio" FromRole="Convenio" ToRole="Actividad" />
+    <NavigationProperty Name="CategoriaC" Relationship="Self.FK_Categoria_Convenio" FromRole="Convenio" ToRole="CategoriaC" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="id_empleado" />
+    </Key>
+    <Property Name="id_empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cuil" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="apellido" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="dni" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="direccion" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="fecha_ing" Type="DateTime" Precision="0" />
+    <Property Name="fecha_egres" Type="DateTime" Precision="0" />
+    <Property Name="fecha_nac" Type="DateTime" Precision="0" />
+    <Property Name="estado_civil" Type="Int32" />
+    <Property Name="hijos" Type="Int32" />
+    <Property Name="empresa" Type="Int32" />
+    <Property Name="antiguedad" Type="Int32" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <Property Name="id_categoria" Type="Int32" />
+    <Property Name="id_actividad" Type="Int32" />
+    <Property Name="obras" Type="Int32" />
+    <NavigationProperty Name="Actividad" Relationship="Self.FK_Empleado_Actividad" FromRole="Empleado" ToRole="Actividad" />
+    <NavigationProperty Name="Contrato" Relationship="Self.FK_Contrato_Empleado" FromRole="Empleado" ToRole="Contrato" />
+    <NavigationProperty Name="Empresa1" Relationship="Self.FK_Empleado_Empresa" FromRole="Empleado" ToRole="Empresa" />
+    <NavigationProperty Name="Estado_Civil1" Relationship="Self.FK_Empleado_EstadoCivil" FromRole="Empleado" ToRole="Estado_Civil" />
+    <NavigationProperty Name="Obra_Social" Relationship="Self.FK_Empleado_Obrasocial" FromRole="Empleado" ToRole="Obra_Social" />
+    <NavigationProperty Name="Sueldo_Cab" Relationship="Self.FK_SueldoC_Empleado" FromRole="Empleado" ToRole="Sueldo_Cab" />
+  </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="id_empresa" />
+    </Key>
+    <Property Name="id_empresa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombrefantasia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cuitE" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="provincia" Type="Int32" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <Property Name="id_razonsocial" Type="Int32" />
+    <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_Empresa" FromRole="Empresa" ToRole="Empleado" />
+    <NavigationProperty Name="Provincia1" Relationship="Self.FK_Empresa_provincia" FromRole="Empresa" ToRole="Provincia" />
+    <NavigationProperty Name="Razon_Social" Relationship="Self.FK_Empresa_razonS" FromRole="Empresa" ToRole="Razon_Social" />
+    <NavigationProperty Name="Empresa_Sucursal" Relationship="Self.FK_Sucu_Empresa" FromRole="Empresa" ToRole="Empresa_Sucursal" />
+  </EntityType>
+  <EntityType Name="Empresa_Sucursal">
+    <Key>
+      <PropertyRef Name="id_sucursal" />
+    </Key>
+    <Property Name="id_sucursal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="empresa" Type="Int32" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Empresa1" Relationship="Self.FK_Sucu_Empresa" FromRole="Empresa_Sucursal" ToRole="Empresa" />
+    <NavigationProperty Name="Sueldo_Cab" Relationship="Self.FK_SueldoC_SucursalEmp" FromRole="Empresa_Sucursal" ToRole="Sueldo_Cab" />
+  </EntityType>
+  <EntityType Name="Estado_Civil">
+    <Key>
+      <PropertyRef Name="id_estadociv" />
+    </Key>
+    <Property Name="id_estadociv" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_EstadoCivil" FromRole="Estado_Civil" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="Localidad">
+    <Key>
+      <PropertyRef Name="id_provincia" />
+      <PropertyRef Name="id_localidad" />
+    </Key>
+    <Property Name="id_provincia" Type="Int32" Nullable="false" />
+    <Property Name="id_localidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Provincia" Relationship="Self.FK_LOCALIDAD_PROV" FromRole="Localidad" ToRole="Provincia" />
+    <NavigationProperty Name="Sueldo_Cab" Relationship="Self.FK_SueldoC_Localidad" FromRole="Localidad" ToRole="Sueldo_Cab" />
+  </EntityType>
+  <EntityType Name="Obra_Social">
+    <Key>
+      <PropertyRef Name="id_obrasocial" />
+    </Key>
+    <Property Name="id_obrasocial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_Obrasocial" FromRole="Obra_Social" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="Periodo">
+    <Key>
+      <PropertyRef Name="id_periodo" />
+    </Key>
+    <Property Name="id_periodo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mes" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="año" Type="Int32" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Sueldo_Cab" Relationship="Self.FK_SueldoC_Perido" FromRole="Periodo" ToRole="Sueldo_Cab" />
+  </EntityType>
+  <EntityType Name="Provincia">
+    <Key>
+      <PropertyRef Name="id_provincia" />
+    </Key>
+    <Property Name="id_provincia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Empresa" Relationship="Self.FK_Empresa_provincia" FromRole="Provincia" ToRole="Empresa" />
+    <NavigationProperty Name="Localidad" Relationship="Self.FK_LOCALIDAD_PROV" FromRole="Provincia" ToRole="Localidad" />
+  </EntityType>
+  <EntityType Name="Razon_Social">
+    <Key>
+      <PropertyRef Name="id_razonsocial" />
+    </Key>
+    <Property Name="id_razonsocial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Empresa" Relationship="Self.FK_Empresa_razonS" FromRole="Razon_Social" ToRole="Empresa" />
+  </EntityType>
+  <EntityType Name="Remuneraciones">
+    <Key>
+      <PropertyRef Name="id_remuneraciones" />
+    </Key>
+    <Property Name="id_remuneraciones" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="valor" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <Property Name="actividad" Type="Int32" />
+    <Property Name="unidad" Type="Int32" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Actividad1" Relationship="Self.FK_Remuneraciones_Actividad" FromRole="Remuneraciones" ToRole="Actividad" />
+  </EntityType>
+  <EntityType Name="Sueldo_Cab">
+    <Key>
+      <PropertyRef Name="id_reciboC" />
+      <PropertyRef Name="fecha" />
+    </Key>
+    <Property Name="id_reciboC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="id_empresa" Type="Int32" />
+    <Property Name="periodo" Type="Int32" />
+    <Property Name="periodoLiq" Type="DateTime" Precision="0" />
+    <Property Name="total" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="empleado" Type="Int32" />
+    <Property Name="id_banco" Type="Int32" />
+    <Property Name="ciudad" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="id_provincia" Type="Int32" />
+    <Property Name="id_localidad" Type="Int32" />
+    <Property Name="sucursalemp" Type="Int32" />
+    <Property Name="total_bruto" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="total_neto" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Banco" Relationship="Self.FK_SueldoC_Banco" FromRole="Sueldo_Cab" ToRole="Banco" />
+    <NavigationProperty Name="Empleado1" Relationship="Self.FK_SueldoC_Empleado" FromRole="Sueldo_Cab" ToRole="Empleado" />
+    <NavigationProperty Name="Empresa_Sucursal" Relationship="Self.FK_SueldoC_SucursalEmp" FromRole="Sueldo_Cab" ToRole="Empresa_Sucursal" />
+    <NavigationProperty Name="Localidad" Relationship="Self.FK_SueldoC_Localidad" FromRole="Sueldo_Cab" ToRole="Localidad" />
+    <NavigationProperty Name="Periodo1" Relationship="Self.FK_SueldoC_Perido" FromRole="Sueldo_Cab" ToRole="Periodo" />
+    <NavigationProperty Name="Sueldo_Det" Relationship="Self.FK_SueldoD_SueldoC" FromRole="Sueldo_Cab" ToRole="Sueldo_Det" />
+  </EntityType>
+  <EntityType Name="Sueldo_Det">
+    <Key>
+      <PropertyRef Name="id_reciboc" />
+      <PropertyRef Name="fecha" />
+      <PropertyRef Name="id_recibo_det" />
+    </Key>
+    <Property Name="id_reciboc" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="id_recibo_det" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="concepto" Type="Int32" />
+    <Property Name="cantidad" Type="Int32" />
+    <Property Name="unidad" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="importe" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="subtotal" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Concepto1" Relationship="Self.FK_Sueldo_Concepto" FromRole="Sueldo_Det" ToRole="Concepto" />
+    <NavigationProperty Name="Sueldo_Cab" Relationship="Self.FK_SueldoD_SueldoC" FromRole="Sueldo_Det" ToRole="Sueldo_Cab" />
+  </EntityType>
+  <EntityType Name="Tipo_Concepto">
+    <Key>
+      <PropertyRef Name="id_tipoconcepto" />
+    </Key>
+    <Property Name="id_tipoconcepto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="estado_r_nor" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Concepto" Relationship="Self.FK_Concepto_TipoConcepto" FromRole="Tipo_Concepto" ToRole="Concepto" />
+  </EntityType>
+  <EntityType Name="Tipo_Contrato">
+    <Key>
+      <PropertyRef Name="id_tipocontrato" />
+    </Key>
+    <Property Name="id_tipocontrato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Contrato" Relationship="Self.FK_Contrato_TipoContrato" FromRole="Tipo_Contrato" ToRole="Contrato" />
+  </EntityType>
+  <EntityType Name="Unidad">
+    <Key>
+      <PropertyRef Name="id_unidad" />
+    </Key>
+    <Property Name="id_unidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="estadobaja" Type="Boolean" />
+    <NavigationProperty Name="Actividad" Relationship="Self.FK_actividad_unidad" FromRole="Unidad" ToRole="Actividad" />
+  </EntityType>
+  <Association Name="Actividades_Convenio">
+    <End Role="Convenio" Type="Self.Convenio" Multiplicity="0..1" />
+    <End Role="Actividad" Type="Self.Actividad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Convenio">
+        <PropertyRef Name="id_convenio" />
+      </Principal>
+      <Dependent Role="Actividad">
+        <PropertyRef Name="id_convenio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_actividad_unidad">
+    <End Role="Unidad" Type="Self.Unidad" Multiplicity="0..1" />
+    <End Role="Actividad" Type="Self.Actividad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unidad">
+        <PropertyRef Name="id_unidad" />
+      </Principal>
+      <Dependent Role="Actividad">
+        <PropertyRef Name="id_unidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleado_Actividad">
+    <End Role="Actividad" Type="Self.Actividad" Multiplicity="0..1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actividad">
+        <PropertyRef Name="id_actividad" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="id_actividad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Remuneraciones_Actividad">
+    <End Role="Actividad" Type="Self.Actividad" Multiplicity="0..1" />
+    <End Role="Remuneraciones" Type="Self.Remuneraciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actividad">
+        <PropertyRef Name="id_actividad" />
+      </Principal>
+      <Dependent Role="Remuneraciones">
+        <PropertyRef Name="actividad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SueldoC_Banco">
+    <End Role="Banco" Type="Self.Banco" Multiplicity="0..1" />
+    <End Role="Sueldo_Cab" Type="Self.Sueldo_Cab" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Banco">
+        <PropertyRef Name="id_banco" />
+      </Principal>
+      <Dependent Role="Sueldo_Cab">
+        <PropertyRef Name="id_banco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Categoria_Convenio">
+    <End Role="Convenio" Type="Self.Convenio" Multiplicity="1" />
+    <End Role="CategoriaC" Type="Self.CategoriaC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Convenio">
+        <PropertyRef Name="id_convenio" />
+      </Principal>
+      <Dependent Role="CategoriaC">
+        <PropertyRef Name="id_convenio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Concepto_TipoConcepto">
+    <End Role="Tipo_Concepto" Type="Self.Tipo_Concepto" Multiplicity="0..1" />
+    <End Role="Concepto" Type="Self.Concepto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Concepto">
+        <PropertyRef Name="id_tipoconcepto" />
+      </Principal>
+      <Dependent Role="Concepto">
+        <PropertyRef Name="tipoconcepto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sueldo_Concepto">
+    <End Role="Concepto" Type="Self.Concepto" Multiplicity="0..1" />
+    <End Role="Sueldo_Det" Type="Self.Sueldo_Det" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Concepto">
+        <PropertyRef Name="id_concepto" />
+      </Principal>
+      <Dependent Role="Sueldo_Det">
+        <PropertyRef Name="concepto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contrato_Empleado">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+    <End Role="Contrato" Type="Self.Contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="id_empleado" />
+      </Principal>
+      <Dependent Role="Contrato">
+        <PropertyRef Name="idempleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contrato_TipoContrato">
+    <End Role="Tipo_Contrato" Type="Self.Tipo_Contrato" Multiplicity="0..1" />
+    <End Role="Contrato" Type="Self.Contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Contrato">
+        <PropertyRef Name="id_tipocontrato" />
+      </Principal>
+      <Dependent Role="Contrato">
+        <PropertyRef Name="tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleado_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="id_empresa" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleado_EstadoCivil">
+    <End Role="Estado_Civil" Type="Self.Estado_Civil" Multiplicity="0..1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado_Civil">
+        <PropertyRef Name="id_estadociv" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="estado_civil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleado_Obrasocial">
+    <End Role="Obra_Social" Type="Self.Obra_Social" Multiplicity="0..1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Obra_Social">
+        <PropertyRef Name="id_obrasocial" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="obras" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SueldoC_Empleado">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+    <End Role="Sueldo_Cab" Type="Self.Sueldo_Cab" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="id_empleado" />
+      </Principal>
+      <Dependent Role="Sueldo_Cab">
+        <PropertyRef Name="empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empresa_provincia">
+    <End Role="Provincia" Type="Self.Provincia" Multiplicity="0..1" />
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="id_provincia" />
+      </Principal>
+      <Dependent Role="Empresa">
+        <PropertyRef Name="provincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empresa_razonS">
+    <End Role="Razon_Social" Type="Self.Razon_Social" Multiplicity="0..1" />
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Razon_Social">
+        <PropertyRef Name="id_razonsocial" />
+      </Principal>
+      <Dependent Role="Empresa">
+        <PropertyRef Name="id_razonsocial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sucu_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+    <End Role="Empresa_Sucursal" Type="Self.Empresa_Sucursal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="id_empresa" />
+      </Principal>
+      <Dependent Role="Empresa_Sucursal">
+        <PropertyRef Name="empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SueldoC_SucursalEmp">
+    <End Role="Empresa_Sucursal" Type="Self.Empresa_Sucursal" Multiplicity="0..1" />
+    <End Role="Sueldo_Cab" Type="Self.Sueldo_Cab" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa_Sucursal">
+        <PropertyRef Name="id_sucursal" />
+      </Principal>
+      <Dependent Role="Sueldo_Cab">
+        <PropertyRef Name="sucursalemp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOCALIDAD_PROV">
+    <End Role="Provincia" Type="Self.Provincia" Multiplicity="1" />
+    <End Role="Localidad" Type="Self.Localidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="id_provincia" />
+      </Principal>
+      <Dependent Role="Localidad">
+        <PropertyRef Name="id_provincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SueldoC_Localidad">
+    <End Role="Localidad" Type="Self.Localidad" Multiplicity="0..1" />
+    <End Role="Sueldo_Cab" Type="Self.Sueldo_Cab" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Localidad">
+        <PropertyRef Name="id_provincia" />
+        <PropertyRef Name="id_localidad" />
+      </Principal>
+      <Dependent Role="Sueldo_Cab">
+        <PropertyRef Name="id_provincia" />
+        <PropertyRef Name="id_localidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SueldoC_Perido">
+    <End Role="Periodo" Type="Self.Periodo" Multiplicity="0..1" />
+    <End Role="Sueldo_Cab" Type="Self.Sueldo_Cab" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Periodo">
+        <PropertyRef Name="id_periodo" />
+      </Principal>
+      <Dependent Role="Sueldo_Cab">
+        <PropertyRef Name="periodo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SueldoD_SueldoC">
+    <End Role="Sueldo_Cab" Type="Self.Sueldo_Cab" Multiplicity="1" />
+    <End Role="Sueldo_Det" Type="Self.Sueldo_Det" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sueldo_Cab">
+        <PropertyRef Name="id_reciboC" />
+        <PropertyRef Name="fecha" />
+      </Principal>
+      <Dependent Role="Sueldo_Det">
+        <PropertyRef Name="id_reciboc" />
+        <PropertyRef Name="fecha" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KoutSueldosEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Actividad" EntityType="Self.Actividad" />
+    <EntitySet Name="Banco" EntityType="Self.Banco" />
+    <EntitySet Name="CategoriaC" EntityType="Self.CategoriaC" />
+    <EntitySet Name="Concepto" EntityType="Self.Concepto" />
+    <EntitySet Name="Contrato" EntityType="Self.Contrato" />
+    <EntitySet Name="Convenio" EntityType="Self.Convenio" />
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" />
+    <EntitySet Name="Empresa" EntityType="Self.Empresa" />
+    <EntitySet Name="Empresa_Sucursal" EntityType="Self.Empresa_Sucursal" />
+    <EntitySet Name="Estado_Civil" EntityType="Self.Estado_Civil" />
+    <EntitySet Name="Localidad" EntityType="Self.Localidad" />
+    <EntitySet Name="Obra_Social" EntityType="Self.Obra_Social" />
+    <EntitySet Name="Periodo" EntityType="Self.Periodo" />
+    <EntitySet Name="Provincia" EntityType="Self.Provincia" />
+    <EntitySet Name="Razon_Social" EntityType="Self.Razon_Social" />
+    <EntitySet Name="Remuneraciones" EntityType="Self.Remuneraciones" />
+    <EntitySet Name="Sueldo_Cab" EntityType="Self.Sueldo_Cab" />
+    <EntitySet Name="Sueldo_Det" EntityType="Self.Sueldo_Det" />
+    <EntitySet Name="Tipo_Concepto" EntityType="Self.Tipo_Concepto" />
+    <EntitySet Name="Tipo_Contrato" EntityType="Self.Tipo_Contrato" />
+    <EntitySet Name="Unidad" EntityType="Self.Unidad" />
+    <AssociationSet Name="Actividades_Convenio" Association="Self.Actividades_Convenio">
+      <End Role="Convenio" EntitySet="Convenio" />
+      <End Role="Actividad" EntitySet="Actividad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_actividad_unidad" Association="Self.FK_actividad_unidad">
+      <End Role="Unidad" EntitySet="Unidad" />
+      <End Role="Actividad" EntitySet="Actividad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleado_Actividad" Association="Self.FK_Empleado_Actividad">
+      <End Role="Actividad" EntitySet="Actividad" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Remuneraciones_Actividad" Association="Self.FK_Remuneraciones_Actividad">
+      <End Role="Actividad" EntitySet="Actividad" />
+      <End Role="Remuneraciones" EntitySet="Remuneraciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SueldoC_Banco" Association="Self.FK_SueldoC_Banco">
+      <End Role="Banco" EntitySet="Banco" />
+      <End Role="Sueldo_Cab" EntitySet="Sueldo_Cab" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Categoria_Convenio" Association="Self.FK_Categoria_Convenio">
+      <End Role="Convenio" EntitySet="Convenio" />
+      <End Role="CategoriaC" EntitySet="CategoriaC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Concepto_TipoConcepto" Association="Self.FK_Concepto_TipoConcepto">
+      <End Role="Tipo_Concepto" EntitySet="Tipo_Concepto" />
+      <End Role="Concepto" EntitySet="Concepto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sueldo_Concepto" Association="Self.FK_Sueldo_Concepto">
+      <End Role="Concepto" EntitySet="Concepto" />
+      <End Role="Sueldo_Det" EntitySet="Sueldo_Det" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contrato_Empleado" Association="Self.FK_Contrato_Empleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Contrato" EntitySet="Contrato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contrato_TipoContrato" Association="Self.FK_Contrato_TipoContrato">
+      <End Role="Tipo_Contrato" EntitySet="Tipo_Contrato" />
+      <End Role="Contrato" EntitySet="Contrato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleado_Empresa" Association="Self.FK_Empleado_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleado_EstadoCivil" Association="Self.FK_Empleado_EstadoCivil">
+      <End Role="Estado_Civil" EntitySet="Estado_Civil" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleado_Obrasocial" Association="Self.FK_Empleado_Obrasocial">
+      <End Role="Obra_Social" EntitySet="Obra_Social" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SueldoC_Empleado" Association="Self.FK_SueldoC_Empleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Sueldo_Cab" EntitySet="Sueldo_Cab" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empresa_provincia" Association="Self.FK_Empresa_provincia">
+      <End Role="Provincia" EntitySet="Provincia" />
+      <End Role="Empresa" EntitySet="Empresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empresa_razonS" Association="Self.FK_Empresa_razonS">
+      <End Role="Razon_Social" EntitySet="Razon_Social" />
+      <End Role="Empresa" EntitySet="Empresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sucu_Empresa" Association="Self.FK_Sucu_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Empresa_Sucursal" EntitySet="Empresa_Sucursal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SueldoC_SucursalEmp" Association="Self.FK_SueldoC_SucursalEmp">
+      <End Role="Empresa_Sucursal" EntitySet="Empresa_Sucursal" />
+      <End Role="Sueldo_Cab" EntitySet="Sueldo_Cab" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOCALIDAD_PROV" Association="Self.FK_LOCALIDAD_PROV">
+      <End Role="Provincia" EntitySet="Provincia" />
+      <End Role="Localidad" EntitySet="Localidad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SueldoC_Localidad" Association="Self.FK_SueldoC_Localidad">
+      <End Role="Localidad" EntitySet="Localidad" />
+      <End Role="Sueldo_Cab" EntitySet="Sueldo_Cab" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SueldoC_Perido" Association="Self.FK_SueldoC_Perido">
+      <End Role="Periodo" EntitySet="Periodo" />
+      <End Role="Sueldo_Cab" EntitySet="Sueldo_Cab" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SueldoD_SueldoC" Association="Self.FK_SueldoD_SueldoC">
+      <End Role="Sueldo_Cab" EntitySet="Sueldo_Cab" />
+      <End Role="Sueldo_Det" EntitySet="Sueldo_Det" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
