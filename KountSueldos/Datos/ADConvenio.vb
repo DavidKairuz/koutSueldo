@@ -5,7 +5,7 @@
     Shared Sub MostrarConvenio(grid As DataGridView)
         Dim bank = (From b In ctx.Convenio
                     Where b.estadobaja = True
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
@@ -13,7 +13,7 @@
 
     Shared Sub MostrarConvenioT(grid As DataGridView)
         Dim bank = (From b In ctx.Convenio
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
@@ -37,7 +37,17 @@
         ctx.SaveChanges()
 
     End Sub
-
+    Function index() As Integer
+        Dim i As Integer
+        Dim ext = (From ex In ctx.Convenio Order By ex.id_convenio Descending Select ex).First().id_convenio
+        i = CInt(ext.ToString)
+        If i > 0 Then
+            Return i + 1
+        Else
+            i = 0
+        End If
+        Return i
+    End Function
 
     Shared Sub ModificarConvenio(id As Integer, name As String)
         Dim tipo = (From t In ctx.Convenio

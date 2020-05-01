@@ -70,4 +70,15 @@
     '                                           Select c).ToList
     '    dgv.DataSource = tipo
     'End Sub
+    Function index() As Integer
+        Dim i As Integer
+        Dim ext = (From ex In ctx.Remuneraciones Order By ex.id_remuneraciones Descending Select ex).First().id_remuneraciones
+        i = CInt(ext.ToString)
+        If i > 0 Then
+            Return i + 1
+        Else
+            i = 0
+        End If
+        Return i
+    End Function
 End Class

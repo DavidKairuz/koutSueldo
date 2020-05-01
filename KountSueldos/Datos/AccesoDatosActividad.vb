@@ -11,6 +11,17 @@
 
     End Sub
 
+    Function index() As Integer
+        Dim i As Integer
+        Dim ext = (From ex In ctx.Actividad Order By ex.id_actividad Descending Select ex).First().id_actividad
+        i = CInt(ext.ToString)
+        If i > 0 Then
+            Return i + 1
+        Else
+            i = 0
+        End If
+        Return i
+    End Function
     Shared Sub MostrarGridT(grid As DataGridView)
         Dim act = (From a In ctx.Actividad
                    Select a).ToList

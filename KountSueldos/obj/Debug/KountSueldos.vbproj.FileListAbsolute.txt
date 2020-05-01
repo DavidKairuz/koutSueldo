@@ -13,5 +13,5 @@ C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\o
 C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.exe
 C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.xml
 C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.pdb
-C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.VTipoConvenio.resources
 C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.VTipoContrato.resources
+C:\Users\david\Documents\Visual Studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.VConvenio.resources

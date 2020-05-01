@@ -184,6 +184,7 @@
       <DependentUpon>ModelDb.tt</DependentUpon>
     </Compile>
     <Compile Include="MConfiguracionF.vb" />
+    <Compile Include="Modulos\Validar.vb" />
     <Compile Include="Principal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -212,10 +213,10 @@
     <Compile Include="Vistas\VTipoContrato.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\VTipoConvenio.Designer.vb">
-      <DependentUpon>VTipoConvenio.vb</DependentUpon>
+    <Compile Include="Vistas\VConvenio.Designer.vb">
+      <DependentUpon>VConvenio.vb</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\VTipoConvenio.vb">
+    <Compile Include="Vistas\VConvenio.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -232,8 +233,8 @@
     <EmbeddedResource Include="Vistas\VTipoContrato.resx">
       <DependentUpon>VTipoContrato.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\VTipoConvenio.resx">
-      <DependentUpon>VTipoConvenio.vb</DependentUpon>
+    <EmbeddedResource Include="Vistas\VConvenio.resx">
+      <DependentUpon>VConvenio.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -267,6 +268,7 @@
       <DependentUpon>ModelDb.edmx</DependentUpon>
       <LastGenOutput>ModelDb.vb</LastGenOutput>
     </Content>
+    <None Include="Resources\clean.png" />
     <None Include="Resources\pdf1.png" />
     <None Include="Resources\pdf.png" />
     <None Include="Resources\edit.png" />

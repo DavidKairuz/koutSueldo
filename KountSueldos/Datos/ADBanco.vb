@@ -9,7 +9,17 @@
         grid.DataSource = bank
     End Sub
 
-
+    Function index() As Integer
+        Dim i As Integer
+        Dim ext = (From ex In ctx.Banco Order By ex.id_banco Descending Select ex).First().id_banco
+        i = CInt(ext.ToString)
+        If i > 0 Then
+            Return i + 1
+        Else
+            i = 0
+        End If
+        Return i
+    End Function
 
     Shared Sub MostrarBancoT(grid As DataGridView)
         Dim bank = (From b In ctx.Banco
