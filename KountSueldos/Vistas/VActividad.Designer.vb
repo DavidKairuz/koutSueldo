@@ -28,9 +28,10 @@ Partial Class VActividad
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.txtcod = New System.Windows.Forms.TextBox()
-        Me.dgvconvenio = New System.Windows.Forms.DataGridView()
+        Me.dgvactividad = New System.Windows.Forms.DataGridView()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
         Me.lbltitulo = New System.Windows.Forms.Label()
+        Me.pbcerrar = New System.Windows.Forms.PictureBox()
         Me.btnlimpiar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -38,8 +39,11 @@ Partial Class VActividad
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btnAlta = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
-        Me.pbcerrar = New System.Windows.Forms.PictureBox()
-        CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.cboconvenio = New System.Windows.Forms.ComboBox()
+        Me.lblconvenio = New System.Windows.Forms.Label()
+        Me.cbounidad = New System.Windows.Forms.ComboBox()
+        Me.lblunidad = New System.Windows.Forms.Label()
+        CType(Me.dgvactividad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -73,7 +77,7 @@ Partial Class VActividad
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(66, 159)
+        Me.Label1.Location = New System.Drawing.Point(56, 131)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 23
@@ -81,7 +85,7 @@ Partial Class VActividad
         '
         'txtdescripcion
         '
-        Me.txtdescripcion.Location = New System.Drawing.Point(127, 199)
+        Me.txtdescripcion.Location = New System.Drawing.Point(117, 201)
         Me.txtdescripcion.Multiline = True
         Me.txtdescripcion.Name = "txtdescripcion"
         Me.txtdescripcion.Size = New System.Drawing.Size(159, 32)
@@ -90,23 +94,23 @@ Partial Class VActividad
         'txtcod
         '
         Me.txtcod.Enabled = False
-        Me.txtcod.Location = New System.Drawing.Point(127, 156)
+        Me.txtcod.Location = New System.Drawing.Point(117, 128)
         Me.txtcod.Name = "txtcod"
         Me.txtcod.Size = New System.Drawing.Size(159, 20)
         Me.txtcod.TabIndex = 21
         '
-        'dgvconvenio
+        'dgvactividad
         '
-        Me.dgvconvenio.AllowUserToAddRows = False
-        Me.dgvconvenio.AllowUserToDeleteRows = False
-        Me.dgvconvenio.AllowUserToResizeColumns = False
-        Me.dgvconvenio.AllowUserToResizeRows = False
-        Me.dgvconvenio.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.dgvconvenio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvconvenio.Location = New System.Drawing.Point(370, 111)
-        Me.dgvconvenio.Name = "dgvconvenio"
-        Me.dgvconvenio.Size = New System.Drawing.Size(453, 427)
-        Me.dgvconvenio.TabIndex = 20
+        Me.dgvactividad.AllowUserToAddRows = False
+        Me.dgvactividad.AllowUserToDeleteRows = False
+        Me.dgvactividad.AllowUserToResizeColumns = False
+        Me.dgvactividad.AllowUserToResizeRows = False
+        Me.dgvactividad.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.dgvactividad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvactividad.Location = New System.Drawing.Point(370, 111)
+        Me.dgvactividad.Name = "dgvactividad"
+        Me.dgvactividad.Size = New System.Drawing.Size(453, 427)
+        Me.dgvactividad.TabIndex = 20
         '
         'PanelSuperior
         '
@@ -130,6 +134,18 @@ Partial Class VActividad
         Me.lbltitulo.TabIndex = 33
         Me.lbltitulo.Text = "Actividad"
         '
+        'pbcerrar
+        '
+        Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pbcerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbcerrar.Dock = System.Windows.Forms.DockStyle.Right
+        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.icon
+        Me.pbcerrar.Location = New System.Drawing.Point(993, 0)
+        Me.pbcerrar.Name = "pbcerrar"
+        Me.pbcerrar.Size = New System.Drawing.Size(29, 45)
+        Me.pbcerrar.TabIndex = 0
+        Me.pbcerrar.TabStop = False
+        '
         'btnlimpiar
         '
         Me.btnlimpiar.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -137,7 +153,7 @@ Partial Class VActividad
         Me.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnlimpiar.Image = Global.KountSueldos.My.Resources.Resources.clean
         Me.btnlimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnlimpiar.Location = New System.Drawing.Point(127, 369)
+        Me.btnlimpiar.Location = New System.Drawing.Point(128, 399)
         Me.btnlimpiar.Name = "btnlimpiar"
         Me.btnlimpiar.Size = New System.Drawing.Size(101, 37)
         Me.btnlimpiar.TabIndex = 33
@@ -151,7 +167,7 @@ Partial Class VActividad
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.web
         Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnnuevo.Location = New System.Drawing.Point(19, 312)
+        Me.btnnuevo.Location = New System.Drawing.Point(20, 342)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(101, 37)
         Me.btnnuevo.TabIndex = 32
@@ -208,7 +224,7 @@ Partial Class VActividad
         Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAlta.Image = Global.KountSueldos.My.Resources.Resources.edit
         Me.btnAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAlta.Location = New System.Drawing.Point(234, 312)
+        Me.btnAlta.Location = New System.Drawing.Point(235, 342)
         Me.btnAlta.Name = "btnAlta"
         Me.btnAlta.Size = New System.Drawing.Size(101, 37)
         Me.btnAlta.TabIndex = 28
@@ -222,7 +238,7 @@ Partial Class VActividad
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Image = Global.KountSueldos.My.Resources.Resources.web
         Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnguardar.Location = New System.Drawing.Point(127, 312)
+        Me.btnguardar.Location = New System.Drawing.Point(128, 342)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(101, 37)
         Me.btnguardar.TabIndex = 27
@@ -230,22 +246,49 @@ Partial Class VActividad
         Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnguardar.UseVisualStyleBackColor = True
         '
-        'pbcerrar
+        'cboconvenio
         '
-        Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pbcerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.icon
-        Me.pbcerrar.Location = New System.Drawing.Point(981, 9)
-        Me.pbcerrar.Name = "pbcerrar"
-        Me.pbcerrar.Size = New System.Drawing.Size(29, 27)
-        Me.pbcerrar.TabIndex = 0
-        Me.pbcerrar.TabStop = False
+        Me.cboconvenio.FormattingEnabled = True
+        Me.cboconvenio.Location = New System.Drawing.Point(117, 164)
+        Me.cboconvenio.Name = "cboconvenio"
+        Me.cboconvenio.Size = New System.Drawing.Size(159, 21)
+        Me.cboconvenio.TabIndex = 34
+        '
+        'lblconvenio
+        '
+        Me.lblconvenio.AutoSize = True
+        Me.lblconvenio.Location = New System.Drawing.Point(56, 167)
+        Me.lblconvenio.Name = "lblconvenio"
+        Me.lblconvenio.Size = New System.Drawing.Size(52, 13)
+        Me.lblconvenio.TabIndex = 35
+        Me.lblconvenio.Text = "Convenio"
+        '
+        'cbounidad
+        '
+        Me.cbounidad.FormattingEnabled = True
+        Me.cbounidad.Location = New System.Drawing.Point(117, 253)
+        Me.cbounidad.Name = "cbounidad"
+        Me.cbounidad.Size = New System.Drawing.Size(159, 21)
+        Me.cbounidad.TabIndex = 36
+        '
+        'lblunidad
+        '
+        Me.lblunidad.AutoSize = True
+        Me.lblunidad.Location = New System.Drawing.Point(57, 256)
+        Me.lblunidad.Name = "lblunidad"
+        Me.lblunidad.Size = New System.Drawing.Size(41, 13)
+        Me.lblunidad.TabIndex = 37
+        Me.lblunidad.Text = "Unidad"
         '
         'VActividad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1022, 557)
+        Me.Controls.Add(Me.lblunidad)
+        Me.Controls.Add(Me.cbounidad)
+        Me.Controls.Add(Me.lblconvenio)
+        Me.Controls.Add(Me.cboconvenio)
         Me.Controls.Add(Me.btnlimpiar)
         Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.Button5)
@@ -259,12 +302,12 @@ Partial Class VActividad
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtdescripcion)
         Me.Controls.Add(Me.txtcod)
-        Me.Controls.Add(Me.dgvconvenio)
+        Me.Controls.Add(Me.dgvactividad)
         Me.Controls.Add(Me.PanelSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "VActividad"
         Me.Text = "VActividad"
-        CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvactividad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSuperior.ResumeLayout(False)
         Me.PanelSuperior.PerformLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -286,8 +329,12 @@ Partial Class VActividad
     Friend WithEvents Label1 As Label
     Friend WithEvents txtdescripcion As TextBox
     Friend WithEvents txtcod As TextBox
-    Friend WithEvents dgvconvenio As DataGridView
+    Friend WithEvents dgvactividad As DataGridView
     Friend WithEvents PanelSuperior As Panel
     Friend WithEvents lbltitulo As Label
     Friend WithEvents pbcerrar As PictureBox
+    Friend WithEvents cboconvenio As ComboBox
+    Friend WithEvents lblconvenio As Label
+    Friend WithEvents cbounidad As ComboBox
+    Friend WithEvents lblunidad As Label
 End Class

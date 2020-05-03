@@ -6,7 +6,10 @@
     End Sub
 
 
+    Sub configCombobox(cbo As ComboBox)
+        cbo.DropDownStyle = ComboBoxStyle.DropDownList
 
+    End Sub
 
 
     Sub configDGV(dgv As DataGridView)

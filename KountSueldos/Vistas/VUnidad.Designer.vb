@@ -28,9 +28,10 @@ Partial Class VUnidad
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.txtcod = New System.Windows.Forms.TextBox()
-        Me.dgvconvenio = New System.Windows.Forms.DataGridView()
+        Me.dgvunidad = New System.Windows.Forms.DataGridView()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
         Me.lbltitulo = New System.Windows.Forms.Label()
+        Me.pbcerrar = New System.Windows.Forms.PictureBox()
         Me.btnlimpiar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -38,8 +39,7 @@ Partial Class VUnidad
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btnAlta = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
-        Me.pbcerrar = New System.Windows.Forms.PictureBox()
-        CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvunidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -95,18 +95,18 @@ Partial Class VUnidad
         Me.txtcod.Size = New System.Drawing.Size(159, 20)
         Me.txtcod.TabIndex = 21
         '
-        'dgvconvenio
+        'dgvunidad
         '
-        Me.dgvconvenio.AllowUserToAddRows = False
-        Me.dgvconvenio.AllowUserToDeleteRows = False
-        Me.dgvconvenio.AllowUserToResizeColumns = False
-        Me.dgvconvenio.AllowUserToResizeRows = False
-        Me.dgvconvenio.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.dgvconvenio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvconvenio.Location = New System.Drawing.Point(370, 121)
-        Me.dgvconvenio.Name = "dgvconvenio"
-        Me.dgvconvenio.Size = New System.Drawing.Size(453, 427)
-        Me.dgvconvenio.TabIndex = 20
+        Me.dgvunidad.AllowUserToAddRows = False
+        Me.dgvunidad.AllowUserToDeleteRows = False
+        Me.dgvunidad.AllowUserToResizeColumns = False
+        Me.dgvunidad.AllowUserToResizeRows = False
+        Me.dgvunidad.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.dgvunidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvunidad.Location = New System.Drawing.Point(370, 121)
+        Me.dgvunidad.Name = "dgvunidad"
+        Me.dgvunidad.Size = New System.Drawing.Size(453, 427)
+        Me.dgvunidad.TabIndex = 20
         '
         'PanelSuperior
         '
@@ -129,6 +129,17 @@ Partial Class VUnidad
         Me.lbltitulo.Size = New System.Drawing.Size(59, 19)
         Me.lbltitulo.TabIndex = 33
         Me.lbltitulo.Text = "Unidad"
+        '
+        'pbcerrar
+        '
+        Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pbcerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.icon
+        Me.pbcerrar.Location = New System.Drawing.Point(895, 9)
+        Me.pbcerrar.Name = "pbcerrar"
+        Me.pbcerrar.Size = New System.Drawing.Size(29, 27)
+        Me.pbcerrar.TabIndex = 0
+        Me.pbcerrar.TabStop = False
         '
         'btnlimpiar
         '
@@ -230,17 +241,6 @@ Partial Class VUnidad
         Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnguardar.UseVisualStyleBackColor = True
         '
-        'pbcerrar
-        '
-        Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pbcerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.icon
-        Me.pbcerrar.Location = New System.Drawing.Point(895, 9)
-        Me.pbcerrar.Name = "pbcerrar"
-        Me.pbcerrar.Size = New System.Drawing.Size(29, 27)
-        Me.pbcerrar.TabIndex = 0
-        Me.pbcerrar.TabStop = False
-        '
         'VUnidad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -259,12 +259,12 @@ Partial Class VUnidad
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtdescripcion)
         Me.Controls.Add(Me.txtcod)
-        Me.Controls.Add(Me.dgvconvenio)
+        Me.Controls.Add(Me.dgvunidad)
         Me.Controls.Add(Me.PanelSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "VUnidad"
         Me.Text = "VUnidad"
-        CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvunidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSuperior.ResumeLayout(False)
         Me.PanelSuperior.PerformLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -286,7 +286,7 @@ Partial Class VUnidad
     Friend WithEvents Label1 As Label
     Friend WithEvents txtdescripcion As TextBox
     Friend WithEvents txtcod As TextBox
-    Friend WithEvents dgvconvenio As DataGridView
+    Friend WithEvents dgvunidad As DataGridView
     Friend WithEvents PanelSuperior As Panel
     Friend WithEvents lbltitulo As Label
     Friend WithEvents pbcerrar As PictureBox

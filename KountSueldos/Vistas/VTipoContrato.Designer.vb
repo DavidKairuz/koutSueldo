@@ -32,13 +32,15 @@ Partial Class VTipoContrato
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
+        Me.lbltitulo = New System.Windows.Forms.Label()
         Me.pbcerrar = New System.Windows.Forms.PictureBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.lbltitulo = New System.Windows.Forms.Label()
+        Me.btnlimpiar = New System.Windows.Forms.Button()
+        Me.btnnuevo = New System.Windows.Forms.Button()
+        Me.btnAlta = New System.Windows.Forms.Button()
+        Me.btnguardar = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -128,6 +130,17 @@ Partial Class VTipoContrato
         Me.PanelSuperior.Size = New System.Drawing.Size(934, 45)
         Me.PanelSuperior.TabIndex = 17
         '
+        'lbltitulo
+        '
+        Me.lbltitulo.AutoSize = True
+        Me.lbltitulo.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltitulo.ForeColor = System.Drawing.Color.White
+        Me.lbltitulo.Location = New System.Drawing.Point(43, 12)
+        Me.lbltitulo.Name = "lbltitulo"
+        Me.lbltitulo.Size = New System.Drawing.Size(106, 19)
+        Me.lbltitulo.TabIndex = 32
+        Me.lbltitulo.Text = "Tipo Contrato"
+        '
         'pbcerrar
         '
         Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -181,56 +194,76 @@ Partial Class VTipoContrato
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnlimpiar
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Image = Global.KountSueldos.My.Resources.Resources.edit
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(62, 398)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(101, 37)
-        Me.Button1.TabIndex = 28
-        Me.Button1.Text = "Editar"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnlimpiar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnlimpiar.Image = Global.KountSueldos.My.Resources.Resources.clean
+        Me.btnlimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnlimpiar.Location = New System.Drawing.Point(127, 396)
+        Me.btnlimpiar.Name = "btnlimpiar"
+        Me.btnlimpiar.Size = New System.Drawing.Size(101, 37)
+        Me.btnlimpiar.TabIndex = 37
+        Me.btnlimpiar.Text = "Limpiar"
+        Me.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnlimpiar.UseVisualStyleBackColor = False
         '
-        'Button2
+        'btnnuevo
         '
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Image = Global.KountSueldos.My.Resources.Resources.web
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(185, 398)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(101, 37)
-        Me.Button2.TabIndex = 27
-        Me.Button2.Text = "Guardar"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.web
+        Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnnuevo.Location = New System.Drawing.Point(19, 339)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(101, 37)
+        Me.btnnuevo.TabIndex = 36
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnnuevo.UseVisualStyleBackColor = True
         '
-        'lbltitulo
+        'btnAlta
         '
-        Me.lbltitulo.AutoSize = True
-        Me.lbltitulo.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltitulo.ForeColor = System.Drawing.Color.White
-        Me.lbltitulo.Location = New System.Drawing.Point(43, 12)
-        Me.lbltitulo.Name = "lbltitulo"
-        Me.lbltitulo.Size = New System.Drawing.Size(106, 19)
-        Me.lbltitulo.TabIndex = 32
-        Me.lbltitulo.Text = "Tipo Contrato"
+        Me.btnAlta.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnAlta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAlta.Image = Global.KountSueldos.My.Resources.Resources.edit
+        Me.btnAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAlta.Location = New System.Drawing.Point(234, 339)
+        Me.btnAlta.Name = "btnAlta"
+        Me.btnAlta.Size = New System.Drawing.Size(101, 37)
+        Me.btnAlta.TabIndex = 35
+        Me.btnAlta.Text = "Alta"
+        Me.btnAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAlta.UseVisualStyleBackColor = False
+        '
+        'btnguardar
+        '
+        Me.btnguardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnguardar.Image = Global.KountSueldos.My.Resources.Resources.web
+        Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnguardar.Location = New System.Drawing.Point(127, 339)
+        Me.btnguardar.Name = "btnguardar"
+        Me.btnguardar.Size = New System.Drawing.Size(101, 37)
+        Me.btnguardar.TabIndex = 34
+        Me.btnguardar.Text = "Guardar"
+        Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnguardar.UseVisualStyleBackColor = True
         '
         'VTipoContrato
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(934, 611)
+        Me.Controls.Add(Me.btnlimpiar)
+        Me.Controls.Add(Me.btnnuevo)
+        Me.Controls.Add(Me.btnAlta)
+        Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.txtfiltro)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.Label3)
@@ -256,8 +289,6 @@ Partial Class VTipoContrato
     Friend WithEvents Button5 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Button3 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
     Friend WithEvents txtfiltro As Label
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Label3 As Label
@@ -270,4 +301,8 @@ Partial Class VTipoContrato
     Friend WithEvents PanelSuperior As Panel
     Friend WithEvents pbcerrar As PictureBox
     Friend WithEvents lbltitulo As Label
+    Friend WithEvents btnlimpiar As Button
+    Friend WithEvents btnnuevo As Button
+    Friend WithEvents btnAlta As Button
+    Friend WithEvents btnguardar As Button
 End Class

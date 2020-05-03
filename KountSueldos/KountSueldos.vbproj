@@ -207,6 +207,60 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Vistas\VActividad.Designer.vb">
+      <DependentUpon>VActividad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VActividad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VBanco.Designer.vb">
+      <DependentUpon>VBanco.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VBanco.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VCategoriaC.Designer.vb">
+      <DependentUpon>VCategoriaC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VCategoriaC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VConcepto.Designer.vb">
+      <DependentUpon>VConcepto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VConcepto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VEstadoCivil.Designer.vb">
+      <DependentUpon>VEstadoCivil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VEstadoCivil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VLocalidad.Designer.vb">
+      <DependentUpon>VLocalidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VLocalidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VObrasocial.Designer.vb">
+      <DependentUpon>VObrasocial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VObrasocial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VPeriodo.Designer.vb">
+      <DependentUpon>VPeriodo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VPeriodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VProvincia.Designer.vb">
+      <DependentUpon>VProvincia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VProvincia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vistas\VTipoConcepto.Designer.vb">
       <DependentUpon>VTipoConcepto.vb</DependentUpon>
     </Compile>
@@ -225,6 +279,12 @@
     <Compile Include="Vistas\VConvenio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vistas\VUnidad.Designer.vb">
+      <DependentUpon>VUnidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VUnidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -236,6 +296,33 @@
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VActividad.resx">
+      <DependentUpon>VActividad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VBanco.resx">
+      <DependentUpon>VBanco.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VCategoriaC.resx">
+      <DependentUpon>VCategoriaC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VConcepto.resx">
+      <DependentUpon>VConcepto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VEstadoCivil.resx">
+      <DependentUpon>VEstadoCivil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VLocalidad.resx">
+      <DependentUpon>VLocalidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VObrasocial.resx">
+      <DependentUpon>VObrasocial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VPeriodo.resx">
+      <DependentUpon>VPeriodo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VProvincia.resx">
+      <DependentUpon>VProvincia.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\VTipoConcepto.resx">
       <DependentUpon>VTipoConcepto.vb</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\VConvenio.resx">
       <DependentUpon>VConvenio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VUnidad.resx">
+      <DependentUpon>VUnidad.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

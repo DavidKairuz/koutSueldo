@@ -13,15 +13,63 @@
 
     Function index() As Integer
         Dim i As Integer
-        Dim ext = (From ex In ctx.Actividad Order By ex.id_actividad Descending Select ex).First().id_actividad
-        i = CInt(ext.ToString)
-        If i > 0 Then
-            Return i + 1
-        Else
-            i = 0
-        End If
+        Try
+
+            Dim ext = (From ex In ctx.Actividad Order By ex.id_actividad Descending Select ex).First().id_actividad
+            i = CInt(ext.ToString)
+            If i = 0 Then
+                i = 1
+            Else
+                i = i + 1
+            End If
+
+        Catch ex As System.InvalidOperationException
+            MsgBox(ex.Message + "no hay elementos", MsgBoxStyle.Information, "Error")
+        End Try
+
         Return i
     End Function
+
+    'Shared Function indice() As Integer
+    '    Dim res As Integer
+    '    Try
+
+    '        'Dim inde As IQueryable = (From a In ctx.Actividad.Where ( a.estadobaja = True).Max()
+    '        Select Case a)
+    '        '  Where (a >= a.estadobaja = True).Max(a >= a.id_acividad)
+    '        ' var query = From c In inde
+    '        '   Where maximo == System.Convert.ToInt32(c.id_actividad)
+    '        'Group c By c.idCategoria Into g
+    '        '    Select Case New {idCategoria=g.Key, maximo=g.Max(c >= c.codigoMaterial) };
+    '        'Materiales mat = New Materiales();
+    '        '//mat.codigoMaterial = query.ToString();
+    '        '   mat.codigoMaterial = query;
+    '    Catch ex As Exception
+
+    '    End Try
+    'End Function
+    Shared Sub MostrarComboConvenio(cbo As ComboBox)
+        Dim var = (From c In ctx.Convenio
+                   Select c).ToList
+        cbo.DataSource = var
+        cbo.DisplayMember = "descripcion"
+        cbo.ValueMember = "id_convenio"
+        'cbo.SelectedValue = -1
+    End Sub
+
+    Shared Sub MostrarComboUnidad(combo As ComboBox)
+        Dim uni = (From e In ctx.Unidad
+                   Select e).ToList
+
+        combo.DataSource = uni
+        combo.DisplayMember = "descripcion"
+        combo.ValueMember = "id_unidad"
+        combo.SelectedValue = -1
+
+    End Sub
+
+
+
     Shared Sub MostrarGridT(grid As DataGridView)
         Dim act = (From a In ctx.Actividad
                    Select a).ToList

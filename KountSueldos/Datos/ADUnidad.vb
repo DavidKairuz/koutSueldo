@@ -5,7 +5,7 @@
     Shared Sub MostrarUnidad(grid As DataGridView)
         Dim bank = (From b In ctx.Unidad
                     Where b.estadobaja = True
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
@@ -13,7 +13,7 @@
 
     Shared Sub MostrarUnidadT(grid As DataGridView)
         Dim bank = (From b In ctx.Unidad
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
@@ -34,6 +34,15 @@
                   Where b.id_unidad = id
                   Select b).SingleOrDefault
         bn.estadobaja = 0
+        ctx.SaveChanges()
+
+    End Sub
+
+    Shared Sub DarAlta(id As Integer)
+        Dim bn = (From b In ctx.Unidad
+                  Where b.id_unidad = id
+                  Select b).SingleOrDefault
+        bn.estadobaja = 1
         ctx.SaveChanges()
 
     End Sub

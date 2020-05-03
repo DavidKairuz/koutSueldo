@@ -77,4 +77,13 @@
                                          Select c).ToList
         dgv.DataSource = tipo
     End Sub
+
+    Shared Sub MostrarComboConvenio(cbo As ComboBox)
+        Dim var = (From c In ctx.Convenio
+                   Select c).ToList
+        cbo.DataSource = var
+        cbo.DisplayMember = "descripcion"
+        cbo.ValueMember = "id_convenio"
+        cbo.SelectedValue = -1
+    End Sub
 End Class
