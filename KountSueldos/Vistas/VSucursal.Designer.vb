@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class VSucursal
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class VSucursal
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnlimpiar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
@@ -33,13 +33,19 @@ Partial Class VSucursal
         Me.txtfiltro = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtdescripcion = New System.Windows.Forms.TextBox()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.txtcod = New System.Windows.Forms.TextBox()
-        Me.dgvunidad = New System.Windows.Forms.DataGridView()
+        Me.dgvsucursal = New System.Windows.Forms.DataGridView()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
         Me.lbltitulo = New System.Windows.Forms.Label()
         Me.pbcerrar = New System.Windows.Forms.PictureBox()
-        CType(Me.dgvunidad, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.cborazonsoc = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txttelefono = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtdireccion = New System.Windows.Forms.TextBox()
+        CType(Me.dgvsucursal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -51,7 +57,7 @@ Partial Class VSucursal
         Me.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnlimpiar.Image = Global.KountSueldos.My.Resources.Resources.clean
         Me.btnlimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnlimpiar.Location = New System.Drawing.Point(127, 371)
+        Me.btnlimpiar.Location = New System.Drawing.Point(137, 439)
         Me.btnlimpiar.Name = "btnlimpiar"
         Me.btnlimpiar.Size = New System.Drawing.Size(101, 37)
         Me.btnlimpiar.TabIndex = 48
@@ -65,7 +71,7 @@ Partial Class VSucursal
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.web
         Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnnuevo.Location = New System.Drawing.Point(19, 314)
+        Me.btnnuevo.Location = New System.Drawing.Point(29, 382)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(101, 37)
         Me.btnnuevo.TabIndex = 47
@@ -122,7 +128,7 @@ Partial Class VSucursal
         Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAlta.Image = Global.KountSueldos.My.Resources.Resources.edit
         Me.btnAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAlta.Location = New System.Drawing.Point(234, 314)
+        Me.btnAlta.Location = New System.Drawing.Point(244, 382)
         Me.btnAlta.Name = "btnAlta"
         Me.btnAlta.Size = New System.Drawing.Size(101, 37)
         Me.btnAlta.TabIndex = 43
@@ -136,7 +142,7 @@ Partial Class VSucursal
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Image = Global.KountSueldos.My.Resources.Resources.web
         Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnguardar.Location = New System.Drawing.Point(127, 314)
+        Me.btnguardar.Location = New System.Drawing.Point(137, 382)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(101, 37)
         Me.btnguardar.TabIndex = 42
@@ -164,49 +170,48 @@ Partial Class VSucursal
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(43, 203)
+        Me.Label2.Location = New System.Drawing.Point(45, 164)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(63, 13)
+        Me.Label2.Size = New System.Drawing.Size(44, 13)
         Me.Label2.TabIndex = 39
-        Me.Label2.Text = "Descripción"
+        Me.Label2.Text = "Nombre"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(66, 161)
+        Me.Label1.Location = New System.Drawing.Point(49, 82)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 38
         Me.Label1.Text = "Código"
         '
-        'txtdescripcion
+        'txtnombre
         '
-        Me.txtdescripcion.Location = New System.Drawing.Point(127, 201)
-        Me.txtdescripcion.Multiline = True
-        Me.txtdescripcion.Name = "txtdescripcion"
-        Me.txtdescripcion.Size = New System.Drawing.Size(159, 32)
-        Me.txtdescripcion.TabIndex = 37
+        Me.txtnombre.Location = New System.Drawing.Point(117, 161)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(193, 20)
+        Me.txtnombre.TabIndex = 37
         '
         'txtcod
         '
         Me.txtcod.Enabled = False
-        Me.txtcod.Location = New System.Drawing.Point(127, 158)
+        Me.txtcod.Location = New System.Drawing.Point(117, 79)
         Me.txtcod.Name = "txtcod"
         Me.txtcod.Size = New System.Drawing.Size(159, 20)
         Me.txtcod.TabIndex = 36
         '
-        'dgvunidad
+        'dgvsucursal
         '
-        Me.dgvunidad.AllowUserToAddRows = False
-        Me.dgvunidad.AllowUserToDeleteRows = False
-        Me.dgvunidad.AllowUserToResizeColumns = False
-        Me.dgvunidad.AllowUserToResizeRows = False
-        Me.dgvunidad.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.dgvunidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvunidad.Location = New System.Drawing.Point(370, 113)
-        Me.dgvunidad.Name = "dgvunidad"
-        Me.dgvunidad.Size = New System.Drawing.Size(453, 427)
-        Me.dgvunidad.TabIndex = 35
+        Me.dgvsucursal.AllowUserToAddRows = False
+        Me.dgvsucursal.AllowUserToDeleteRows = False
+        Me.dgvsucursal.AllowUserToResizeColumns = False
+        Me.dgvsucursal.AllowUserToResizeRows = False
+        Me.dgvsucursal.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.dgvsucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvsucursal.Location = New System.Drawing.Point(370, 113)
+        Me.dgvsucursal.Name = "dgvsucursal"
+        Me.dgvsucursal.Size = New System.Drawing.Size(453, 427)
+        Me.dgvsucursal.TabIndex = 35
         '
         'PanelSuperior
         '
@@ -241,11 +246,66 @@ Partial Class VSucursal
         Me.pbcerrar.TabIndex = 0
         Me.pbcerrar.TabStop = False
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(41, 125)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(48, 13)
+        Me.Label9.TabIndex = 68
+        Me.Label9.Text = "Empresa"
+        '
+        'cborazonsoc
+        '
+        Me.cborazonsoc.FormattingEnabled = True
+        Me.cborazonsoc.Location = New System.Drawing.Point(117, 122)
+        Me.cborazonsoc.Name = "cborazonsoc"
+        Me.cborazonsoc.Size = New System.Drawing.Size(156, 21)
+        Me.cborazonsoc.TabIndex = 67
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(40, 249)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(49, 13)
+        Me.Label5.TabIndex = 66
+        Me.Label5.Text = "Telefono"
+        '
+        'txttelefono
+        '
+        Me.txttelefono.Location = New System.Drawing.Point(117, 249)
+        Me.txttelefono.Name = "txttelefono"
+        Me.txttelefono.Size = New System.Drawing.Size(159, 20)
+        Me.txttelefono.TabIndex = 65
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(37, 207)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(52, 13)
+        Me.Label3.TabIndex = 64
+        Me.Label3.Text = "Dirección"
+        '
+        'txtdireccion
+        '
+        Me.txtdireccion.Location = New System.Drawing.Point(117, 207)
+        Me.txtdireccion.Name = "txtdireccion"
+        Me.txtdireccion.Size = New System.Drawing.Size(243, 20)
+        Me.txtdireccion.TabIndex = 63
+        '
         'VSucursal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1019, 558)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.cborazonsoc)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.txttelefono)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.txtdireccion)
         Me.Controls.Add(Me.btnlimpiar)
         Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.Button5)
@@ -257,14 +317,14 @@ Partial Class VSucursal
         Me.Controls.Add(Me.txtfiltro)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtdescripcion)
+        Me.Controls.Add(Me.txtnombre)
         Me.Controls.Add(Me.txtcod)
-        Me.Controls.Add(Me.dgvunidad)
+        Me.Controls.Add(Me.dgvsucursal)
         Me.Controls.Add(Me.PanelSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "VSucursal"
         Me.Text = "VSucursal"
-        CType(Me.dgvunidad, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvsucursal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSuperior.ResumeLayout(False)
         Me.PanelSuperior.PerformLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -284,10 +344,16 @@ Partial Class VSucursal
     Friend WithEvents txtfiltro As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtdescripcion As TextBox
+    Friend WithEvents txtnombre As TextBox
     Friend WithEvents txtcod As TextBox
-    Friend WithEvents dgvunidad As DataGridView
+    Friend WithEvents dgvsucursal As DataGridView
     Friend WithEvents PanelSuperior As Panel
     Friend WithEvents lbltitulo As Label
     Friend WithEvents pbcerrar As PictureBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents cborazonsoc As ComboBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txttelefono As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtdireccion As TextBox
 End Class

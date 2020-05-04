@@ -145,6 +145,7 @@
                 Else
 
                     Dim id As Integer = dgvcategoria.CurrentRow.Cells(0).Value
+                    Dim bas As Decimal = 0
                     ADCategoriaC.ModificarCategoriaC(id, txtdescripcion.Text, bas)
                 End If
 

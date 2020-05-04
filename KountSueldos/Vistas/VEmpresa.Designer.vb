@@ -35,11 +35,23 @@ Partial Class VEmpresa
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.txtcod = New System.Windows.Forms.TextBox()
-        Me.dgvunidad = New System.Windows.Forms.DataGridView()
+        Me.dgvempresa = New System.Windows.Forms.DataGridView()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
         Me.lbltitulo = New System.Windows.Forms.Label()
         Me.pbcerrar = New System.Windows.Forms.PictureBox()
-        CType(Me.dgvunidad, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtdireccion = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txttelefono = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.cboprovincia = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtemail = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.cborazonsoc = New System.Windows.Forms.ComboBox()
+        Me.mkcuit = New System.Windows.Forms.MaskedTextBox()
+        CType(Me.dgvempresa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -51,7 +63,7 @@ Partial Class VEmpresa
         Me.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnlimpiar.Image = Global.KountSueldos.My.Resources.Resources.clean
         Me.btnlimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnlimpiar.Location = New System.Drawing.Point(127, 371)
+        Me.btnlimpiar.Location = New System.Drawing.Point(139, 476)
         Me.btnlimpiar.Name = "btnlimpiar"
         Me.btnlimpiar.Size = New System.Drawing.Size(101, 37)
         Me.btnlimpiar.TabIndex = 48
@@ -65,7 +77,7 @@ Partial Class VEmpresa
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.web
         Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnnuevo.Location = New System.Drawing.Point(19, 314)
+        Me.btnnuevo.Location = New System.Drawing.Point(31, 419)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(101, 37)
         Me.btnnuevo.TabIndex = 47
@@ -122,7 +134,7 @@ Partial Class VEmpresa
         Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAlta.Image = Global.KountSueldos.My.Resources.Resources.edit
         Me.btnAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAlta.Location = New System.Drawing.Point(234, 314)
+        Me.btnAlta.Location = New System.Drawing.Point(246, 419)
         Me.btnAlta.Name = "btnAlta"
         Me.btnAlta.Size = New System.Drawing.Size(101, 37)
         Me.btnAlta.TabIndex = 43
@@ -136,7 +148,7 @@ Partial Class VEmpresa
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Image = Global.KountSueldos.My.Resources.Resources.web
         Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnguardar.Location = New System.Drawing.Point(127, 314)
+        Me.btnguardar.Location = New System.Drawing.Point(139, 419)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(101, 37)
         Me.btnguardar.TabIndex = 42
@@ -164,16 +176,16 @@ Partial Class VEmpresa
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(43, 203)
+        Me.Label2.Location = New System.Drawing.Point(43, 119)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(63, 13)
+        Me.Label2.Size = New System.Drawing.Size(47, 26)
         Me.Label2.TabIndex = 39
-        Me.Label2.Text = "Descripción"
+        Me.Label2.Text = "Nombre" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Fantasia"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(66, 161)
+        Me.Label1.Location = New System.Drawing.Point(50, 84)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 38
@@ -181,32 +193,31 @@ Partial Class VEmpresa
         '
         'txtdescripcion
         '
-        Me.txtdescripcion.Location = New System.Drawing.Point(127, 201)
-        Me.txtdescripcion.Multiline = True
+        Me.txtdescripcion.Location = New System.Drawing.Point(104, 119)
         Me.txtdescripcion.Name = "txtdescripcion"
-        Me.txtdescripcion.Size = New System.Drawing.Size(159, 32)
+        Me.txtdescripcion.Size = New System.Drawing.Size(159, 20)
         Me.txtdescripcion.TabIndex = 37
         '
         'txtcod
         '
         Me.txtcod.Enabled = False
-        Me.txtcod.Location = New System.Drawing.Point(127, 158)
+        Me.txtcod.Location = New System.Drawing.Point(104, 82)
         Me.txtcod.Name = "txtcod"
         Me.txtcod.Size = New System.Drawing.Size(159, 20)
         Me.txtcod.TabIndex = 36
         '
-        'dgvunidad
+        'dgvempresa
         '
-        Me.dgvunidad.AllowUserToAddRows = False
-        Me.dgvunidad.AllowUserToDeleteRows = False
-        Me.dgvunidad.AllowUserToResizeColumns = False
-        Me.dgvunidad.AllowUserToResizeRows = False
-        Me.dgvunidad.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.dgvunidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvunidad.Location = New System.Drawing.Point(370, 113)
-        Me.dgvunidad.Name = "dgvunidad"
-        Me.dgvunidad.Size = New System.Drawing.Size(453, 427)
-        Me.dgvunidad.TabIndex = 35
+        Me.dgvempresa.AllowUserToAddRows = False
+        Me.dgvempresa.AllowUserToDeleteRows = False
+        Me.dgvempresa.AllowUserToResizeColumns = False
+        Me.dgvempresa.AllowUserToResizeRows = False
+        Me.dgvempresa.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.dgvempresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvempresa.Location = New System.Drawing.Point(370, 113)
+        Me.dgvempresa.Name = "dgvempresa"
+        Me.dgvempresa.Size = New System.Drawing.Size(453, 427)
+        Me.dgvempresa.TabIndex = 35
         '
         'PanelSuperior
         '
@@ -241,11 +252,121 @@ Partial Class VEmpresa
         Me.pbcerrar.TabIndex = 0
         Me.pbcerrar.TabStop = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(38, 159)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(52, 13)
+        Me.Label3.TabIndex = 50
+        Me.Label3.Text = "Dirección"
+        '
+        'txtdireccion
+        '
+        Me.txtdireccion.Location = New System.Drawing.Point(104, 156)
+        Me.txtdireccion.Name = "txtdireccion"
+        Me.txtdireccion.Size = New System.Drawing.Size(243, 20)
+        Me.txtdireccion.TabIndex = 49
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(41, 232)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(49, 13)
+        Me.Label5.TabIndex = 52
+        Me.Label5.Text = "Telefono"
+        '
+        'txttelefono
+        '
+        Me.txttelefono.Location = New System.Drawing.Point(104, 230)
+        Me.txttelefono.Name = "txttelefono"
+        Me.txttelefono.Size = New System.Drawing.Size(159, 20)
+        Me.txttelefono.TabIndex = 51
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(58, 272)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(32, 13)
+        Me.Label6.TabIndex = 54
+        Me.Label6.Text = "CUIT"
+        '
+        'cboprovincia
+        '
+        Me.cboprovincia.FormattingEnabled = True
+        Me.cboprovincia.Location = New System.Drawing.Point(104, 304)
+        Me.cboprovincia.Name = "cboprovincia"
+        Me.cboprovincia.Size = New System.Drawing.Size(159, 21)
+        Me.cboprovincia.TabIndex = 55
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(55, 197)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(35, 13)
+        Me.Label7.TabIndex = 57
+        Me.Label7.Text = "E-mail"
+        '
+        'txtemail
+        '
+        Me.txtemail.Location = New System.Drawing.Point(104, 193)
+        Me.txtemail.Name = "txtemail"
+        Me.txtemail.Size = New System.Drawing.Size(243, 20)
+        Me.txtemail.TabIndex = 56
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(39, 307)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(51, 13)
+        Me.Label8.TabIndex = 58
+        Me.Label8.Text = "Provincia"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(17, 350)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(73, 13)
+        Me.Label9.TabIndex = 60
+        Me.Label9.Text = "Razón Social "
+        '
+        'cborazonsoc
+        '
+        Me.cborazonsoc.FormattingEnabled = True
+        Me.cborazonsoc.Location = New System.Drawing.Point(104, 347)
+        Me.cborazonsoc.Name = "cborazonsoc"
+        Me.cborazonsoc.Size = New System.Drawing.Size(159, 21)
+        Me.cborazonsoc.TabIndex = 59
+        '
+        'mkcuit
+        '
+        Me.mkcuit.Location = New System.Drawing.Point(104, 269)
+        Me.mkcuit.Name = "mkcuit"
+        Me.mkcuit.Size = New System.Drawing.Size(159, 20)
+        Me.mkcuit.TabIndex = 61
+        '
         'VEmpresa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1027, 562)
+        Me.Controls.Add(Me.mkcuit)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.cborazonsoc)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.txtemail)
+        Me.Controls.Add(Me.cboprovincia)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.txttelefono)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.txtdireccion)
         Me.Controls.Add(Me.btnlimpiar)
         Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.Button5)
@@ -259,12 +380,12 @@ Partial Class VEmpresa
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtdescripcion)
         Me.Controls.Add(Me.txtcod)
-        Me.Controls.Add(Me.dgvunidad)
+        Me.Controls.Add(Me.dgvempresa)
         Me.Controls.Add(Me.PanelSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "VEmpresa"
         Me.Text = "VEmpresa"
-        CType(Me.dgvunidad, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvempresa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSuperior.ResumeLayout(False)
         Me.PanelSuperior.PerformLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -286,8 +407,20 @@ Partial Class VEmpresa
     Friend WithEvents Label1 As Label
     Friend WithEvents txtdescripcion As TextBox
     Friend WithEvents txtcod As TextBox
-    Friend WithEvents dgvunidad As DataGridView
+    Friend WithEvents dgvempresa As DataGridView
     Friend WithEvents PanelSuperior As Panel
     Friend WithEvents lbltitulo As Label
     Friend WithEvents pbcerrar As PictureBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtdireccion As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txttelefono As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents cboprovincia As ComboBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtemail As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents cborazonsoc As ComboBox
+    Friend WithEvents mkcuit As MaskedTextBox
 End Class

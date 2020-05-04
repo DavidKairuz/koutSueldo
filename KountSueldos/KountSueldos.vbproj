@@ -132,6 +132,13 @@
     <Compile Include="Empresa_Sucursal.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\EActividad.vb" />
+    <Compile Include="Entidades\EBanco.vb" />
+    <Compile Include="Entidades\ECategoriaC.vb" />
+    <Compile Include="Entidades\EConcepto.vb" />
+    <Compile Include="Entidades\EContrato.vb" />
+    <Compile Include="Entidades\EConvenio.vb" />
+    <Compile Include="Entidades\EEmpleado.vb" />
     <Compile Include="Estado_Civil.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

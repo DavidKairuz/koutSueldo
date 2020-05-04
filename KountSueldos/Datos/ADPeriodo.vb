@@ -38,6 +38,14 @@
 
     End Sub
 
+    Shared Sub DarAlta(id As Integer)
+        Dim bn = (From b In ctx.Periodo
+                  Where b.id_periodo = id
+                  Select b).SingleOrDefault
+        bn.estadobaja = 1
+        ctx.SaveChanges()
+
+    End Sub
 
     Shared Sub ModificarPeriodo(id As Integer, name As String, anio As Integer)
         Dim tipo = (From t In ctx.Periodo

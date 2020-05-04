@@ -5,7 +5,7 @@
     Shared Sub MostrarEmpresa_Sucursal(grid As DataGridView)
         Dim emp = (From b In ctx.Empresa_Sucursal
                    Where b.estadobaja = True
-                   Select b)
+                   Select b).ToList
         grid.DataSource = emp
     End Sub
 
@@ -13,7 +13,7 @@
 
     Shared Sub MostrarEmpresa_SucursalT(grid As DataGridView)
         Dim emp = (From b In ctx.Empresa_Sucursal
-                   Select b)
+                   Select b).ToList
         grid.DataSource = emp
     End Sub
 
@@ -38,6 +38,15 @@
 
     End Sub
 
+
+    Shared Sub DarAlta(id As Integer)
+        Dim bn = (From b In ctx.Empresa_Sucursal
+                  Where b.id_sucursal = id
+                  Select b).SingleOrDefault
+        bn.estadobaja = 1
+        ctx.SaveChanges()
+
+    End Sub
 
     Shared Sub ModificarEmpresa_Sucursal(id As Integer, name As String, dir As String, tel As String, emp As String, prov As Integer, razon As Integer)
         Dim tipo = (From t In ctx.Empresa_Sucursal
@@ -64,14 +73,14 @@
     End Function
 
 
-    Sub FiltraName(txt As TextBox, dgv As DataGridView)
+    Shared Sub FiltraName(txt As TextBox, dgv As DataGridView)
         Dim tipo As List(Of Empresa_Sucursal) = (From c In ctx.Empresa_Sucursal
                                                  Where c.descripcion.StartsWith(txt.Text)
                                                  Select c).ToList
         dgv.DataSource = tipo
     End Sub
 
-    Function index() As Integer
+    Shared Function index() As Integer
         Dim i As Integer
         Dim ext = (From ex In ctx.Empresa_Sucursal Order By ex.id_sucursal Descending Select ex).First().id_sucursal
         i = CInt(ext.ToString)

@@ -5,7 +5,7 @@
     Shared Sub MostrarTipo_Concepto(grid As DataGridView)
         Dim bank = (From b In ctx.Tipo_Concepto
                     Where b.estadobaja = True
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
@@ -13,7 +13,7 @@
 
     Shared Sub MostrarTipo_ConceptoT(grid As DataGridView)
         Dim bank = (From b In ctx.Tipo_Concepto
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
@@ -38,6 +38,14 @@
 
     End Sub
 
+    Shared Sub DarAlta(id As Integer)
+        Dim bn = (From b In ctx.Tipo_Concepto
+                  Where b.id_tipoconcepto = id
+                  Select b).SingleOrDefault
+        bn.estadobaja = 0
+        ctx.SaveChanges()
+
+    End Sub
 
     Shared Sub ModificarTipo_Concepto(id As Integer, name As String)
         Dim tipo = (From t In ctx.Tipo_Concepto
@@ -61,14 +69,14 @@
     End Function
 
 
-    Sub Filtra(txt As TextBox, dgv As DataGridView)
+    Shared Sub Filtra(txt As TextBox, dgv As DataGridView)
         Dim tipo As List(Of Tipo_Concepto) = (From c In ctx.Tipo_Concepto
                                               Where c.descripcion.StartsWith(txt.Text)
                                               Select c).ToList
         dgv.DataSource = tipo
     End Sub
 
-    Function index() As Integer
+    Shared Function index() As Integer
         Dim i As Integer
         Dim ext = (From ex In ctx.Tipo_Concepto Order By ex.id_tipoconcepto Descending Select ex).First().id_tipoconcepto
         i = CInt(ext.ToString)

@@ -22,15 +22,13 @@ Partial Class VTipoContrato
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.txtfiltro = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblfiltro = New System.Windows.Forms.Label()
+        Me.txtfiltro = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.txtdescripcion = New System.Windows.Forms.TextBox()
+        Me.txtcod = New System.Windows.Forms.TextBox()
+        Me.dgvtipocontrato = New System.Windows.Forms.DataGridView()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
         Me.lbltitulo = New System.Windows.Forms.Label()
         Me.pbcerrar = New System.Windows.Forms.PictureBox()
@@ -41,83 +39,67 @@ Partial Class VTipoContrato
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnAlta = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvtipocontrato, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'lblfiltro
+        '
+        Me.lblfiltro.AutoSize = True
+        Me.lblfiltro.Location = New System.Drawing.Point(382, 97)
+        Me.lblfiltro.Name = "lblfiltro"
+        Me.lblfiltro.Size = New System.Drawing.Size(40, 13)
+        Me.lblfiltro.TabIndex = 26
+        Me.lblfiltro.Text = "Buscar"
+        '
         'txtfiltro
         '
-        Me.txtfiltro.AutoSize = True
-        Me.txtfiltro.Location = New System.Drawing.Point(382, 102)
+        Me.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtfiltro.Location = New System.Drawing.Point(440, 95)
         Me.txtfiltro.Name = "txtfiltro"
-        Me.txtfiltro.Size = New System.Drawing.Size(40, 13)
-        Me.txtfiltro.TabIndex = 26
-        Me.txtfiltro.Text = "Buscar"
-        '
-        'TextBox4
-        '
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox4.Location = New System.Drawing.Point(440, 95)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(220, 20)
-        Me.TextBox4.TabIndex = 25
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(43, 272)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
-        Me.Label3.TabIndex = 24
-        Me.Label3.Text = "Label3"
+        Me.txtfiltro.Size = New System.Drawing.Size(220, 20)
+        Me.txtfiltro.TabIndex = 25
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(43, 230)
+        Me.Label2.Location = New System.Drawing.Point(43, 226)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 23
-        Me.Label2.Text = "Label2"
+        Me.Label2.Text = "Descripción"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(43, 183)
+        Me.Label1.Location = New System.Drawing.Point(66, 181)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 22
-        Me.Label1.Text = "Label1"
+        Me.Label1.Text = "Código"
         '
-        'TextBox3
+        'txtdescripcion
         '
-        Me.TextBox3.Location = New System.Drawing.Point(127, 265)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(159, 20)
-        Me.TextBox3.TabIndex = 21
+        Me.txtdescripcion.Location = New System.Drawing.Point(127, 223)
+        Me.txtdescripcion.Name = "txtdescripcion"
+        Me.txtdescripcion.Size = New System.Drawing.Size(159, 20)
+        Me.txtdescripcion.TabIndex = 20
         '
-        'TextBox2
+        'txtcod
         '
-        Me.TextBox2.Location = New System.Drawing.Point(127, 223)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(159, 20)
-        Me.TextBox2.TabIndex = 20
+        Me.txtcod.Location = New System.Drawing.Point(127, 180)
+        Me.txtcod.Name = "txtcod"
+        Me.txtcod.Size = New System.Drawing.Size(159, 20)
+        Me.txtcod.TabIndex = 19
         '
-        'TextBox1
+        'dgvtipocontrato
         '
-        Me.TextBox1.Location = New System.Drawing.Point(127, 180)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(159, 20)
-        Me.TextBox1.TabIndex = 19
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(346, 131)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(439, 410)
-        Me.DataGridView1.TabIndex = 18
+        Me.dgvtipocontrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvtipocontrato.Location = New System.Drawing.Point(346, 131)
+        Me.dgvtipocontrato.Name = "dgvtipocontrato"
+        Me.dgvtipocontrato.Size = New System.Drawing.Size(439, 410)
+        Me.dgvtipocontrato.TabIndex = 18
         '
         'PanelSuperior
         '
@@ -264,20 +246,18 @@ Partial Class VTipoContrato
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.lblfiltro)
         Me.Controls.Add(Me.txtfiltro)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.txtdescripcion)
+        Me.Controls.Add(Me.txtcod)
+        Me.Controls.Add(Me.dgvtipocontrato)
         Me.Controls.Add(Me.PanelSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "VTipoContrato"
         Me.Text = "VTipoContrato"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvtipocontrato, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSuperior.ResumeLayout(False)
         Me.PanelSuperior.PerformLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -289,15 +269,13 @@ Partial Class VTipoContrato
     Friend WithEvents Button5 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Button3 As Button
-    Friend WithEvents txtfiltro As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblfiltro As Label
+    Friend WithEvents txtfiltro As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents txtdescripcion As TextBox
+    Friend WithEvents txtcod As TextBox
+    Friend WithEvents dgvtipocontrato As DataGridView
     Friend WithEvents PanelSuperior As Panel
     Friend WithEvents pbcerrar As PictureBox
     Friend WithEvents lbltitulo As Label

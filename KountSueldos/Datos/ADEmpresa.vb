@@ -5,7 +5,7 @@
     Shared Sub MostrarEmpresa(grid As DataGridView)
         Dim emp = (From b In ctx.Empresa
                    Where b.estadobaja = True
-                   Select b)
+                   Select b).ToList
         grid.DataSource = emp
     End Sub
 
@@ -13,7 +13,7 @@
 
     Shared Sub MostrarEmpresaT(grid As DataGridView)
         Dim emp = (From b In ctx.Empresa
-                   Select b)
+                   Select b).ToList
         grid.DataSource = emp
     End Sub
 
@@ -67,14 +67,14 @@
     End Function
 
 
-    Sub FiltraName(txt As TextBox, dgv As DataGridView)
+    Shared Sub FiltraName(txt As TextBox, dgv As DataGridView)
         Dim tipo As List(Of Empresa) = (From c In ctx.Empresa
                                         Where c.nombrefantasia.StartsWith(txt.Text)
                                         Select c).ToList
         dgv.DataSource = tipo
     End Sub
 
-    Function index() As Integer
+    Shared Function index() As Integer
         Dim i As Integer
         Dim ext = (From ex In ctx.Empresa Order By ex.id_empresa Descending Select ex).First().id_empresa
         i = CInt(ext.ToString)

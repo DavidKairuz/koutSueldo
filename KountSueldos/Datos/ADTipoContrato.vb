@@ -38,6 +38,14 @@
 
     End Sub
 
+    Shared Sub DarAlta(id As Integer)
+        Dim bn = (From b In ctx.Tipo_Contrato
+                  Where b.id_tipocontrato = id
+                  Select b).SingleOrDefault
+        bn.estadobaja = 1
+        ctx.SaveChanges()
+
+    End Sub
 
     Shared Sub ModificarTipo_Contrato(id As Integer, name As String)
         Dim tipo = (From t In ctx.Tipo_Contrato
