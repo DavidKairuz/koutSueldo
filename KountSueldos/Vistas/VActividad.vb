@@ -118,7 +118,7 @@
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.OkOnly, "Error")
         End Try
-
+        Return result
     End Function
     Sub Agregar()
         If DatosVacios() = True Then
@@ -134,7 +134,7 @@
                                     {
                                     .id_convenio = CInt(cboconvenio.SelectedValue.ToString),
                                     .descripcion = txtdescripcion.Text,
-                                    .id_unidad = CInt(cbounidad.SelectedValue.ToString),
+                                    .id_categoria = CInt(cbounidad.SelectedValue.ToString),
                                     .estadobaja = 1
                                                           })
 

@@ -1,5 +1,5 @@
 ﻿Public Class ADEmpleado
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
 
     Shared Sub MostrarEmpleado(grid As DataGridView)

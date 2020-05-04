@@ -83,11 +83,26 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actividad.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Banco.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriaC.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Concepto.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contrato.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Convenio.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Datos\AccesoDatos.vb" />
     <Compile Include="Datos\AccesoDatosActividad.vb" />
-    <Compile Include="Datos\Actividad.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Datos\ADBanco.vb" />
     <Compile Include="Datos\ADCategoriaC.vb" />
     <Compile Include="Datos\ADConcepto.vb" />
@@ -108,83 +123,44 @@
     <Compile Include="Datos\ADTipoConcepto.vb" />
     <Compile Include="Datos\ADTipoContrato.vb" />
     <Compile Include="Datos\ADUnidad.vb" />
-    <Compile Include="Datos\Banco.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
+    <Compile Include="Empleado.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Datos\CategoriaC.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
+    <Compile Include="Empresa.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Datos\Concepto.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
+    <Compile Include="Empresa_Sucursal.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Datos\Contrato.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
+    <Compile Include="Estado_Civil.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Datos\Convenio.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\Empleado.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\Empresa.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\Empresa_Sucursal.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\Estado_Civil.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\Localidad.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\ModelDb.Context.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\ModelDb.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDb.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\ModelDb.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\Obra_Social.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\Periodo.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\Provincia.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\Razon_Social.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\Remuneraciones.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\Sueldo_Cab.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\Sueldo_Det.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\Tipo_Concepto.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\Tipo_Contrato.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datos\Unidad.vb">
-      <DependentUpon>ModelDb.tt</DependentUpon>
+    <Compile Include="Localidad.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="MConfiguracionF.vb" />
+    <Compile Include="Model1.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Validar.vb" />
+    <Compile Include="Obra_Social.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Periodo.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Principal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +182,30 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Provincia.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Razon_Social.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Remuneraciones.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sueldo_Cab.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sueldo_Det.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tipo_Concepto.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tipo_Contrato.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Unidad.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VActividad.Designer.vb">
       <DependentUpon>VActividad.vb</DependentUpon>
@@ -337,12 +337,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Datos\ModelDb.edmx">
+    <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelDb.Designer.vb</LastGenOutput>
+      <LastGenOutput>Model1.Designer.vb</LastGenOutput>
     </EntityDeploy>
-    <None Include="Datos\ModelDb.edmx.diagram">
-      <DependentUpon>ModelDb.edmx</DependentUpon>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -357,15 +357,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Datos\ModelDb.Context.tt">
+    <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelDb.edmx</DependentUpon>
-      <LastGenOutput>ModelDb.Context.vb</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.vb</LastGenOutput>
     </Content>
-    <Content Include="Datos\ModelDb.tt">
+    <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelDb.edmx</DependentUpon>
-      <LastGenOutput>ModelDb.vb</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.vb</LastGenOutput>
     </Content>
     <None Include="Resources\clean.png" />
     <None Include="Resources\pdf1.png" />

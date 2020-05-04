@@ -10,14 +10,20 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Banco
-    Public Property id_banco As Integer
-    Public Property nombre As String
+Partial Public Class Empresa
+    Public Property id_empresa As Integer
+    Public Property nombrefantasia As String
     Public Property direccion As String
     Public Property telefono As String
-    Public Property sucursalb As Nullable(Of Integer)
+    Public Property cuitE As String
+    Public Property provincia As Nullable(Of Integer)
     Public Property estadobaja As Nullable(Of Boolean)
+    Public Property id_razonsocial As Nullable(Of Integer)
+    Public Property email As String
 
-    Public Overridable Property Sueldo_Cab As ICollection(Of Sueldo_Cab) = New HashSet(Of Sueldo_Cab)
+    Public Overridable Property Empleado As ICollection(Of Empleado) = New HashSet(Of Empleado)
+    Public Overridable Property Provincia1 As Provincia
+    Public Overridable Property Razon_Social As Razon_Social
+    Public Overridable Property Empresa_Sucursal As ICollection(Of Empresa_Sucursal) = New HashSet(Of Empresa_Sucursal)
 
 End Class

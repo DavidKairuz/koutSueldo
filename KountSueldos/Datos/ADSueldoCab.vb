@@ -1,5 +1,5 @@
 ﻿Public Class ADSueldoCab
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
 
     Shared Sub MostrarSueldo_Cab(grid As DataGridView)

@@ -1,5 +1,5 @@
 ﻿Public Class ADPeriodo
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
 
     Shared Sub MostrarPeriodo(grid As DataGridView)

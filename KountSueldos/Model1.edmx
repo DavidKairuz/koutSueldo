@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="SueldosLiquidadosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SueldosLiquidadosModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Actividad">
           <Key>
             <PropertyRef Name="id_actividad" />
@@ -505,7 +505,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SueldosLiquidadosModelStoreContainer">
+        <EntityContainer Name="SueldosLiquidadosModel1StoreContainer">
           <EntitySet Name="Actividad" EntityType="Self.Actividad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Banco" EntityType="Self.Banco" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CategoriaC" EntityType="Self.CategoriaC" Schema="dbo" store:Type="Tables" />
@@ -612,10 +612,11 @@
             <End Role="Sueldo_Det" EntitySet="Sueldo_Det" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="SueldosLiquidadosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="SueldosLiquidadosModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Actividad">
           <Key>
             <PropertyRef Name="id_actividad" />
@@ -625,11 +626,10 @@
           <Property Name="descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="valor" Type="Decimal" Precision="12" Scale="2" />
           <Property Name="estadobaja" Type="Boolean" />
-          <NavigationProperty Name="Convenio" Relationship="Self.Actividades_Convenio" FromRole="Actividad" ToRole="Convenio" />
+          <Property Name="id_categoria" Type="Int32" />
+          <NavigationProperty Name="CategoriaC" Relationship="Self.FK_Actividad_CategoriaC" FromRole="Actividad" ToRole="CategoriaC" />
           <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_Actividad" FromRole="Actividad" ToRole="Empleado" />
           <NavigationProperty Name="Remuneraciones" Relationship="Self.FK_Remuneraciones_Actividad" FromRole="Actividad" ToRole="Remuneraciones" />
-          <Property Name="id_categoria" Type="Int32" />
-          <NavigationProperty Name="CategoriaC" Relationship="SueldosLiquidadosModel.FK_Actividad_CategoriaC" FromRole="Actividad" ToRole="CategoriaC" />
         </EntityType>
         <EntityType Name="Banco">
           <Key>
@@ -641,8 +641,8 @@
           <Property Name="telefono" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
           <Property Name="sucursalb" Type="Int32" />
           <Property Name="estadobaja" Type="Boolean" />
-          <NavigationProperty Name="Sueldo_Cab" Relationship="Self.FK_SueldoC_Banco" FromRole="Banco" ToRole="Sueldo_Cab" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Sueldo_Cab" Relationship="Self.FK_SueldoC_Banco" FromRole="Banco" ToRole="Sueldo_Cab" />
         </EntityType>
         <EntityType Name="CategoriaC">
           <Key>
@@ -654,8 +654,8 @@
           <Property Name="estadobaja" Type="Boolean" />
           <Property Name="descripcion" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
           <Property Name="basico" Type="Decimal" Precision="12" Scale="2" />
+          <NavigationProperty Name="Actividad" Relationship="Self.FK_Actividad_CategoriaC" FromRole="CategoriaC" ToRole="Actividad" />
           <NavigationProperty Name="Convenio" Relationship="Self.FK_Categoria_Convenio" FromRole="CategoriaC" ToRole="Convenio" />
-          <NavigationProperty Name="Actividad" Relationship="SueldosLiquidadosModel.FK_Actividad_CategoriaC" FromRole="CategoriaC" ToRole="Actividad" />
         </EntityType>
         <EntityType Name="Concepto">
           <Key>
@@ -695,7 +695,6 @@
           <Property Name="id_convenio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="estadobaja" Type="Boolean" />
-          <NavigationProperty Name="Actividad" Relationship="Self.Actividades_Convenio" FromRole="Convenio" ToRole="Actividad" />
           <NavigationProperty Name="CategoriaC" Relationship="Self.FK_Categoria_Convenio" FromRole="Convenio" ToRole="CategoriaC" />
         </EntityType>
         <EntityType Name="Empleado">
@@ -720,13 +719,13 @@
           <Property Name="id_categoria" Type="Int32" />
           <Property Name="id_actividad" Type="Int32" />
           <Property Name="obras" Type="Int32" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Actividad" Relationship="Self.FK_Empleado_Actividad" FromRole="Empleado" ToRole="Actividad" />
           <NavigationProperty Name="Contrato" Relationship="Self.FK_Contrato_Empleado" FromRole="Empleado" ToRole="Contrato" />
           <NavigationProperty Name="Empresa1" Relationship="Self.FK_Empleado_Empresa" FromRole="Empleado" ToRole="Empresa" />
           <NavigationProperty Name="Estado_Civil1" Relationship="Self.FK_Empleado_EstadoCivil" FromRole="Empleado" ToRole="Estado_Civil" />
           <NavigationProperty Name="Obra_Social" Relationship="Self.FK_Empleado_Obrasocial" FromRole="Empleado" ToRole="Obra_Social" />
           <NavigationProperty Name="Sueldo_Cab" Relationship="Self.FK_SueldoC_Empleado" FromRole="Empleado" ToRole="Sueldo_Cab" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Empresa">
           <Key>
@@ -740,11 +739,11 @@
           <Property Name="provincia" Type="Int32" />
           <Property Name="estadobaja" Type="Boolean" />
           <Property Name="id_razonsocial" Type="Int32" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_Empresa" FromRole="Empresa" ToRole="Empleado" />
           <NavigationProperty Name="Provincia1" Relationship="Self.FK_Empresa_provincia" FromRole="Empresa" ToRole="Provincia" />
           <NavigationProperty Name="Razon_Social" Relationship="Self.FK_Empresa_razonS" FromRole="Empresa" ToRole="Razon_Social" />
           <NavigationProperty Name="Empresa_Sucursal" Relationship="Self.FK_Sucu_Empresa" FromRole="Empresa" ToRole="Empresa_Sucursal" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Empresa_Sucursal">
           <Key>
@@ -901,29 +900,18 @@
           <Property Name="id_unidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="estadobaja" Type="Boolean" />
-          <NavigationProperty Name="Actividad" Relationship="Self.FK_actividad_unidad" FromRole="Unidad" ToRole="Actividad" />
         </EntityType>
-        <Association Name="Actividades_Convenio">
-          <End Role="Convenio" Type="Self.Convenio" Multiplicity="0..1" />
+        <Association Name="FK_Actividad_CategoriaC">
+          <End Role="CategoriaC" Type="Self.CategoriaC" Multiplicity="0..1" />
           <End Role="Actividad" Type="Self.Actividad" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Convenio">
+            <Principal Role="CategoriaC">
               <PropertyRef Name="id_convenio" />
+              <PropertyRef Name="id_categoria" />
             </Principal>
             <Dependent Role="Actividad">
               <PropertyRef Name="id_convenio" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_actividad_unidad">
-          <End Role="Unidad" Type="Self.Unidad" Multiplicity="0..1" />
-          <End Role="Actividad" Type="Self.Actividad" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Unidad">
-              <PropertyRef Name="id_unidad" />
-            </Principal>
-            <Dependent Role="Actividad">
-              <PropertyRef Name="id_unidad" />
+              <PropertyRef Name="id_categoria" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1171,7 +1159,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="KoutSueldosEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SueldosLiquidadosEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Actividad" EntityType="Self.Actividad" />
           <EntitySet Name="Banco" EntityType="Self.Banco" />
           <EntitySet Name="CategoriaC" EntityType="Self.CategoriaC" />
@@ -1193,12 +1181,8 @@
           <EntitySet Name="Tipo_Concepto" EntityType="Self.Tipo_Concepto" />
           <EntitySet Name="Tipo_Contrato" EntityType="Self.Tipo_Contrato" />
           <EntitySet Name="Unidad" EntityType="Self.Unidad" />
-          <AssociationSet Name="Actividades_Convenio" Association="Self.Actividades_Convenio">
-            <End Role="Convenio" EntitySet="Convenio" />
-            <End Role="Actividad" EntitySet="Actividad" />
-          </AssociationSet>
-          <AssociationSet Name="FK_actividad_unidad" Association="Self.FK_actividad_unidad">
-            <End Role="Unidad" EntitySet="Unidad" />
+          <AssociationSet Name="FK_Actividad_CategoriaC" Association="Self.FK_Actividad_CategoriaC">
+            <End Role="CategoriaC" EntitySet="CategoriaC" />
             <End Role="Actividad" EntitySet="Actividad" />
           </AssociationSet>
           <AssociationSet Name="FK_Empleado_Actividad" Association="Self.FK_Empleado_Actividad">
@@ -1281,58 +1265,40 @@
             <End Role="Sueldo_Cab" EntitySet="Sueldo_Cab" />
             <End Role="Sueldo_Det" EntitySet="Sueldo_Det" />
           </AssociationSet>
-          <AssociationSet Name="FK_Actividad_CategoriaC" Association="SueldosLiquidadosModel.FK_Actividad_CategoriaC">
-            <End Role="CategoriaC" EntitySet="CategoriaC" />
-            <End Role="Actividad" EntitySet="Actividad" />
-          </AssociationSet>
         </EntityContainer>
-        <Association Name="FK_Actividad_CategoriaC">
-          <End Type="SueldosLiquidadosModel.CategoriaC" Role="CategoriaC" Multiplicity="0..1" />
-          <End Type="SueldosLiquidadosModel.Actividad" Role="Actividad" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CategoriaC">
-              <PropertyRef Name="id_convenio" />
-              <PropertyRef Name="id_categoria" />
-            </Principal>
-            <Dependent Role="Actividad">
-              <PropertyRef Name="id_convenio" />
-              <PropertyRef Name="id_categoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SueldosLiquidadosModelStoreContainer" CdmEntityContainer="KoutSueldosEntities">
+        <EntityContainerMapping StorageEntityContainer="SueldosLiquidadosModel1StoreContainer" CdmEntityContainer="SueldosLiquidadosEntities">
           <EntitySetMapping Name="Actividad">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Actividad">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Actividad">
               <MappingFragment StoreEntitySet="Actividad">
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
                 <ScalarProperty Name="id_actividad" ColumnName="id_actividad" />
                 <ScalarProperty Name="id_convenio" ColumnName="id_convenio" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="valor" ColumnName="valor" />
                 <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Banco">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Banco">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Banco">
               <MappingFragment StoreEntitySet="Banco">
-                <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="id_banco" ColumnName="id_banco" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="direccion" ColumnName="direccion" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="sucursalb" ColumnName="sucursalb" />
                 <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
+                <ScalarProperty Name="email" ColumnName="email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CategoriaC">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.CategoriaC">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.CategoriaC">
               <MappingFragment StoreEntitySet="CategoriaC">
                 <ScalarProperty Name="id_convenio" ColumnName="id_convenio" />
                 <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
@@ -1343,7 +1309,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Concepto">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Concepto">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Concepto">
               <MappingFragment StoreEntitySet="Concepto">
                 <ScalarProperty Name="id_concepto" ColumnName="id_concepto" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -1356,7 +1322,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Contrato">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Contrato">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Contrato">
               <MappingFragment StoreEntitySet="Contrato">
                 <ScalarProperty Name="id_contrato" ColumnName="id_contrato" />
                 <ScalarProperty Name="fechac" ColumnName="fechac" />
@@ -1371,7 +1337,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Convenio">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Convenio">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Convenio">
               <MappingFragment StoreEntitySet="Convenio">
                 <ScalarProperty Name="id_convenio" ColumnName="id_convenio" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -1380,9 +1346,8 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Empleado">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Empleado">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Empleado">
               <MappingFragment StoreEntitySet="Empleado">
-                <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
                 <ScalarProperty Name="cuil" ColumnName="cuil" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -1401,13 +1366,13 @@
                 <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
                 <ScalarProperty Name="id_actividad" ColumnName="id_actividad" />
                 <ScalarProperty Name="obras" ColumnName="obras" />
+                <ScalarProperty Name="email" ColumnName="email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Empresa">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Empresa">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Empresa">
               <MappingFragment StoreEntitySet="Empresa">
-                <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
                 <ScalarProperty Name="nombrefantasia" ColumnName="nombrefantasia" />
                 <ScalarProperty Name="direccion" ColumnName="direccion" />
@@ -1416,11 +1381,12 @@
                 <ScalarProperty Name="provincia" ColumnName="provincia" />
                 <ScalarProperty Name="estadobaja" ColumnName="estadobaja" />
                 <ScalarProperty Name="id_razonsocial" ColumnName="id_razonsocial" />
+                <ScalarProperty Name="email" ColumnName="email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Empresa_Sucursal">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Empresa_Sucursal">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Empresa_Sucursal">
               <MappingFragment StoreEntitySet="Empresa_Sucursal">
                 <ScalarProperty Name="id_sucursal" ColumnName="id_sucursal" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -1432,7 +1398,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Estado_Civil">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Estado_Civil">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Estado_Civil">
               <MappingFragment StoreEntitySet="Estado_Civil">
                 <ScalarProperty Name="id_estadociv" ColumnName="id_estadociv" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -1441,7 +1407,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Localidad">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Localidad">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Localidad">
               <MappingFragment StoreEntitySet="Localidad">
                 <ScalarProperty Name="id_provincia" ColumnName="id_provincia" />
                 <ScalarProperty Name="id_localidad" ColumnName="id_localidad" />
@@ -1451,7 +1417,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Obra_Social">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Obra_Social">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Obra_Social">
               <MappingFragment StoreEntitySet="Obra_Social">
                 <ScalarProperty Name="id_obrasocial" ColumnName="id_obrasocial" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -1460,7 +1426,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Periodo">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Periodo">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Periodo">
               <MappingFragment StoreEntitySet="Periodo">
                 <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
                 <ScalarProperty Name="mes" ColumnName="mes" />
@@ -1470,7 +1436,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Provincia">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Provincia">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Provincia">
               <MappingFragment StoreEntitySet="Provincia">
                 <ScalarProperty Name="id_provincia" ColumnName="id_provincia" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -1479,7 +1445,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Razon_Social">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Razon_Social">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Razon_Social">
               <MappingFragment StoreEntitySet="Razon_Social">
                 <ScalarProperty Name="id_razonsocial" ColumnName="id_razonsocial" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -1488,7 +1454,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Remuneraciones">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Remuneraciones">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Remuneraciones">
               <MappingFragment StoreEntitySet="Remuneraciones">
                 <ScalarProperty Name="id_remuneraciones" ColumnName="id_remuneraciones" />
                 <ScalarProperty Name="valor" ColumnName="valor" />
@@ -1500,7 +1466,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sueldo_Cab">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Sueldo_Cab">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Sueldo_Cab">
               <MappingFragment StoreEntitySet="Sueldo_Cab">
                 <ScalarProperty Name="id_reciboC" ColumnName="id_reciboC" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
@@ -1521,7 +1487,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sueldo_Det">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Sueldo_Det">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Sueldo_Det">
               <MappingFragment StoreEntitySet="Sueldo_Det">
                 <ScalarProperty Name="id_reciboc" ColumnName="id_reciboc" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
@@ -1536,7 +1502,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tipo_Concepto">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Tipo_Concepto">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Tipo_Concepto">
               <MappingFragment StoreEntitySet="Tipo_Concepto">
                 <ScalarProperty Name="id_tipoconcepto" ColumnName="id_tipoconcepto" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -1546,7 +1512,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tipo_Contrato">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Tipo_Contrato">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Tipo_Contrato">
               <MappingFragment StoreEntitySet="Tipo_Contrato">
                 <ScalarProperty Name="id_tipocontrato" ColumnName="id_tipocontrato" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -1555,7 +1521,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Unidad">
-            <EntityTypeMapping TypeName="SueldosLiquidadosModel.Unidad">
+            <EntityTypeMapping TypeName="SueldosLiquidadosModel1.Unidad">
               <MappingFragment StoreEntitySet="Unidad">
                 <ScalarProperty Name="id_unidad" ColumnName="id_unidad" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />

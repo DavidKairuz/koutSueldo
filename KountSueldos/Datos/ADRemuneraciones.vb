@@ -1,5 +1,5 @@
 ﻿Public Class ADRemuneraciones
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
 
     Shared Sub MostrarRemuneraciones(grid As DataGridView)

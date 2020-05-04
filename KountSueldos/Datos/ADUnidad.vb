@@ -1,5 +1,5 @@
 ﻿Public Class ADUnidad
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
 
     Shared Sub MostrarUnidad(grid As DataGridView)

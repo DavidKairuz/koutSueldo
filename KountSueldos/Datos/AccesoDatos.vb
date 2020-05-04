@@ -1,6 +1,6 @@
 ﻿Public Class AccesoDatos
 
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
     'Shared Function ValidateLogin(username As String, password As String) As Boolean
 

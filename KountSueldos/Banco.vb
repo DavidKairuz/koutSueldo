@@ -10,12 +10,15 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Convenio
-    Public Property id_convenio As Integer
-    Public Property descripcion As String
+Partial Public Class Banco
+    Public Property id_banco As Integer
+    Public Property nombre As String
+    Public Property direccion As String
+    Public Property telefono As String
+    Public Property sucursalb As Nullable(Of Integer)
     Public Property estadobaja As Nullable(Of Boolean)
+    Public Property email As String
 
-    Public Overridable Property Actividad As ICollection(Of Actividad) = New HashSet(Of Actividad)
-    Public Overridable Property CategoriaC As ICollection(Of CategoriaC) = New HashSet(Of CategoriaC)
+    Public Overridable Property Sueldo_Cab As ICollection(Of Sueldo_Cab) = New HashSet(Of Sueldo_Cab)
 
 End Class

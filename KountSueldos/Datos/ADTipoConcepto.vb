@@ -1,5 +1,5 @@
 ﻿Public Class ADTipoConcepto
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
 
     Shared Sub MostrarTipo_Concepto(grid As DataGridView)

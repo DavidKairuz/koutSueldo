@@ -1,5 +1,5 @@
 ﻿Public Class ADEstadoCivil
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
 
     Shared Sub MostrarEstado_Civil(grid As DataGridView)

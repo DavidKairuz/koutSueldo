@@ -182,25 +182,38 @@
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
         '  Dim id = dgvunidad.CurrentRow.Cells(0).Value
         Try
-            If MsgBox("Seguro desea dar de alta este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
-
-                Dim ide = dgvunidad.CurrentRow().Cells(0).Value
-                If ide <> 0 Then
-
-
-                    ADUnidad.DarAlta(ide)
-                    ADUnidad.MostrarUnidad(dgvunidad)
-                    MsgBox("Registro actualizado con éxito", MsgBoxStyle.Information, "Actualización")
-                    indice()
-                Else
-                    MsgBox("Hubo un error al intentar acceder a la base de datos", MsgBoxStyle.Critical, "Error")
-                End If
+            If dgvunidad.RowCount = 0 Then
+                MsgBox("No hay registros para dar de alta", MsgBoxStyle.Critical, "Error")
             Else
-                MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
-                limpiar()
+
+                If MsgBox("Seguro desea dar de alta este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
+
+                    Dim ide = dgvunidad.CurrentRow().Cells(0).Value
+                    If ide <> 0 Then
+
+
+                        ADUnidad.DarAlta(ide)
+                        ADUnidad.MostrarUnidad(dgvunidad)
+                        MsgBox("Registro actualizado con éxito", MsgBoxStyle.Information, "Actualización")
+                        indice()
+                    Else
+                        MsgBox("Hubo un error al intentar acceder a la base de datos", MsgBoxStyle.Critical, "Error")
+                    End If
+                Else
+                    MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
+                    limpiar()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+        Try
+
+        Catch ex As Exception
+
         End Try
     End Sub
 End Class

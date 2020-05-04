@@ -29,6 +29,7 @@ Partial Public Class Empleado
     Public Property id_categoria As Nullable(Of Integer)
     Public Property id_actividad As Nullable(Of Integer)
     Public Property obras As Nullable(Of Integer)
+    Public Property email As String
 
     Public Overridable Property Actividad As Actividad
     Public Overridable Property Contrato As ICollection(Of Contrato) = New HashSet(Of Contrato)

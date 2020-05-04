@@ -10,13 +10,9 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class CategoriaC
-    Public Property id_convenio As Integer
-    Public Property id_categoria As Integer
-    Public Property estadobaja As Nullable(Of Boolean)
+Partial Public Class Unidad
+    Public Property id_unidad As Integer
     Public Property descripcion As String
-    Public Property basico As Nullable(Of Decimal)
-
-    Public Overridable Property Convenio As Convenio
+    Public Property estadobaja As Nullable(Of Boolean)
 
 End Class

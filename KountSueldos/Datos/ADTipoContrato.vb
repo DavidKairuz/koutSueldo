@@ -1,5 +1,5 @@
 ﻿Public Class ADTipoContrato
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
 
     Shared Sub MostrarTipo_Contrato(grid As DataGridView)

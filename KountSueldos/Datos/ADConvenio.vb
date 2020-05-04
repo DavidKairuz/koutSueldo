@@ -1,5 +1,5 @@
 ﻿Public Class ADConvenio
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
 
     Shared Sub MostrarConvenio(grid As DataGridView)

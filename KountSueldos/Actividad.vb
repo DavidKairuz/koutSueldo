@@ -15,11 +15,10 @@ Partial Public Class Actividad
     Public Property id_convenio As Nullable(Of Integer)
     Public Property descripcion As String
     Public Property valor As Nullable(Of Decimal)
-    Public Property id_unidad As Nullable(Of Integer)
     Public Property estadobaja As Nullable(Of Boolean)
+    Public Property id_categoria As Nullable(Of Integer)
 
-    Public Overridable Property Convenio As Convenio
-    Public Overridable Property Unidad As Unidad
+    Public Overridable Property CategoriaC As CategoriaC
     Public Overridable Property Empleado As ICollection(Of Empleado) = New HashSet(Of Empleado)
     Public Overridable Property Remuneraciones As ICollection(Of Remuneraciones) = New HashSet(Of Remuneraciones)
 

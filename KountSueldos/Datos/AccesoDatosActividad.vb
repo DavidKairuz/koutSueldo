@@ -1,6 +1,6 @@
 ﻿Public Class AccesoDatosActividad
 
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
     Shared Sub MostrarGrid(grid As DataGridView)
         Dim act = (From a In ctx.Actividad
@@ -96,7 +96,7 @@
         ctx.SaveChanges()
     End Sub
 
-    Shared Sub ModificarActividad(id As Integer, idconv As Integer, desc As String, valor As Decimal, unidad As Integer)
+    Shared Sub ModificarActividad(id As Integer, idconv As Integer, desc As String, valor As Decimal, cat As Integer)
         Dim tipo = (From t In ctx.Actividad
                     Where t.id_actividad = id
                     Select t).SingleOrDefault
@@ -104,7 +104,7 @@
             .id_convenio = idconv
             .descripcion = desc
             .valor = valor
-            .id_unidad = unidad
+            .id_categoria = cat
         End With
 
         ctx.SaveChanges()

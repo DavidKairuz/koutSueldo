@@ -1,6 +1,6 @@
 ﻿Public Class ADCategoriaC
 
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
 
     Shared Sub MostrarCategoria(grid As DataGridView)

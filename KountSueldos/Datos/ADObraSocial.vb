@@ -1,5 +1,5 @@
 ﻿Public Class ADObraSocial
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
 
     Shared Sub MostrarObra_Social(grid As DataGridView)

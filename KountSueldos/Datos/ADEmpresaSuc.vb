@@ -1,5 +1,5 @@
 ﻿Public Class ADEmpresa_SucursalSuc
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
 
     Shared Sub MostrarEmpresa_Sucursal(grid As DataGridView)

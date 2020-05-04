@@ -1,5 +1,5 @@
 ﻿Public Class ADProvincia
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
 
     Shared Sub MostrarProvincia(grid As DataGridView)

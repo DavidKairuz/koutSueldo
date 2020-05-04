@@ -1,5 +1,5 @@
 ﻿Public Class ADBanco
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
 
     Shared Sub MostrarBanco(grid As DataGridView)

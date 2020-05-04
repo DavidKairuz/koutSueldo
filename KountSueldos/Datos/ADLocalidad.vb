@@ -1,5 +1,5 @@
 ﻿Public Class ADLocalidad
-    Shared ctx As New KoutSueldosEntities
+    Shared ctx As New SueldosLiquidadosEntities
 
 
     Shared Sub MostrarLocalidad(grid As DataGridView)

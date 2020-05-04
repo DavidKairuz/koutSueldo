@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="SueldosLiquidadosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="SueldosLiquidadosModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Actividad">
     <Key>
       <PropertyRef Name="id_actividad" />
@@ -9,11 +9,10 @@
     <Property Name="descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Name="valor" Type="Decimal" Precision="12" Scale="2" />
     <Property Name="estadobaja" Type="Boolean" />
-    <NavigationProperty Name="Convenio" Relationship="Self.Actividades_Convenio" FromRole="Actividad" ToRole="Convenio" />
+    <Property Name="id_categoria" Type="Int32" />
+    <NavigationProperty Name="CategoriaC" Relationship="Self.FK_Actividad_CategoriaC" FromRole="Actividad" ToRole="CategoriaC" />
     <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_Actividad" FromRole="Actividad" ToRole="Empleado" />
     <NavigationProperty Name="Remuneraciones" Relationship="Self.FK_Remuneraciones_Actividad" FromRole="Actividad" ToRole="Remuneraciones" />
-    <Property Name="id_categoria" Type="Int32" />
-    <NavigationProperty Name="CategoriaC" Relationship="SueldosLiquidadosModel.FK_Actividad_CategoriaC" FromRole="Actividad" ToRole="CategoriaC" />
   </EntityType>
   <EntityType Name="Banco">
     <Key>
@@ -25,8 +24,8 @@
     <Property Name="telefono" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
     <Property Name="sucursalb" Type="Int32" />
     <Property Name="estadobaja" Type="Boolean" />
-    <NavigationProperty Name="Sueldo_Cab" Relationship="Self.FK_SueldoC_Banco" FromRole="Banco" ToRole="Sueldo_Cab" />
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sueldo_Cab" Relationship="Self.FK_SueldoC_Banco" FromRole="Banco" ToRole="Sueldo_Cab" />
   </EntityType>
   <EntityType Name="CategoriaC">
     <Key>
@@ -38,8 +37,8 @@
     <Property Name="estadobaja" Type="Boolean" />
     <Property Name="descripcion" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
     <Property Name="basico" Type="Decimal" Precision="12" Scale="2" />
+    <NavigationProperty Name="Actividad" Relationship="Self.FK_Actividad_CategoriaC" FromRole="CategoriaC" ToRole="Actividad" />
     <NavigationProperty Name="Convenio" Relationship="Self.FK_Categoria_Convenio" FromRole="CategoriaC" ToRole="Convenio" />
-    <NavigationProperty Name="Actividad" Relationship="SueldosLiquidadosModel.FK_Actividad_CategoriaC" FromRole="CategoriaC" ToRole="Actividad" />
   </EntityType>
   <EntityType Name="Concepto">
     <Key>
@@ -79,7 +78,6 @@
     <Property Name="id_convenio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="descripcion" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Name="estadobaja" Type="Boolean" />
-    <NavigationProperty Name="Actividad" Relationship="Self.Actividades_Convenio" FromRole="Convenio" ToRole="Actividad" />
     <NavigationProperty Name="CategoriaC" Relationship="Self.FK_Categoria_Convenio" FromRole="Convenio" ToRole="CategoriaC" />
   </EntityType>
   <EntityType Name="Empleado">
@@ -104,13 +102,13 @@
     <Property Name="id_categoria" Type="Int32" />
     <Property Name="id_actividad" Type="Int32" />
     <Property Name="obras" Type="Int32" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Actividad" Relationship="Self.FK_Empleado_Actividad" FromRole="Empleado" ToRole="Actividad" />
     <NavigationProperty Name="Contrato" Relationship="Self.FK_Contrato_Empleado" FromRole="Empleado" ToRole="Contrato" />
     <NavigationProperty Name="Empresa1" Relationship="Self.FK_Empleado_Empresa" FromRole="Empleado" ToRole="Empresa" />
     <NavigationProperty Name="Estado_Civil1" Relationship="Self.FK_Empleado_EstadoCivil" FromRole="Empleado" ToRole="Estado_Civil" />
     <NavigationProperty Name="Obra_Social" Relationship="Self.FK_Empleado_Obrasocial" FromRole="Empleado" ToRole="Obra_Social" />
     <NavigationProperty Name="Sueldo_Cab" Relationship="Self.FK_SueldoC_Empleado" FromRole="Empleado" ToRole="Sueldo_Cab" />
-    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Empresa">
     <Key>
@@ -124,11 +122,11 @@
     <Property Name="provincia" Type="Int32" />
     <Property Name="estadobaja" Type="Boolean" />
     <Property Name="id_razonsocial" Type="Int32" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_Empresa" FromRole="Empresa" ToRole="Empleado" />
     <NavigationProperty Name="Provincia1" Relationship="Self.FK_Empresa_provincia" FromRole="Empresa" ToRole="Provincia" />
     <NavigationProperty Name="Razon_Social" Relationship="Self.FK_Empresa_razonS" FromRole="Empresa" ToRole="Razon_Social" />
     <NavigationProperty Name="Empresa_Sucursal" Relationship="Self.FK_Sucu_Empresa" FromRole="Empresa" ToRole="Empresa_Sucursal" />
-    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Empresa_Sucursal">
     <Key>
@@ -285,29 +283,18 @@
     <Property Name="id_unidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="estadobaja" Type="Boolean" />
-    <NavigationProperty Name="Actividad" Relationship="Self.FK_actividad_unidad" FromRole="Unidad" ToRole="Actividad" />
   </EntityType>
-  <Association Name="Actividades_Convenio">
-    <End Role="Convenio" Type="Self.Convenio" Multiplicity="0..1" />
+  <Association Name="FK_Actividad_CategoriaC">
+    <End Role="CategoriaC" Type="Self.CategoriaC" Multiplicity="0..1" />
     <End Role="Actividad" Type="Self.Actividad" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Convenio">
+      <Principal Role="CategoriaC">
         <PropertyRef Name="id_convenio" />
+        <PropertyRef Name="id_categoria" />
       </Principal>
       <Dependent Role="Actividad">
         <PropertyRef Name="id_convenio" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_actividad_unidad">
-    <End Role="Unidad" Type="Self.Unidad" Multiplicity="0..1" />
-    <End Role="Actividad" Type="Self.Actividad" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Unidad">
-        <PropertyRef Name="id_unidad" />
-      </Principal>
-      <Dependent Role="Actividad">
-        <PropertyRef Name="id_unidad" />
+        <PropertyRef Name="id_categoria" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -555,7 +542,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="KoutSueldosEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="SueldosLiquidadosEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Actividad" EntityType="Self.Actividad" />
     <EntitySet Name="Banco" EntityType="Self.Banco" />
     <EntitySet Name="CategoriaC" EntityType="Self.CategoriaC" />
@@ -577,12 +564,8 @@
     <EntitySet Name="Tipo_Concepto" EntityType="Self.Tipo_Concepto" />
     <EntitySet Name="Tipo_Contrato" EntityType="Self.Tipo_Contrato" />
     <EntitySet Name="Unidad" EntityType="Self.Unidad" />
-    <AssociationSet Name="Actividades_Convenio" Association="Self.Actividades_Convenio">
-      <End Role="Convenio" EntitySet="Convenio" />
-      <End Role="Actividad" EntitySet="Actividad" />
-    </AssociationSet>
-    <AssociationSet Name="FK_actividad_unidad" Association="Self.FK_actividad_unidad">
-      <End Role="Unidad" EntitySet="Unidad" />
+    <AssociationSet Name="FK_Actividad_CategoriaC" Association="Self.FK_Actividad_CategoriaC">
+      <End Role="CategoriaC" EntitySet="CategoriaC" />
       <End Role="Actividad" EntitySet="Actividad" />
     </AssociationSet>
     <AssociationSet Name="FK_Empleado_Actividad" Association="Self.FK_Empleado_Actividad">
@@ -665,23 +648,5 @@
       <End Role="Sueldo_Cab" EntitySet="Sueldo_Cab" />
       <End Role="Sueldo_Det" EntitySet="Sueldo_Det" />
     </AssociationSet>
-    <AssociationSet Name="FK_Actividad_CategoriaC" Association="SueldosLiquidadosModel.FK_Actividad_CategoriaC">
-      <End Role="CategoriaC" EntitySet="CategoriaC" />
-      <End Role="Actividad" EntitySet="Actividad" />
-    </AssociationSet>
   </EntityContainer>
-  <Association Name="FK_Actividad_CategoriaC">
-    <End Type="SueldosLiquidadosModel.CategoriaC" Role="CategoriaC" Multiplicity="0..1" />
-    <End Type="SueldosLiquidadosModel.Actividad" Role="Actividad" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CategoriaC">
-        <PropertyRef Name="id_convenio" />
-        <PropertyRef Name="id_categoria" />
-      </Principal>
-      <Dependent Role="Actividad">
-        <PropertyRef Name="id_convenio" />
-        <PropertyRef Name="id_categoria" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>
