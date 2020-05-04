@@ -231,10 +231,28 @@
     <Compile Include="Vistas\VConcepto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vistas\VEmpleado.Designer.vb">
+      <DependentUpon>VEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VEmpresa.Designer.vb">
+      <DependentUpon>VEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vistas\VEstadoCivil.Designer.vb">
       <DependentUpon>VEstadoCivil.vb</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VEstadoCivil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VLiquidacion.Designer.vb">
+      <DependentUpon>VLiquidacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VLiquidacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\VLocalidad.Designer.vb">
@@ -259,6 +277,24 @@
       <DependentUpon>VProvincia.vb</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VProvincia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VRazonSocial.Designer.vb">
+      <DependentUpon>VRazonSocial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VRazonSocial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VRemuneraciones.Designer.vb">
+      <DependentUpon>VRemuneraciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VRemuneraciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VSucursal.Designer.vb">
+      <DependentUpon>VSucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VSucursal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\VTipoConcepto.Designer.vb">
@@ -308,8 +344,17 @@
     <EmbeddedResource Include="Vistas\VConcepto.resx">
       <DependentUpon>VConcepto.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VEmpleado.resx">
+      <DependentUpon>VEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VEmpresa.resx">
+      <DependentUpon>VEmpresa.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\VEstadoCivil.resx">
       <DependentUpon>VEstadoCivil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VLiquidacion.resx">
+      <DependentUpon>VLiquidacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\VLocalidad.resx">
       <DependentUpon>VLocalidad.vb</DependentUpon>
@@ -322,6 +367,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\VProvincia.resx">
       <DependentUpon>VProvincia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VRazonSocial.resx">
+      <DependentUpon>VRazonSocial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VRemuneraciones.resx">
+      <DependentUpon>VRemuneraciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VSucursal.resx">
+      <DependentUpon>VSucursal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\VTipoConcepto.resx">
       <DependentUpon>VTipoConcepto.vb</DependentUpon>

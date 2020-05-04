@@ -1,28 +1,24 @@
-﻿Public Class VProvincia
-
-    Dim ADProvincia As ADProvincia = New ADProvincia
+﻿Public Class VRazonSocial
+    Dim ADRazonSocial As ADRazonSocial = New ADRazonSocial
     Dim validar As Validar = New Validar
-
-
-    Private Sub VProvincia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub VRazonSocial_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MConfiguracionF.TamañoForm(Me)
-        dgvmanual(dgvprovincia)
-        MConfiguracionF.configDGV(dgvprovincia)
+        dgvmanual(dgvrazon)
+        MConfiguracionF.configDGV(dgvrazon)
         Mostrardgv()
         ' indice()
     End Sub
 
-
     Sub Mostrardgv()
-        ADProvincia.MostrarProvincia(dgvprovincia)
+        ADRazonSocial.MostrarRazon_Social(dgvrazon)
     End Sub
     Sub dgvmanual(dgv As DataGridView)
 
         dgv.AutoGenerateColumns = False
         dgv.Columns.Clear()
 
-        dgv.Columns.Add("id_provincia", "Código")
-        dgv.Columns.Add("descripcion", "Provincia")
+        dgv.Columns.Add("id_razonsocial", "Código")
+        dgv.Columns.Add("descripcion", "Razón Social")
 
         Dim btnck As New DataGridViewCheckBoxColumn
         btnck.Name = "estado"
@@ -55,9 +51,9 @@
         Try
             If MsgBox("Seguro desea Eliminar este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
 
-                Dim ide = dgvprovincia.CurrentRow().Cells(0).Value
-                ADProvincia.DarBaja(ide)
-                ADProvincia.MostrarProvincia(dgvprovincia)
+                Dim ide = dgvrazon.CurrentRow().Cells(0).Value
+                ADRazonSocial.DarBaja(ide)
+                ADRazonSocial.MostrarRazon_Social(dgvrazon)
                 MsgBox("Registro Eliminado con éxito", MsgBoxStyle.Information, "Eliminación")
                 indice()
             Else
@@ -75,7 +71,7 @@
         txtdescripcion.Clear()
     End Sub
     Sub indice()
-        txtcod.Text = ADProvincia.index()
+        txtcod.Text = ADRazonSocial.index()
 
     End Sub
     Function DatosVacios() As Boolean
@@ -100,11 +96,11 @@
             txtdescripcion.Focus()
         Else
 
-            If (ADProvincia.Existe(txtdescripcion.Text) = False) Then
+            If (ADRazonSocial.Existe(txtdescripcion.Text) = False) Then
 
                 If MsgBox("Seguro agregar este registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
 
-                    ADProvincia.AgregarProvincia(New Provincia() With
+                    ADRazonSocial.AgregarRazon_Social(New Razon_Social() With
                                     {
                                     .descripcion = txtdescripcion.Text,
                                     .estadobaja = 1
@@ -113,7 +109,7 @@
 
 
 
-                    ADProvincia.MostrarProvincia(dgvprovincia)
+                    ADRazonSocial.MostrarRazon_Social(dgvrazon)
                     limpiar()
                     MsgBox("El registro ha sido agregado exitosamente", MsgBoxStyle.Information, "Gestión")
                     indice()
@@ -134,21 +130,21 @@
 
 
     Sub Editar()
-        txtcod.Text = CStr(dgvprovincia.CurrentRow.Cells(0).Value)
-        txtdescripcion.Text = CStr(dgvprovincia.CurrentRow.Cells(1).Value)
+        txtcod.Text = CStr(dgvrazon.CurrentRow.Cells(0).Value)
+        txtdescripcion.Text = CStr(dgvrazon.CurrentRow.Cells(1).Value)
     End Sub
 
     Sub Guardar()
         Try
-            If dgvprovincia.RowCount = 0 Then
+            If dgvrazon.RowCount = 0 Then
                 MsgBox("No hay registros para editar", MsgBoxStyle.Critical, "Error")
             Else
                 If txtdescripcion.Text.Trim = "" Or txtcod.Text.Trim = "" Then
 
                 Else
 
-                    Dim id As Integer = dgvprovincia.CurrentRow.Cells(0).Value
-                    ADProvincia.ModificarProvincia(id, txtdescripcion.Text)
+                    Dim id As Integer = dgvrazon.CurrentRow.Cells(0).Value
+                    ADRazonSocial.ModificarRazon_Social(id, txtdescripcion.Text)
                 End If
 
 
@@ -160,18 +156,18 @@
     End Sub
     Sub Alta()
         Try
-            If dgvprovincia.RowCount = 0 Then
+            If dgvrazon.RowCount = 0 Then
                 MsgBox("No hay registros para dar de alta", MsgBoxStyle.Critical, "Error")
             Else
 
                 If MsgBox("Seguro desea dar de alta este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
 
-                    Dim ide = dgvprovincia.CurrentRow().Cells(0).Value
+                    Dim ide = dgvrazon.CurrentRow().Cells(0).Value
                     If ide <> 0 Then
 
 
-                        ADProvincia.DarAlta(ide)
-                        ADProvincia.MostrarProvincia(dgvprovincia)
+                        ADRazonSocial.DarAlta(ide)
+                        ADRazonSocial.MostrarRazon_Social(dgvrazon)
                         MsgBox("Registro actualizado con éxito", MsgBoxStyle.Information, "Actualización")
                         indice()
                     Else
@@ -186,51 +182,24 @@
             MsgBox(ex.Message)
         End Try
     End Sub
-    Private Sub dgvprovincia_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvprovincia.CellContentClick
-        Try
-            If validar.DatagridVacio(dgvprovincia) = False Then
-
-
-                Select Case e.ColumnIndex
-                    Case 2
-
-                        Editar()
-                        Return
-                    Case 3
-                        Eliminar()
-                        Return
-
-                    Case 4
-                        MsgBox("Le dio check")
-                        Return
-
-                End Select
-            Else
-
-            End If
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-
-    End Sub
 
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         Agregar()
+    End Sub
+
+    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+        Guardar()
+    End Sub
+
+    Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
+        Alta()
     End Sub
 
     Private Sub btnlimpiar_Click(sender As Object, e As EventArgs) Handles btnlimpiar.Click
         limpiar()
     End Sub
 
-    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
-        Guardar()
-
-    End Sub
-
-
-
     Private Sub txtfiltro_TextChanged(sender As Object, e As EventArgs) Handles txtfiltro.TextChanged
-        ADProvincia.Filtra(txtfiltro, dgvprovincia)
+        ADRazonSocial.Filtra(txtfiltro, dgvrazon)
     End Sub
 End Class

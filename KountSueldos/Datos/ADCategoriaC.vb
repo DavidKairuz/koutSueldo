@@ -38,6 +38,14 @@
         ctx.SaveChanges()
 
     End Sub
+    Shared Sub DarAlta(id As Integer)
+        Dim bn = (From b In ctx.CategoriaC
+                  Where b.id_categoria = id
+                  Select b).SingleOrDefault
+        bn.estadobaja = 1
+        ctx.SaveChanges()
+
+    End Sub
 
     Shared Sub ModificarCategoriaC(id As Integer, desc As String, bas As Decimal)
         Dim tipo = (From t In ctx.CategoriaC

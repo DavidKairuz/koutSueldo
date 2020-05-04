@@ -179,8 +179,7 @@
         limpiar()
     End Sub
 
-    Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
-        '  Dim id = dgvunidad.CurrentRow.Cells(0).Value
+    Sub Alta()
         Try
             If dgvunidad.RowCount = 0 Then
                 MsgBox("No hay registros para dar de alta", MsgBoxStyle.Critical, "Error")
@@ -208,12 +207,32 @@
             MsgBox(ex.Message)
         End Try
     End Sub
+    Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
+        Alta()
+    End Sub
 
-    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+    Sub Guardar()
         Try
+            If dgvunidad.RowCount = 0 Then
+                MsgBox("No hay registros para editar", MsgBoxStyle.Critical, "Error")
+            Else
+                If txtdescripcion.Text.Trim = "" Or txtcod.Text.Trim = "" Then
 
+                Else
+
+                    Dim id As Integer = dgvunidad.CurrentRow.Cells(0).Value
+                    ADUnidad.ModificarUnidad(id, txtdescripcion.Text)
+                End If
+
+
+            End If
         Catch ex As Exception
 
         End Try
+
+    End Sub
+
+    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+        Guardar()
     End Sub
 End Class

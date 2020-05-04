@@ -38,7 +38,14 @@
 
     End Sub
 
+    Shared Sub DarAlta(id As Integer)
+        Dim bn = (From b In ctx.Razon_Social
+                  Where b.id_razonsocial = id
+                  Select b).SingleOrDefault
+        bn.estadobaja = 1
+        ctx.SaveChanges()
 
+    End Sub
     Shared Sub ModificarRazon_Social(id As Integer, name As String)
         Dim tipo = (From t In ctx.Razon_Social
                     Where t.id_razonsocial = id

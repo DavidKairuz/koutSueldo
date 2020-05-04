@@ -5,7 +5,7 @@
     Shared Sub MostrarProvincia(grid As DataGridView)
         Dim bank = (From b In ctx.Provincia
                     Where b.estadobaja = True
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
@@ -13,7 +13,7 @@
 
     Shared Sub MostrarProvinciaT(grid As DataGridView)
         Dim bank = (From b In ctx.Provincia
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
@@ -38,6 +38,15 @@
 
     End Sub
 
+
+    Shared Sub DarAlta(id As Integer)
+        Dim bn = (From b In ctx.Provincia
+                  Where b.id_provincia = id
+                  Select b).SingleOrDefault
+        bn.estadobaja = 1
+        ctx.SaveChanges()
+
+    End Sub
 
     Shared Sub ModificarProvincia(id As Integer, name As String)
         Dim tipo = (From t In ctx.Provincia

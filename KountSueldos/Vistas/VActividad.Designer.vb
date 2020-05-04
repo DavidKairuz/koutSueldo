@@ -41,7 +41,7 @@ Partial Class VActividad
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.cboconvenio = New System.Windows.Forms.ComboBox()
         Me.lblconvenio = New System.Windows.Forms.Label()
-        Me.cbounidad = New System.Windows.Forms.ComboBox()
+        Me.cbocategoria = New System.Windows.Forms.ComboBox()
         Me.lblunidad = New System.Windows.Forms.Label()
         CType(Me.dgvactividad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
@@ -68,7 +68,7 @@ Partial Class VActividad
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(43, 201)
+        Me.Label2.Location = New System.Drawing.Point(43, 245)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 24
@@ -77,7 +77,7 @@ Partial Class VActividad
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(56, 131)
+        Me.Label1.Location = New System.Drawing.Point(66, 131)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 23
@@ -85,7 +85,7 @@ Partial Class VActividad
         '
         'txtdescripcion
         '
-        Me.txtdescripcion.Location = New System.Drawing.Point(117, 201)
+        Me.txtdescripcion.Location = New System.Drawing.Point(117, 241)
         Me.txtdescripcion.Multiline = True
         Me.txtdescripcion.Name = "txtdescripcion"
         Me.txtdescripcion.Size = New System.Drawing.Size(159, 32)
@@ -249,7 +249,7 @@ Partial Class VActividad
         'cboconvenio
         '
         Me.cboconvenio.FormattingEnabled = True
-        Me.cboconvenio.Location = New System.Drawing.Point(117, 164)
+        Me.cboconvenio.Location = New System.Drawing.Point(117, 165)
         Me.cboconvenio.Name = "cboconvenio"
         Me.cboconvenio.Size = New System.Drawing.Size(159, 21)
         Me.cboconvenio.TabIndex = 34
@@ -257,28 +257,28 @@ Partial Class VActividad
         'lblconvenio
         '
         Me.lblconvenio.AutoSize = True
-        Me.lblconvenio.Location = New System.Drawing.Point(56, 167)
+        Me.lblconvenio.Location = New System.Drawing.Point(54, 169)
         Me.lblconvenio.Name = "lblconvenio"
         Me.lblconvenio.Size = New System.Drawing.Size(52, 13)
         Me.lblconvenio.TabIndex = 35
         Me.lblconvenio.Text = "Convenio"
         '
-        'cbounidad
+        'cbocategoria
         '
-        Me.cbounidad.FormattingEnabled = True
-        Me.cbounidad.Location = New System.Drawing.Point(117, 253)
-        Me.cbounidad.Name = "cbounidad"
-        Me.cbounidad.Size = New System.Drawing.Size(159, 21)
-        Me.cbounidad.TabIndex = 36
+        Me.cbocategoria.FormattingEnabled = True
+        Me.cbocategoria.Location = New System.Drawing.Point(117, 203)
+        Me.cbocategoria.Name = "cbocategoria"
+        Me.cbocategoria.Size = New System.Drawing.Size(159, 21)
+        Me.cbocategoria.TabIndex = 36
         '
         'lblunidad
         '
         Me.lblunidad.AutoSize = True
-        Me.lblunidad.Location = New System.Drawing.Point(57, 256)
+        Me.lblunidad.Location = New System.Drawing.Point(54, 207)
         Me.lblunidad.Name = "lblunidad"
-        Me.lblunidad.Size = New System.Drawing.Size(41, 13)
+        Me.lblunidad.Size = New System.Drawing.Size(52, 13)
         Me.lblunidad.TabIndex = 37
-        Me.lblunidad.Text = "Unidad"
+        Me.lblunidad.Text = "Categoria"
         '
         'VActividad
         '
@@ -286,7 +286,7 @@ Partial Class VActividad
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1022, 557)
         Me.Controls.Add(Me.lblunidad)
-        Me.Controls.Add(Me.cbounidad)
+        Me.Controls.Add(Me.cbocategoria)
         Me.Controls.Add(Me.lblconvenio)
         Me.Controls.Add(Me.cboconvenio)
         Me.Controls.Add(Me.btnlimpiar)
@@ -335,6 +335,6 @@ Partial Class VActividad
     Friend WithEvents pbcerrar As PictureBox
     Friend WithEvents cboconvenio As ComboBox
     Friend WithEvents lblconvenio As Label
-    Friend WithEvents cbounidad As ComboBox
+    Friend WithEvents cbocategoria As ComboBox
     Friend WithEvents lblunidad As Label
 End Class

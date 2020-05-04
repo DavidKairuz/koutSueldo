@@ -57,13 +57,13 @@
         'cbo.SelectedValue = -1
     End Sub
 
-    Shared Sub MostrarComboUnidad(combo As ComboBox)
-        Dim uni = (From e In ctx.Unidad
+    Shared Sub MostrarComboCategoria(combo As ComboBox)
+        Dim uni = (From e In ctx.CategoriaC
                    Select e).ToList
 
         combo.DataSource = uni
         combo.DisplayMember = "descripcion"
-        combo.ValueMember = "id_unidad"
+        combo.ValueMember = "id_categoria"
         combo.SelectedValue = -1
 
     End Sub

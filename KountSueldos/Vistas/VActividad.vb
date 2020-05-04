@@ -13,7 +13,7 @@
         Mostrardgv()
         indice()
         MostrarComboConvenio()
-        MostrarComboUnidad()
+        MostrarComboCategoria()
     End Sub
     Sub Mostrardgv()
         AccesoDatosActividad.MostrarGrid(dgvactividad)
@@ -35,7 +35,7 @@
         codigo.Name = "Codigo"
         descripcion.Name = "Actividad"
         convenio.Name = "Convenio"
-        unidad.Name = "Unidad"
+        unidad.Name = "Categoria"
         valor.Name = "Valor"
 
         dgv.Columns.Add(codigo)
@@ -63,7 +63,7 @@
         dgv.Columns(0).DataPropertyName = "Codigo"
         dgv.Columns(1).DataPropertyName = "Actividad"
         dgv.Columns(2).DataPropertyName = "Convenio"
-        dgv.Columns(3).DataPropertyName = "Unidad"
+        dgv.Columns(3).DataPropertyName = "Categoria"
         dgv.Columns(4).DataPropertyName = "Editar"
         dgv.Columns(5).DataPropertyName = "Eliminar"
         dgv.Columns(6).DataPropertyName = "estadobaja"
@@ -78,8 +78,9 @@
         AccesoDatosActividad.MostrarComboConvenio(cboconvenio)
     End Sub
 
-    Sub MostrarComboUnidad()
-        AccesoDatosActividad.MostrarComboUnidad(cbounidad)
+    Sub MostrarComboCategoria()
+        MConfiguracionF.configCombobox(cbocategoria)
+        AccesoDatosActividad.MostrarComboCategoria(cbocategoria)
     End Sub
     Sub limpiar()
         txtcod.Clear()
@@ -109,7 +110,7 @@
         Dim result As Boolean
         Try
 
-            If txtdescripcion.Text.Trim = "" Or cboconvenio.SelectedValue = -1 Or cbounidad.SelectedValue = -1 Then
+            If txtdescripcion.Text.Trim = "" Or cboconvenio.SelectedValue = -1 Or cbocategoria.SelectedValue = -1 Then
                 result = False
             Else
                 result = True
@@ -134,7 +135,7 @@
                                     {
                                     .id_convenio = CInt(cboconvenio.SelectedValue.ToString),
                                     .descripcion = txtdescripcion.Text,
-                                    .id_categoria = CInt(cbounidad.SelectedValue.ToString),
+                                    .id_categoria = CInt(cbocategoria.SelectedValue.ToString),
                                     .estadobaja = 1
                                                           })
 
@@ -165,7 +166,7 @@
         txtcod.Text = CStr(dgvactividad.CurrentRow.Cells(0).Value)
         cboconvenio.SelectedValue = dgvactividad.CurrentRow.Cells(2).Value
         txtdescripcion.Text = CStr(dgvactividad.CurrentRow.Cells(1).Value)
-        cbounidad.SelectedValue = dgvactividad.CurrentRow.Cells(4).Value
+        cbocategoria.SelectedValue = dgvactividad.CurrentRow.Cells(4).Value
     End Sub
     Private Sub dgvactividad_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvactividad.CellContentClick
         Try
