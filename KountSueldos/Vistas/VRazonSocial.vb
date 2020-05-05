@@ -71,19 +71,19 @@
         txtdescripcion.Clear()
     End Sub
     Sub indice()
-        txtcod.Text = ADRazonSocial.index()
-
+        If ADRazonSocial.index() = 0 Then
+            txtcod.Text = 1
+        Else
+            txtcod.Text = ADRazonSocial.index
+        End If
     End Sub
     Function DatosVacios() As Boolean
-
-        Dim result As Boolean
+        Dim result As Boolean = False
         Try
-
             If txtdescripcion.Text.Trim = "" Then
-                result = False
-            Else
                 result = True
-
+            Else
+                result = False
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.OkOnly, "Error")
@@ -95,9 +95,7 @@
             MsgBox("Debe completar todos los campos", MsgBoxStyle.Information, "Aviso")
             txtdescripcion.Focus()
         Else
-
             If (ADRazonSocial.Existe(txtdescripcion.Text) = False) Then
-
                 If MsgBox("Seguro agregar este registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
 
                     ADRazonSocial.AgregarRazon_Social(New Razon_Social() With
@@ -105,33 +103,33 @@
                                     .descripcion = txtdescripcion.Text,
                                     .estadobaja = 1
                                                           })
-
-
-
-
                     ADRazonSocial.MostrarRazon_Social(dgvrazon)
                     limpiar()
                     MsgBox("El registro ha sido agregado exitosamente", MsgBoxStyle.Information, "Gestión")
                     indice()
-
                 Else
                     MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
                     limpiar()
                 End If
-
             Else
                 MsgBox("Ya existe un registro con este nombre", MsgBoxStyle.Exclamation, "Alerta")
                 limpiar()
             End If
-
         End If
-
     End Sub
 
 
     Sub Editar()
-        txtcod.Text = CStr(dgvrazon.CurrentRow.Cells(0).Value)
-        txtdescripcion.Text = CStr(dgvrazon.CurrentRow.Cells(1).Value)
+        Try
+            If dgvrazon.RowCount > 0 Then
+                txtcod.Text = CStr(dgvrazon.CurrentRow.Cells(0).Value)
+                txtdescripcion.Text = CStr(dgvrazon.CurrentRow.Cells(1).Value)
+            Else
+                MsgBox("No hay registros para editar", MsgBoxStyle.Exclamation, "Error")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Sub Guardar()
@@ -140,19 +138,23 @@
                 MsgBox("No hay registros para editar", MsgBoxStyle.Critical, "Error")
             Else
                 If txtdescripcion.Text.Trim = "" Or txtcod.Text.Trim = "" Then
-
+                    MsgBox("Debe seleccionar un registro", MsgBoxStyle.Information, "Seleccionar")
                 Else
+                    If MsgBox("Seguro desea dar de modificar este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
 
-                    Dim id As Integer = dgvrazon.CurrentRow.Cells(0).Value
-                    ADRazonSocial.ModificarRazon_Social(id, txtdescripcion.Text)
+                        Dim id As Integer = dgvrazon.CurrentRow.Cells(0).Value
+                        ADRazonSocial.ModificarRazon_Social(id, txtdescripcion.Text)
+                        MsgBox("el registro se modifico exitosamente", MsgBoxStyle.Information, "Modificación")
+                    Else
+                        MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
+                        limpiar()
+                        indice()
+                    End If
                 End If
-
-
             End If
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
-
     End Sub
     Sub Alta()
         Try
@@ -164,8 +166,6 @@
 
                     Dim ide = dgvrazon.CurrentRow().Cells(0).Value
                     If ide <> 0 Then
-
-
                         ADRazonSocial.DarAlta(ide)
                         ADRazonSocial.MostrarRazon_Social(dgvrazon)
                         MsgBox("Registro actualizado con éxito", MsgBoxStyle.Information, "Actualización")
@@ -201,5 +201,11 @@
 
     Private Sub txtfiltro_TextChanged(sender As Object, e As EventArgs) Handles txtfiltro.TextChanged
         ADRazonSocial.Filtra(txtfiltro, dgvrazon)
+    End Sub
+
+    Private Sub txtdescripcion_TextChanged(sender As Object, e As EventArgs) Handles txtdescripcion.TextChanged
+        Dim texto As String
+        texto = txtdescripcion.Text
+        validar.validartexto(texto, e)
     End Sub
 End Class
