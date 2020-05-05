@@ -40,7 +40,9 @@ Partial Class VCategoriaC
         Me.btnAlta = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.lblbasico = New System.Windows.Forms.Label()
-        Me.mkbasico = New System.Windows.Forms.MaskedTextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cboconvenio = New System.Windows.Forms.ComboBox()
+        Me.txtbasico = New System.Windows.Forms.TextBox()
         CType(Me.dgvcategoria, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,7 +68,7 @@ Partial Class VCategoriaC
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(43, 182)
+        Me.Label2.Location = New System.Drawing.Point(57, 192)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 24
@@ -75,7 +77,7 @@ Partial Class VCategoriaC
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(66, 138)
+        Me.Label1.Location = New System.Drawing.Point(80, 106)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 23
@@ -83,15 +85,16 @@ Partial Class VCategoriaC
         '
         'txtdescripcion
         '
-        Me.txtdescripcion.Location = New System.Drawing.Point(127, 180)
+        Me.txtdescripcion.Location = New System.Drawing.Point(127, 188)
+        Me.txtdescripcion.Multiline = True
         Me.txtdescripcion.Name = "txtdescripcion"
-        Me.txtdescripcion.Size = New System.Drawing.Size(159, 20)
+        Me.txtdescripcion.Size = New System.Drawing.Size(208, 29)
         Me.txtdescripcion.TabIndex = 22
         '
         'txtcod
         '
         Me.txtcod.Enabled = False
-        Me.txtcod.Location = New System.Drawing.Point(127, 135)
+        Me.txtcod.Location = New System.Drawing.Point(127, 103)
         Me.txtcod.Name = "txtcod"
         Me.txtcod.Size = New System.Drawing.Size(159, 20)
         Me.txtcod.TabIndex = 21
@@ -135,10 +138,11 @@ Partial Class VCategoriaC
         '
         Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pbcerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbcerrar.Dock = System.Windows.Forms.DockStyle.Right
         Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.icon
-        Me.pbcerrar.Location = New System.Drawing.Point(895, 9)
+        Me.pbcerrar.Location = New System.Drawing.Point(1015, 0)
         Me.pbcerrar.Name = "pbcerrar"
-        Me.pbcerrar.Size = New System.Drawing.Size(29, 27)
+        Me.pbcerrar.Size = New System.Drawing.Size(29, 45)
         Me.pbcerrar.TabIndex = 0
         Me.pbcerrar.TabStop = False
         '
@@ -149,7 +153,7 @@ Partial Class VCategoriaC
         Me.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnlimpiar.Image = Global.KountSueldos.My.Resources.Resources.clean
         Me.btnlimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnlimpiar.Location = New System.Drawing.Point(127, 376)
+        Me.btnlimpiar.Location = New System.Drawing.Point(127, 410)
         Me.btnlimpiar.Name = "btnlimpiar"
         Me.btnlimpiar.Size = New System.Drawing.Size(101, 37)
         Me.btnlimpiar.TabIndex = 33
@@ -163,7 +167,7 @@ Partial Class VCategoriaC
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.web
         Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnnuevo.Location = New System.Drawing.Point(19, 319)
+        Me.btnnuevo.Location = New System.Drawing.Point(19, 353)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(101, 37)
         Me.btnnuevo.TabIndex = 32
@@ -220,7 +224,7 @@ Partial Class VCategoriaC
         Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAlta.Image = Global.KountSueldos.My.Resources.Resources.edit
         Me.btnAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAlta.Location = New System.Drawing.Point(234, 319)
+        Me.btnAlta.Location = New System.Drawing.Point(234, 353)
         Me.btnAlta.Name = "btnAlta"
         Me.btnAlta.Size = New System.Drawing.Size(101, 37)
         Me.btnAlta.TabIndex = 28
@@ -234,7 +238,7 @@ Partial Class VCategoriaC
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Image = Global.KountSueldos.My.Resources.Resources.web
         Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnguardar.Location = New System.Drawing.Point(127, 319)
+        Me.btnguardar.Location = New System.Drawing.Point(127, 353)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(101, 37)
         Me.btnguardar.TabIndex = 27
@@ -245,25 +249,44 @@ Partial Class VCategoriaC
         'lblbasico
         '
         Me.lblbasico.AutoSize = True
-        Me.lblbasico.Location = New System.Drawing.Point(68, 230)
+        Me.lblbasico.Location = New System.Drawing.Point(81, 242)
         Me.lblbasico.Name = "lblbasico"
         Me.lblbasico.Size = New System.Drawing.Size(39, 13)
         Me.lblbasico.TabIndex = 34
         Me.lblbasico.Text = "Básico"
         '
-        'mkbasico
+        'Label3
         '
-        Me.mkbasico.Location = New System.Drawing.Point(127, 227)
-        Me.mkbasico.Name = "mkbasico"
-        Me.mkbasico.Size = New System.Drawing.Size(139, 20)
-        Me.mkbasico.TabIndex = 35
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(68, 148)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(52, 13)
+        Me.Label3.TabIndex = 36
+        Me.Label3.Text = "Convenio"
+        '
+        'cboconvenio
+        '
+        Me.cboconvenio.FormattingEnabled = True
+        Me.cboconvenio.Location = New System.Drawing.Point(127, 145)
+        Me.cboconvenio.Name = "cboconvenio"
+        Me.cboconvenio.Size = New System.Drawing.Size(159, 21)
+        Me.cboconvenio.TabIndex = 37
+        '
+        'txtbasico
+        '
+        Me.txtbasico.Location = New System.Drawing.Point(128, 242)
+        Me.txtbasico.Name = "txtbasico"
+        Me.txtbasico.Size = New System.Drawing.Size(121, 20)
+        Me.txtbasico.TabIndex = 38
         '
         'VCategoriaC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1044, 536)
-        Me.Controls.Add(Me.mkbasico)
+        Me.ClientSize = New System.Drawing.Size(1044, 552)
+        Me.Controls.Add(Me.txtbasico)
+        Me.Controls.Add(Me.cboconvenio)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lblbasico)
         Me.Controls.Add(Me.btnlimpiar)
         Me.Controls.Add(Me.btnnuevo)
@@ -310,5 +333,7 @@ Partial Class VCategoriaC
     Friend WithEvents lbltitulo As Label
     Friend WithEvents pbcerrar As PictureBox
     Friend WithEvents lblbasico As Label
-    Friend WithEvents mkbasico As MaskedTextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents cboconvenio As ComboBox
+    Friend WithEvents txtbasico As TextBox
 End Class

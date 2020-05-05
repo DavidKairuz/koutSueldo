@@ -1,9 +1,6 @@
 ﻿Public Class VUnidad
     Dim ADUnidad As ADUnidad = New ADUnidad
     Dim validar As Validar = New Validar
-    Private Sub lbltitulo_Click(sender As Object, e As EventArgs) Handles lbltitulo.Click
-
-    End Sub
 
     Private Sub VUnidad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -95,7 +92,7 @@
         Return result
     End Function
     Sub Agregar()
-        If DatosVacios() = True Then
+        If DatosVacios() = False Then
             MsgBox("Debe completar todos los campos", MsgBoxStyle.Information, "Aviso")
             txtdescripcion.Focus()
         Else
@@ -134,14 +131,23 @@
 
 
     Sub Editar()
-        txtcod.Text = CStr(dgvunidad.CurrentRow.Cells(0).Value)
-        txtdescripcion.Text = CStr(dgvunidad.CurrentRow.Cells(1).Value)
+        Try
+            If dgvunidad.RowCount > 0 Then
+                txtcod.Text = CStr(dgvunidad.CurrentRow.Cells(0).Value)
+                txtdescripcion.Text = CStr(dgvunidad.CurrentRow.Cells(1).Value)
+            Else
+                MsgBox("No hay datos para editar", MsgBoxStyle.Exclamation, "Error")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub dgvunidad_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvunidad.CellContentClick
         Try
             If validar.DatagridVacio(dgvunidad) = False Then
-
 
                 Select Case e.ColumnIndex
                     Case 2
@@ -201,6 +207,7 @@
                 Else
                     MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
                     limpiar()
+                    indice()
                 End If
             End If
         Catch ex As Exception
@@ -209,6 +216,7 @@
     End Sub
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
         Alta()
+        indice()
     End Sub
 
     Sub Guardar()
@@ -217,17 +225,18 @@
                 MsgBox("No hay registros para editar", MsgBoxStyle.Critical, "Error")
             Else
                 If txtdescripcion.Text.Trim = "" Or txtcod.Text.Trim = "" Then
-
+                    MsgBox("Los campos estan vacios debe completarlos", MsgBoxStyle.Critical, "Error")
                 Else
 
                     Dim id As Integer = dgvunidad.CurrentRow.Cells(0).Value
                     ADUnidad.ModificarUnidad(id, txtdescripcion.Text)
+                    limpiar()
+                    indice()
                 End If
-
 
             End If
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
     End Sub

@@ -1,5 +1,6 @@
 ﻿Public Class VCategoriaC
     Dim ADCategoriaC As ADCategoriaC = New ADCategoriaC
+    Dim validas As Validar = New Validar
 
 
     Private Sub VCategoriaC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -7,7 +8,8 @@
         dgvmanual(dgvcategoria)
         MConfiguracionF.configDGV(dgvcategoria)
         Mostrardgv()
-        ' indice()
+        MostrarComboConvenio()
+        indice()
     End Sub
 
     Sub Mostrardgv()
@@ -18,8 +20,17 @@
         dgv.AutoGenerateColumns = False
         dgv.Columns.Clear()
 
-        dgv.Columns.Add("id_razonsocial", "Código")
-        dgv.Columns.Add("descripcion", "Razón Social")
+        Dim con As New DataGridViewTextBoxColumn
+        con.Name = "convenio"
+        con.HeaderText = "Convenio"
+        Dim basico As New DataGridViewTextBoxColumn
+        basico.Name = "basico"
+
+        basico.HeaderText = "Sueldo Basico"
+        dgv.Columns.Add("id_categoria", "Código")
+        dgv.Columns.Add("descripcion", "Categoria")
+        dgv.Columns.Add(con)
+        dgv.Columns.Add(basico)
 
         Dim btnck As New DataGridViewCheckBoxColumn
         btnck.Name = "estado"
@@ -35,11 +46,13 @@
         dgv.Columns.Add(btne)
         dgv.Columns.Add(btnd)
         dgv.Columns.Add(btnck)
-        dgv.Columns(0).DataPropertyName = "id_provincia"
+        dgv.Columns(0).DataPropertyName = "id_categoria"
         dgv.Columns(1).DataPropertyName = "descripcion"
-        dgv.Columns(2).DataPropertyName = "Editar"
-        dgv.Columns(3).DataPropertyName = "Eliminar"
-        dgv.Columns(4).DataPropertyName = "estadobaja"
+        dgv.Columns(2).DataPropertyName = "Convenio"
+        dgv.Columns(3).DataPropertyName = "Sueldo Basico"
+        dgv.Columns(4).DataPropertyName = "Editar"
+        dgv.Columns(5).DataPropertyName = "Eliminar"
+        dgv.Columns(6).DataPropertyName = "estadobaja"
         dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.Aquamarine
     End Sub
@@ -67,23 +80,35 @@
 
     End Sub
 
+    Sub MostrarComboConvenio()
+        MConfiguracionF.configCombobox(cboconvenio)
+        Dim ADConvenio As New ADConvenio
+        ADConvenio.MostrarComboConvenio(cboconvenio)
+    End Sub
     Sub limpiar()
         txtcod.Clear()
         txtdescripcion.Clear()
+        cboconvenio.SelectedValue = -1
+        txtbasico.Clear()
     End Sub
     Sub indice()
-        txtcod.Text = ADCategoriaC.index()
+        If ADCategoriaC.index() = 0 Then
+            txtcod.Text = 1
+        Else
+            txtcod.Text = ADCategoriaC.index
+        End If
+
 
     End Sub
     Function DatosVacios() As Boolean
 
-        Dim result As Boolean
+        Dim result As Boolean = False
         Try
 
             If txtdescripcion.Text.Trim = "" Then
-                result = False
-            Else
                 result = True
+            Else
+                result = False
 
             End If
         Catch ex As Exception
@@ -107,9 +132,6 @@
                                     .estadobaja = 1
                                                           })
 
-
-
-
                     ADCategoriaC.MostrarCategoria(dgvcategoria)
                     limpiar()
                     MsgBox("El registro ha sido agregado exitosamente", MsgBoxStyle.Information, "Gestión")
@@ -131,8 +153,23 @@
 
 
     Sub Editar()
-        txtcod.Text = CStr(dgvcategoria.CurrentRow.Cells(0).Value)
-        txtdescripcion.Text = CStr(dgvcategoria.CurrentRow.Cells(1).Value)
+
+        Try
+            If dgvcategoria.RowCount > 0 Then
+                txtcod.Text = CStr(dgvcategoria.CurrentRow.Cells(0).Value)
+                txtdescripcion.Text = dgvcategoria.CurrentRow.Cells(1).Value
+                cboconvenio.SelectedValue = dgvcategoria.CurrentRow.Cells(2).Value
+                txtbasico.Text = dgvcategoria.CurrentRow.Cells(3).Value
+
+            Else
+                MsgBox("No hay registros para editar", MsgBoxStyle.Exclamation, "Error")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
     End Sub
 
     Sub Guardar()
@@ -141,18 +178,24 @@
                 MsgBox("No hay registros para editar", MsgBoxStyle.Critical, "Error")
             Else
                 If txtdescripcion.Text.Trim = "" Or txtcod.Text.Trim = "" Then
-
+                    MsgBox("Debe seleccionar un registro", MsgBoxStyle.Critical, "Error")
                 Else
+                    If MsgBox("Seguro desea dar de modificar este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
 
-                    Dim id As Integer = dgvcategoria.CurrentRow.Cells(0).Value
-                    Dim bas As Decimal = 0
-                    ADCategoriaC.ModificarCategoriaC(id, txtdescripcion.Text, bas)
+                        Dim id As Integer = dgvcategoria.CurrentRow.Cells(0).Value
+                        Dim bas As Decimal = 0
+                        ADCategoriaC.ModificarCategoriaC(id, txtdescripcion.Text, bas)
+                        MsgBox("el registro se modifico exitosamente", MsgBoxStyle.Information, "Modificación")
+                    Else
+                        MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
+                        limpiar()
+                        indice()
+
+                    End If
                 End If
-
-
             End If
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
     End Sub
@@ -178,6 +221,7 @@
                 Else
                     MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
                     limpiar()
+                    indice()
                 End If
             End If
         Catch ex As Exception
@@ -187,23 +231,69 @@
 
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         Agregar()
+        limpiar()
+        indice()
     End Sub
 
 
 
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Guardar()
+        limpiar()
     End Sub
 
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
         Alta()
+        limpiar()
+        indice()
     End Sub
 
     Private Sub btnlimpiar_Click(sender As Object, e As EventArgs) Handles btnlimpiar.Click
         limpiar()
+        indice()
     End Sub
 
     Private Sub txtfiltro_TextChanged(sender As Object, e As EventArgs) Handles txtfiltro.TextChanged
         ADCategoriaC.Filtra(txtfiltro, dgvcategoria)
+    End Sub
+
+    Private Sub dgvcategoria_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvcategoria.CellContentClick
+        Try
+            If dgvcategoria.RowCount <> 0 Then
+
+                Select Case e.ColumnIndex
+                    Case 4
+
+                        Editar()
+                        Return
+                    Case 5
+                        Eliminar()
+                        Return
+
+                    Case 6
+                        MsgBox("Le dio check")
+                        Return
+
+                End Select
+            Else
+
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub txtbasico_TextChanged(sender As Object, e As EventArgs) Handles txtbasico.TextChanged
+        Dim texto As String
+        texto = txtdescripcion.Text
+        validas.validarnumeros(texto, e)
+    End Sub
+
+    Private Sub txtdescripcion_TextChanged(sender As Object, e As EventArgs) Handles txtdescripcion.TextChanged
+        Dim texto As String
+        texto = txtdescripcion.Text
+        validas.validartexto(texto, e)
     End Sub
 End Class

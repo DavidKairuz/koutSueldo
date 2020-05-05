@@ -190,7 +190,6 @@
                     ADBanco.ModificarBanco(id, txtnombre.Text, txtdireccion.Text, txttel.Text, CInt(txtsucursal.Text), txtemail.Text)
                 End If
 
-
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
