@@ -5,25 +5,31 @@
     Shared Sub MostrarBanco(grid As DataGridView)
         Dim bank = (From b In ctx.Banco
                     Where b.estadobaja = True
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
-    Function index() As Integer
+    Shared Function index() As Integer
         Dim i As Integer
-        Dim ext = (From ex In ctx.Banco Order By ex.id_banco Descending Select ex).First().id_banco
-        i = CInt(ext.ToString)
-        If i > 0 Then
-            Return i + 1
-        Else
-            i = 0
-        End If
+        Try
+
+            Dim ext = (From ex In ctx.Banco Order By ex.id_banco Descending Select ex).First().id_banco
+            i = CInt(ext.ToString)
+            If i > 0 Then
+                Return i + 1
+            Else
+                i = 0
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
         Return i
     End Function
 
     Shared Sub MostrarBancoT(grid As DataGridView)
         Dim bank = (From b In ctx.Banco
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
@@ -48,8 +54,18 @@
 
     End Sub
 
+    Shared Sub DarAlta(id As Integer)
+        Dim bn = (From b In ctx.Banco
+                  Where b.id_banco = id
+                  Select b).SingleOrDefault
+        bn.estadobaja = 1
+        ctx.SaveChanges()
 
-    Shared Sub ModificarBanco(id As Integer, name As String, dir As String, tel As String, suc As Integer)
+    End Sub
+
+
+
+    Shared Sub ModificarBanco(id As Integer, name As String, dir As String, tel As String, suc As Integer, mail As String)
         Dim tipo = (From t In ctx.Banco
                     Where t.id_banco = id
                     Select t).SingleOrDefault
@@ -58,6 +74,7 @@
             .direccion = dir
             .telefono = tel
             .sucursalb = suc
+            .email = mail
         End With
 
         ctx.SaveChanges()
