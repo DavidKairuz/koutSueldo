@@ -90,4 +90,26 @@
         End If
         Return i
     End Function
+
+    Shared Function ExisteID(id As Integer) As Boolean
+        Dim result As Boolean = False
+        If ctx.Concepto.Any(Function(o) o.id_concepto = id) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
+
+    Shared Function ExisteIDEstado(id As Integer) As Boolean
+        Dim result As Boolean = False
+        If ctx.Concepto.Any(Function(o) o.id_concepto = id) And (ctx.Concepto.Any(Function(o) o.estadobaja = True)) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
+
+
 End Class

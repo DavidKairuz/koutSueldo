@@ -51,6 +51,7 @@ Partial Class VEmpresa
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cborazonsoc = New System.Windows.Forms.ComboBox()
         Me.mkcuit = New System.Windows.Forms.MaskedTextBox()
+        Me.chktodo = New System.Windows.Forms.CheckBox()
         CType(Me.dgvempresa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -159,7 +160,7 @@ Partial Class VEmpresa
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(444, 70)
+        Me.Label4.Location = New System.Drawing.Point(544, 79)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 13)
         Me.Label4.TabIndex = 41
@@ -168,7 +169,7 @@ Partial Class VEmpresa
         'txtfiltro
         '
         Me.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtfiltro.Location = New System.Drawing.Point(503, 68)
+        Me.txtfiltro.Location = New System.Drawing.Point(603, 77)
         Me.txtfiltro.Name = "txtfiltro"
         Me.txtfiltro.Size = New System.Drawing.Size(220, 20)
         Me.txtfiltro.TabIndex = 40
@@ -350,11 +351,22 @@ Partial Class VEmpresa
         Me.mkcuit.Size = New System.Drawing.Size(159, 20)
         Me.mkcuit.TabIndex = 61
         '
+        'chktodo
+        '
+        Me.chktodo.AutoSize = True
+        Me.chktodo.Location = New System.Drawing.Point(370, 75)
+        Me.chktodo.Name = "chktodo"
+        Me.chktodo.Size = New System.Drawing.Size(91, 17)
+        Me.chktodo.TabIndex = 62
+        Me.chktodo.Text = "Mostrar todo :"
+        Me.chktodo.UseVisualStyleBackColor = True
+        '
         'VEmpresa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1027, 562)
+        Me.Controls.Add(Me.chktodo)
         Me.Controls.Add(Me.mkcuit)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.cborazonsoc)
@@ -423,4 +435,5 @@ Partial Class VEmpresa
     Friend WithEvents Label9 As Label
     Friend WithEvents cborazonsoc As ComboBox
     Friend WithEvents mkcuit As MaskedTextBox
+    Friend WithEvents chktodo As CheckBox
 End Class

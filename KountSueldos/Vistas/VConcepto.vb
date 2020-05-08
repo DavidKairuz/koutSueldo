@@ -3,15 +3,16 @@
     Dim validar As Validar = New Validar
     Private Sub VConcepto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MConfiguracionF.TamañoForm(Me)
+        MConfiguracionF.configDGV(dgvconcepto)
         Mostrardgv()
-
         MostrarComboTipoC()
         MostrarComboEstado()
+        indice()
     End Sub
 
     Sub Mostrardgv()
         dgvmanual(dgvconcepto)
-        MConfiguracionF.configDGV(dgvconcepto)
+        ADConcepto.MostrarConcepto(dgvconcepto)
     End Sub
     Sub dgvmanual(dgv As DataGridView)
 
@@ -25,7 +26,8 @@
         dgv.Columns.Add("descripcion", "Concepto")
         dgv.Columns.Add("valor", "Valor")
         dgv.Columns.Add(tipoconceto)
-        dgv.Columns.Add("estado", "Estado")
+        dgv.Columns.Add("codigo", "Ley Nº")
+        dgv.Columns.Add("estado", "Tipo")
         'dgv.Columns.Add(valor)
 
         Dim btnck As New DataGridViewCheckBoxColumn
@@ -47,12 +49,12 @@
         dgv.Columns(1).DataPropertyName = "descripcion"
         dgv.Columns(2).DataPropertyName = "Valor"
         dgv.Columns(3).DataPropertyName = "Tipo Concepto"
-        dgv.Columns(4).DataPropertyName = "Estado"
-        dgv.Columns(5).DataPropertyName = "Editar"
-        dgv.Columns(6).DataPropertyName = "Eliminar"
+        dgv.Columns(4).DataPropertyName = "Ley Nº"
+        dgv.Columns(5).DataPropertyName = "Tipo"
+        dgv.Columns(6).DataPropertyName = "Editar"
+        dgv.Columns(7).DataPropertyName = "Eliminar"
         '  dgv.Columns(7).DataPropertyName = "estadobaja"
-        '   dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        '  dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.Aquamarine
+
     End Sub
 
     Private Sub pbcerrar_Click(sender As Object, e As EventArgs) Handles pbcerrar.Click
@@ -65,7 +67,7 @@
 
                 Dim ide = dgvconcepto.CurrentRow().Cells(0).Value
                 ADConcepto.DarBaja(ide)
-                ADConcepto.MostrarConcepto(dgvconcepto)
+                Mostrardgv()
                 MsgBox("Registro Eliminado con éxito", MsgBoxStyle.Information, "Eliminación")
                 indice()
             Else
@@ -86,8 +88,8 @@
 
     Sub MostrarComboEstado()
         MConfiguracionF.configCombobox(cboestado)
-        cboestado.Items.Add("Remunerativo")
-        cboestado.Items.Add("No Remunerativo")
+        cboestado.Items.Add("R")
+        cboestado.Items.Add("N")
     End Sub
 
 
@@ -140,10 +142,11 @@
                                     .valor = txtvalor.Text,
                                     .tipoconcepto = cbotipoconcep.SelectedValue,
                                     .estado = cboestado.SelectedValue,
+                                    .codigo = txtley.Text,
                                     .estadobaja = 1
                                                           })
 
-                    ADConcepto.MostrarConcepto(dgvconcepto)
+                    Mostrardgv()
                     limpiar()
                     MsgBox("El registro ha sido agregado exitosamente", MsgBoxStyle.Information, "Gestión")
                     indice()
@@ -165,10 +168,10 @@
             If dgvconcepto.RowCount > 0 Then
                 txtcod.Text = CStr(dgvconcepto.CurrentRow.Cells(0).Value)
                 txtdescripcion.Text = dgvconcepto.CurrentRow.Cells(1).Value
-                cbotipoconcep.SelectedValue = dgvconcepto.CurrentRow.Cells(2).Value
-                cboestado.SelectedValue = dgvconcepto.CurrentRow.Cells(3).Value
-                txtvalor.Text = dgvconcepto.CurrentRow.Cells(4).Value
-
+                txtvalor.Text = dgvconcepto.CurrentRow.Cells(2).Value
+                cbotipoconcep.SelectedValue = dgvconcepto.CurrentRow.Cells(3).Value
+                txtley.Text = dgvconcepto.CurrentRow.Cells(4).Value
+                cboestado.SelectedValue = dgvconcepto.CurrentRow.Cells(5).Value
             Else
                 MsgBox("No hay registros para editar", MsgBoxStyle.Exclamation, "Error")
             End If
@@ -180,6 +183,25 @@
 
     End Sub
 
+    Function ExisteReg() As Boolean
+        Dim res As Boolean
+        Try
+            If txtcod.Text.Trim <> "" Or txtcod.Text.Trim <> 0 Then
+                Dim id As Integer = txtcod.Text
+                If ADConcepto.ExisteID(id) = True Then
+                    res = True
+                    MsgBox("Existe")
+                Else
+                    MsgBox("no Existe")
+                    res = False
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Return res
+    End Function
+
     Sub Guardar()
         Try
             If dgvconcepto.RowCount = 0 Then
@@ -188,19 +210,23 @@
                 If txtdescripcion.Text.Trim = "" Or txtcod.Text.Trim = "" Then
                     MsgBox("Debe seleccionar un registro", MsgBoxStyle.Critical, "Error")
                 Else
-                    If MsgBox("Seguro desea dar de modificar este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
+                    If ExisteReg() = True Then
 
-                        Dim id As Integer = dgvconcepto.CurrentRow.Cells(0).Value
-                        Dim bas As Decimal = 0
-                        ' ADConcepto.ModificarConcepto(id, txtdescripcion.Text, bas)
-                        MsgBox("el registro se modifico exitosamente", MsgBoxStyle.Information, "Modificación")
-                        limpiar()
-                        indice()
+                        If MsgBox("Seguro desea dar de modificar este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
+
+                            Dim id As Integer = dgvconcepto.CurrentRow.Cells(0).Value
+                            Dim bas As Decimal = 0
+                            ' ADConcepto.ModificarConcepto(id, txtdescripcion.Text, bas)
+                            MsgBox("el registro se modifico exitosamente", MsgBoxStyle.Information, "Modificación")
+                            limpiar()
+                            indice()
+                        Else
+                            MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
+                            limpiar()
+                            indice()
+                        End If
                     Else
-                        MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
-                        limpiar()
-                        indice()
-
+                        MsgBox("Debe seleccionar el boton agregar para un nuevo registro,Guardar es para modificar datos", MsgBoxStyle.Information, "Mensaje")
                     End If
                 End If
             End If
@@ -269,15 +295,15 @@
             If dgvconcepto.RowCount <> 0 Then
 
                 Select Case e.ColumnIndex
-                    Case 4
+                    Case 6
 
                         Editar()
                         Return
-                    Case 5
+                    Case 7
                         Eliminar()
                         Return
 
-                    Case 6
+                    Case 8
                         MsgBox("Le dio check")
                         Return
 
@@ -290,5 +316,26 @@
             MsgBox(ex.Message)
         End Try
 
+    End Sub
+
+
+    Sub Mostrartodo() 'solovamos a mostrar los dados de baja
+        Try
+            If chktodo.Checked = True Then
+                dgvmanual(dgvconcepto)
+                ADConcepto.MostrarConceptoT(dgvconcepto)
+                btnAlta.Enabled = True
+            Else
+                Mostrardgv()
+                btnAlta.Enabled = False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub chktodo_CheckedChanged(sender As Object, e As EventArgs) Handles chktodo.CheckedChanged
+        Mostrartodo()
     End Sub
 End Class

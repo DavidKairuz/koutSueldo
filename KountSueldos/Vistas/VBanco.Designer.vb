@@ -47,6 +47,7 @@ Partial Class VBanco
         Me.txtdireccion = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtemail = New System.Windows.Forms.TextBox()
+        Me.chktodo = New System.Windows.Forms.CheckBox()
         CType(Me.dgvbanco, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,7 +56,7 @@ Partial Class VBanco
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(444, 69)
+        Me.Label4.Location = New System.Drawing.Point(610, 79)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 13)
         Me.Label4.TabIndex = 26
@@ -64,7 +65,7 @@ Partial Class VBanco
         'txtfiltro
         '
         Me.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtfiltro.Location = New System.Drawing.Point(503, 67)
+        Me.txtfiltro.Location = New System.Drawing.Point(669, 77)
         Me.txtfiltro.Name = "txtfiltro"
         Me.txtfiltro.Size = New System.Drawing.Size(220, 20)
         Me.txtfiltro.TabIndex = 25
@@ -317,11 +318,22 @@ Partial Class VBanco
         Me.txtemail.Size = New System.Drawing.Size(196, 20)
         Me.txtemail.TabIndex = 71
         '
+        'chktodo
+        '
+        Me.chktodo.AutoSize = True
+        Me.chktodo.Location = New System.Drawing.Point(370, 77)
+        Me.chktodo.Name = "chktodo"
+        Me.chktodo.Size = New System.Drawing.Size(91, 17)
+        Me.chktodo.TabIndex = 72
+        Me.chktodo.Text = "Mostrar todo :"
+        Me.chktodo.UseVisualStyleBackColor = True
+        '
         'VBanco
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 552)
+        Me.Controls.Add(Me.chktodo)
         Me.Controls.Add(Me.txtemail)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -382,4 +394,5 @@ Partial Class VBanco
     Friend WithEvents txtdireccion As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents txtemail As TextBox
+    Friend WithEvents chktodo As CheckBox
 End Class

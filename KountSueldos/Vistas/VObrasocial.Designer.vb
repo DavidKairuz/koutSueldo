@@ -31,6 +31,7 @@ Partial Class VObrasocial
         Me.dgvconvenio = New System.Windows.Forms.DataGridView()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
         Me.lbltitulo = New System.Windows.Forms.Label()
+        Me.pbcerrar = New System.Windows.Forms.PictureBox()
         Me.btnlimpiar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -38,7 +39,7 @@ Partial Class VObrasocial
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btnAlta = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
-        Me.pbcerrar = New System.Windows.Forms.PictureBox()
+        Me.chktodo = New System.Windows.Forms.CheckBox()
         CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,7 +48,7 @@ Partial Class VObrasocial
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(444, 74)
+        Me.Label4.Location = New System.Drawing.Point(544, 82)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 13)
         Me.Label4.TabIndex = 26
@@ -56,7 +57,7 @@ Partial Class VObrasocial
         'txtfiltro
         '
         Me.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtfiltro.Location = New System.Drawing.Point(503, 72)
+        Me.txtfiltro.Location = New System.Drawing.Point(603, 80)
         Me.txtfiltro.Name = "txtfiltro"
         Me.txtfiltro.Size = New System.Drawing.Size(220, 20)
         Me.txtfiltro.TabIndex = 25
@@ -129,6 +130,17 @@ Partial Class VObrasocial
         Me.lbltitulo.Size = New System.Drawing.Size(91, 19)
         Me.lbltitulo.TabIndex = 33
         Me.lbltitulo.Text = " Obra Social"
+        '
+        'pbcerrar
+        '
+        Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pbcerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.icon
+        Me.pbcerrar.Location = New System.Drawing.Point(895, 9)
+        Me.pbcerrar.Name = "pbcerrar"
+        Me.pbcerrar.Size = New System.Drawing.Size(29, 27)
+        Me.pbcerrar.TabIndex = 0
+        Me.pbcerrar.TabStop = False
         '
         'btnlimpiar
         '
@@ -230,22 +242,22 @@ Partial Class VObrasocial
         Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnguardar.UseVisualStyleBackColor = True
         '
-        'pbcerrar
+        'chktodo
         '
-        Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pbcerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.icon
-        Me.pbcerrar.Location = New System.Drawing.Point(895, 9)
-        Me.pbcerrar.Name = "pbcerrar"
-        Me.pbcerrar.Size = New System.Drawing.Size(29, 27)
-        Me.pbcerrar.TabIndex = 0
-        Me.pbcerrar.TabStop = False
+        Me.chktodo.AutoSize = True
+        Me.chktodo.Location = New System.Drawing.Point(397, 83)
+        Me.chktodo.Name = "chktodo"
+        Me.chktodo.Size = New System.Drawing.Size(91, 17)
+        Me.chktodo.TabIndex = 35
+        Me.chktodo.Text = "Mostrar todo :"
+        Me.chktodo.UseVisualStyleBackColor = True
         '
         'VObrasocial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1023, 555)
+        Me.Controls.Add(Me.chktodo)
         Me.Controls.Add(Me.btnlimpiar)
         Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.Button5)
@@ -290,4 +302,5 @@ Partial Class VObrasocial
     Friend WithEvents PanelSuperior As Panel
     Friend WithEvents lbltitulo As Label
     Friend WithEvents pbcerrar As PictureBox
+    Friend WithEvents chktodo As CheckBox
 End Class

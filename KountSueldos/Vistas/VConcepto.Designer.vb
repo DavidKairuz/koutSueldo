@@ -45,6 +45,9 @@ Partial Class VConcepto
         Me.cbotipoconcep = New System.Windows.Forms.ComboBox()
         Me.txtvalor = New System.Windows.Forms.TextBox()
         Me.cboestado = New System.Windows.Forms.ComboBox()
+        Me.chktodo = New System.Windows.Forms.CheckBox()
+        Me.lblley = New System.Windows.Forms.Label()
+        Me.txtley = New System.Windows.Forms.TextBox()
         CType(Me.dgvconcepto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,7 +56,7 @@ Partial Class VConcepto
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(444, 74)
+        Me.Label4.Location = New System.Drawing.Point(544, 79)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 13)
         Me.Label4.TabIndex = 26
@@ -62,7 +65,7 @@ Partial Class VConcepto
         'txtfiltro
         '
         Me.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtfiltro.Location = New System.Drawing.Point(503, 72)
+        Me.txtfiltro.Location = New System.Drawing.Point(603, 77)
         Me.txtfiltro.Name = "txtfiltro"
         Me.txtfiltro.Size = New System.Drawing.Size(220, 20)
         Me.txtfiltro.TabIndex = 25
@@ -70,7 +73,7 @@ Partial Class VConcepto
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(43, 123)
+        Me.Label2.Location = New System.Drawing.Point(27, 119)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 24
@@ -79,7 +82,7 @@ Partial Class VConcepto
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(66, 77)
+        Me.Label1.Location = New System.Drawing.Point(50, 77)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 23
@@ -87,7 +90,7 @@ Partial Class VConcepto
         '
         'txtdescripcion
         '
-        Me.txtdescripcion.Location = New System.Drawing.Point(127, 117)
+        Me.txtdescripcion.Location = New System.Drawing.Point(127, 112)
         Me.txtdescripcion.Multiline = True
         Me.txtdescripcion.Name = "txtdescripcion"
         Me.txtdescripcion.Size = New System.Drawing.Size(159, 32)
@@ -109,9 +112,9 @@ Partial Class VConcepto
         Me.dgvconcepto.AllowUserToResizeRows = False
         Me.dgvconcepto.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.dgvconcepto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvconcepto.Location = New System.Drawing.Point(370, 117)
+        Me.dgvconcepto.Location = New System.Drawing.Point(332, 117)
         Me.dgvconcepto.Name = "dgvconcepto"
-        Me.dgvconcepto.Size = New System.Drawing.Size(453, 427)
+        Me.dgvconcepto.Size = New System.Drawing.Size(505, 427)
         Me.dgvconcepto.TabIndex = 20
         '
         'PanelSuperior
@@ -122,7 +125,7 @@ Partial Class VConcepto
         Me.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelSuperior.Location = New System.Drawing.Point(0, 0)
         Me.PanelSuperior.Name = "PanelSuperior"
-        Me.PanelSuperior.Size = New System.Drawing.Size(1025, 45)
+        Me.PanelSuperior.Size = New System.Drawing.Size(950, 45)
         Me.PanelSuperior.TabIndex = 19
         '
         'lbltitulo
@@ -154,7 +157,7 @@ Partial Class VConcepto
         Me.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnlimpiar.Image = Global.KountSueldos.My.Resources.Resources.clean
         Me.btnlimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnlimpiar.Location = New System.Drawing.Point(127, 375)
+        Me.btnlimpiar.Location = New System.Drawing.Point(118, 446)
         Me.btnlimpiar.Name = "btnlimpiar"
         Me.btnlimpiar.Size = New System.Drawing.Size(101, 37)
         Me.btnlimpiar.TabIndex = 33
@@ -168,7 +171,7 @@ Partial Class VConcepto
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.web
         Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnnuevo.Location = New System.Drawing.Point(19, 318)
+        Me.btnnuevo.Location = New System.Drawing.Point(10, 389)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(101, 37)
         Me.btnnuevo.TabIndex = 32
@@ -182,9 +185,9 @@ Partial Class VConcepto
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.Image = Global.KountSueldos.My.Resources.Resources.pdf1
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(837, 179)
+        Me.Button5.Location = New System.Drawing.Point(851, 183)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(101, 37)
+        Me.Button5.Size = New System.Drawing.Size(87, 37)
         Me.Button5.TabIndex = 31
         Me.Button5.Text = "PDF"
         Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -196,9 +199,9 @@ Partial Class VConcepto
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Image = Global.KountSueldos.My.Resources.Resources.tecnologia
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(837, 117)
+        Me.Button4.Location = New System.Drawing.Point(851, 121)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(101, 37)
+        Me.Button4.Size = New System.Drawing.Size(87, 37)
         Me.Button4.TabIndex = 30
         Me.Button4.Text = "Imprimir"
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -210,9 +213,9 @@ Partial Class VConcepto
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Image = Global.KountSueldos.My.Resources.Resources.logo
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(837, 238)
+        Me.Button3.Location = New System.Drawing.Point(851, 242)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(101, 37)
+        Me.Button3.Size = New System.Drawing.Size(87, 37)
         Me.Button3.TabIndex = 29
         Me.Button3.Text = "Excel"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -225,7 +228,7 @@ Partial Class VConcepto
         Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAlta.Image = Global.KountSueldos.My.Resources.Resources.edit
         Me.btnAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAlta.Location = New System.Drawing.Point(234, 318)
+        Me.btnAlta.Location = New System.Drawing.Point(225, 389)
         Me.btnAlta.Name = "btnAlta"
         Me.btnAlta.Size = New System.Drawing.Size(101, 37)
         Me.btnAlta.TabIndex = 28
@@ -239,7 +242,7 @@ Partial Class VConcepto
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Image = Global.KountSueldos.My.Resources.Resources.web
         Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnguardar.Location = New System.Drawing.Point(127, 318)
+        Me.btnguardar.Location = New System.Drawing.Point(118, 389)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(101, 37)
         Me.btnguardar.TabIndex = 27
@@ -250,7 +253,7 @@ Partial Class VConcepto
         'lbltipo
         '
         Me.lbltipo.AutoSize = True
-        Me.lbltipo.Location = New System.Drawing.Point(62, 163)
+        Me.lbltipo.Location = New System.Drawing.Point(37, 199)
         Me.lbltipo.Name = "lbltipo"
         Me.lbltipo.Size = New System.Drawing.Size(53, 26)
         Me.lbltipo.TabIndex = 34
@@ -259,7 +262,7 @@ Partial Class VConcepto
         'lblvalor
         '
         Me.lblvalor.AutoSize = True
-        Me.lblvalor.Location = New System.Drawing.Point(66, 207)
+        Me.lblvalor.Location = New System.Drawing.Point(59, 243)
         Me.lblvalor.Name = "lblvalor"
         Me.lblvalor.Size = New System.Drawing.Size(31, 13)
         Me.lblvalor.TabIndex = 35
@@ -268,7 +271,7 @@ Partial Class VConcepto
         'lblestado
         '
         Me.lblestado.AutoSize = True
-        Me.lblestado.Location = New System.Drawing.Point(66, 238)
+        Me.lblestado.Location = New System.Drawing.Point(47, 274)
         Me.lblestado.Name = "lblestado"
         Me.lblestado.Size = New System.Drawing.Size(43, 26)
         Me.lblestado.TabIndex = 36
@@ -277,14 +280,14 @@ Partial Class VConcepto
         'cbotipoconcep
         '
         Me.cbotipoconcep.FormattingEnabled = True
-        Me.cbotipoconcep.Location = New System.Drawing.Point(127, 169)
+        Me.cbotipoconcep.Location = New System.Drawing.Point(127, 200)
         Me.cbotipoconcep.Name = "cbotipoconcep"
         Me.cbotipoconcep.Size = New System.Drawing.Size(159, 21)
         Me.cbotipoconcep.TabIndex = 37
         '
         'txtvalor
         '
-        Me.txtvalor.Location = New System.Drawing.Point(128, 203)
+        Me.txtvalor.Location = New System.Drawing.Point(128, 239)
         Me.txtvalor.Name = "txtvalor"
         Me.txtvalor.Size = New System.Drawing.Size(158, 20)
         Me.txtvalor.TabIndex = 38
@@ -292,16 +295,45 @@ Partial Class VConcepto
         'cboestado
         '
         Me.cboestado.FormattingEnabled = True
-        Me.cboestado.Location = New System.Drawing.Point(127, 238)
+        Me.cboestado.Location = New System.Drawing.Point(127, 277)
         Me.cboestado.Name = "cboestado"
         Me.cboestado.Size = New System.Drawing.Size(159, 21)
         Me.cboestado.TabIndex = 39
+        '
+        'chktodo
+        '
+        Me.chktodo.AutoSize = True
+        Me.chktodo.Location = New System.Drawing.Point(381, 80)
+        Me.chktodo.Name = "chktodo"
+        Me.chktodo.Size = New System.Drawing.Size(91, 17)
+        Me.chktodo.TabIndex = 40
+        Me.chktodo.Text = "Mostrar todo :"
+        Me.chktodo.UseVisualStyleBackColor = True
+        '
+        'lblley
+        '
+        Me.lblley.AutoSize = True
+        Me.lblley.Location = New System.Drawing.Point(66, 165)
+        Me.lblley.Name = "lblley"
+        Me.lblley.Size = New System.Drawing.Size(24, 13)
+        Me.lblley.TabIndex = 42
+        Me.lblley.Text = "Ley"
+        '
+        'txtley
+        '
+        Me.txtley.Location = New System.Drawing.Point(127, 162)
+        Me.txtley.Name = "txtley"
+        Me.txtley.Size = New System.Drawing.Size(159, 20)
+        Me.txtley.TabIndex = 41
         '
         'VConcepto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1025, 555)
+        Me.ClientSize = New System.Drawing.Size(950, 611)
+        Me.Controls.Add(Me.lblley)
+        Me.Controls.Add(Me.txtley)
+        Me.Controls.Add(Me.chktodo)
         Me.Controls.Add(Me.cboestado)
         Me.Controls.Add(Me.txtvalor)
         Me.Controls.Add(Me.cbotipoconcep)
@@ -358,4 +390,7 @@ Partial Class VConcepto
     Friend WithEvents cbotipoconcep As ComboBox
     Friend WithEvents txtvalor As TextBox
     Friend WithEvents cboestado As ComboBox
+    Friend WithEvents chktodo As CheckBox
+    Friend WithEvents lblley As Label
+    Friend WithEvents txtley As TextBox
 End Class

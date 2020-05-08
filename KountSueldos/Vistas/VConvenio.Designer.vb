@@ -24,6 +24,7 @@ Partial Class VConvenio
     Private Sub InitializeComponent()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
         Me.lbltitulo = New System.Windows.Forms.Label()
+        Me.pbcerrar = New System.Windows.Forms.PictureBox()
         Me.dgvconvenio = New System.Windows.Forms.DataGridView()
         Me.txtcod = New System.Windows.Forms.TextBox()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
@@ -38,10 +39,10 @@ Partial Class VConvenio
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btnAlta = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
-        Me.pbcerrar = New System.Windows.Forms.PictureBox()
+        Me.chktodo = New System.Windows.Forms.CheckBox()
         Me.PanelSuperior.SuspendLayout()
-        CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelSuperior
@@ -65,6 +66,17 @@ Partial Class VConvenio
         Me.lbltitulo.Size = New System.Drawing.Size(78, 19)
         Me.lbltitulo.TabIndex = 33
         Me.lbltitulo.Text = " Convenio"
+        '
+        'pbcerrar
+        '
+        Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pbcerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.icon
+        Me.pbcerrar.Location = New System.Drawing.Point(895, 9)
+        Me.pbcerrar.Name = "pbcerrar"
+        Me.pbcerrar.Size = New System.Drawing.Size(29, 27)
+        Me.pbcerrar.TabIndex = 0
+        Me.pbcerrar.TabStop = False
         '
         'dgvconvenio
         '
@@ -116,7 +128,7 @@ Partial Class VConvenio
         'txtfiltro
         '
         Me.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtfiltro.Location = New System.Drawing.Point(503, 81)
+        Me.txtfiltro.Location = New System.Drawing.Point(603, 84)
         Me.txtfiltro.Name = "txtfiltro"
         Me.txtfiltro.Size = New System.Drawing.Size(220, 20)
         Me.txtfiltro.TabIndex = 10
@@ -124,7 +136,7 @@ Partial Class VConvenio
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(444, 83)
+        Me.Label4.Location = New System.Drawing.Point(544, 86)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 13)
         Me.Label4.TabIndex = 11
@@ -230,22 +242,22 @@ Partial Class VConvenio
         Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnguardar.UseVisualStyleBackColor = True
         '
-        'pbcerrar
+        'chktodo
         '
-        Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pbcerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.icon
-        Me.pbcerrar.Location = New System.Drawing.Point(895, 9)
-        Me.pbcerrar.Name = "pbcerrar"
-        Me.pbcerrar.Size = New System.Drawing.Size(29, 27)
-        Me.pbcerrar.TabIndex = 0
-        Me.pbcerrar.TabStop = False
+        Me.chktodo.AutoSize = True
+        Me.chktodo.Location = New System.Drawing.Point(384, 87)
+        Me.chktodo.Name = "chktodo"
+        Me.chktodo.Size = New System.Drawing.Size(91, 17)
+        Me.chktodo.TabIndex = 35
+        Me.chktodo.Text = "Mostrar todo :"
+        Me.chktodo.UseVisualStyleBackColor = True
         '
         'VConvenio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(950, 611)
+        Me.Controls.Add(Me.chktodo)
         Me.Controls.Add(Me.btnlimpiar)
         Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.Button5)
@@ -267,8 +279,8 @@ Partial Class VConvenio
         Me.Text = "Convenio"
         Me.PanelSuperior.ResumeLayout(False)
         Me.PanelSuperior.PerformLayout()
-        CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -291,4 +303,5 @@ Partial Class VConvenio
     Friend WithEvents lbltitulo As Label
     Friend WithEvents btnnuevo As Button
     Friend WithEvents btnlimpiar As Button
+    Friend WithEvents chktodo As CheckBox
 End Class

@@ -42,7 +42,7 @@
         Dim bn = (From b In ctx.Tipo_Concepto
                   Where b.id_tipoconcepto = id
                   Select b).SingleOrDefault
-        bn.estadobaja = 0
+        bn.estadobaja = 1
         ctx.SaveChanges()
 
     End Sub
@@ -67,6 +67,7 @@
         End If
         Return result
     End Function
+
 
 
     Shared Sub Filtra(txt As TextBox, dgv As DataGridView)
@@ -102,5 +103,26 @@
         combo.SelectedValue = -1
 
     End Sub
+
+
+    Shared Function ExisteID(id As Integer) As Boolean
+        Dim result As Boolean = False
+        If ctx.Tipo_Concepto.Any(Function(o) o.id_tipoconcepto = id) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
+
+    Shared Function ExisteIDEstado(id As Integer) As Boolean
+        Dim result As Boolean = False
+        If ctx.Tipo_Concepto.Any(Function(o) o.id_tipoconcepto = id) And (ctx.Tipo_Concepto.Any(Function(o) o.estadobaja = True)) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
 
 End Class

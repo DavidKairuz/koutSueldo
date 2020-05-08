@@ -39,6 +39,7 @@ Partial Class VTipoContrato
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnAlta = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
+        Me.chktodo = New System.Windows.Forms.CheckBox()
         CType(Me.dgvtipocontrato, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,7 +48,7 @@ Partial Class VTipoContrato
         'lblfiltro
         '
         Me.lblfiltro.AutoSize = True
-        Me.lblfiltro.Location = New System.Drawing.Point(382, 97)
+        Me.lblfiltro.Location = New System.Drawing.Point(507, 97)
         Me.lblfiltro.Name = "lblfiltro"
         Me.lblfiltro.Size = New System.Drawing.Size(40, 13)
         Me.lblfiltro.TabIndex = 26
@@ -56,7 +57,7 @@ Partial Class VTipoContrato
         'txtfiltro
         '
         Me.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtfiltro.Location = New System.Drawing.Point(440, 95)
+        Me.txtfiltro.Location = New System.Drawing.Point(565, 95)
         Me.txtfiltro.Name = "txtfiltro"
         Me.txtfiltro.Size = New System.Drawing.Size(220, 20)
         Me.txtfiltro.TabIndex = 25
@@ -234,11 +235,22 @@ Partial Class VTipoContrato
         Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnguardar.UseVisualStyleBackColor = True
         '
+        'chktodo
+        '
+        Me.chktodo.AutoSize = True
+        Me.chktodo.Location = New System.Drawing.Point(365, 97)
+        Me.chktodo.Name = "chktodo"
+        Me.chktodo.Size = New System.Drawing.Size(91, 17)
+        Me.chktodo.TabIndex = 38
+        Me.chktodo.Text = "Mostrar todo :"
+        Me.chktodo.UseVisualStyleBackColor = True
+        '
         'VTipoContrato
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(934, 611)
+        Me.Controls.Add(Me.chktodo)
         Me.Controls.Add(Me.btnlimpiar)
         Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.btnAlta)
@@ -283,4 +295,5 @@ Partial Class VTipoContrato
     Friend WithEvents btnnuevo As Button
     Friend WithEvents btnAlta As Button
     Friend WithEvents btnguardar As Button
+    Friend WithEvents chktodo As CheckBox
 End Class

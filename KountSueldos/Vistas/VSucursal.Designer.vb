@@ -45,6 +45,7 @@ Partial Class VSucursal
         Me.txttelefono = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtdireccion = New System.Windows.Forms.TextBox()
+        Me.chktodo = New System.Windows.Forms.CheckBox()
         CType(Me.dgvsucursal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -153,7 +154,7 @@ Partial Class VSucursal
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(444, 70)
+        Me.Label4.Location = New System.Drawing.Point(544, 77)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 13)
         Me.Label4.TabIndex = 41
@@ -162,7 +163,7 @@ Partial Class VSucursal
         'txtfiltro
         '
         Me.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtfiltro.Location = New System.Drawing.Point(503, 68)
+        Me.txtfiltro.Location = New System.Drawing.Point(603, 75)
         Me.txtfiltro.Name = "txtfiltro"
         Me.txtfiltro.Size = New System.Drawing.Size(220, 20)
         Me.txtfiltro.TabIndex = 40
@@ -295,11 +296,22 @@ Partial Class VSucursal
         Me.txtdireccion.Size = New System.Drawing.Size(243, 20)
         Me.txtdireccion.TabIndex = 63
         '
+        'chktodo
+        '
+        Me.chktodo.AutoSize = True
+        Me.chktodo.Location = New System.Drawing.Point(389, 82)
+        Me.chktodo.Name = "chktodo"
+        Me.chktodo.Size = New System.Drawing.Size(91, 17)
+        Me.chktodo.TabIndex = 69
+        Me.chktodo.Text = "Mostrar todo :"
+        Me.chktodo.UseVisualStyleBackColor = True
+        '
         'VSucursal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1019, 558)
+        Me.Controls.Add(Me.chktodo)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.cborazonsoc)
         Me.Controls.Add(Me.Label5)
@@ -356,4 +368,5 @@ Partial Class VSucursal
     Friend WithEvents txttelefono As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txtdireccion As TextBox
+    Friend WithEvents chktodo As CheckBox
 End Class

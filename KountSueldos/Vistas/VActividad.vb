@@ -205,4 +205,8 @@
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         Agregar()
     End Sub
+
+    Private Sub chktodo_CheckedChanged(sender As Object, e As EventArgs) Handles chktodo.CheckedChanged
+
+    End Sub
 End Class

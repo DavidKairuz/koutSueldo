@@ -43,6 +43,7 @@ Partial Class VActividad
         Me.lblconvenio = New System.Windows.Forms.Label()
         Me.cbocategoria = New System.Windows.Forms.ComboBox()
         Me.lblunidad = New System.Windows.Forms.Label()
+        Me.chktodo = New System.Windows.Forms.CheckBox()
         CType(Me.dgvactividad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,7 +52,7 @@ Partial Class VActividad
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(444, 68)
+        Me.Label4.Location = New System.Drawing.Point(538, 79)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 13)
         Me.Label4.TabIndex = 26
@@ -60,7 +61,7 @@ Partial Class VActividad
         'txtfiltro
         '
         Me.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtfiltro.Location = New System.Drawing.Point(503, 66)
+        Me.txtfiltro.Location = New System.Drawing.Point(597, 77)
         Me.txtfiltro.Name = "txtfiltro"
         Me.txtfiltro.Size = New System.Drawing.Size(220, 20)
         Me.txtfiltro.TabIndex = 25
@@ -280,11 +281,22 @@ Partial Class VActividad
         Me.lblunidad.TabIndex = 37
         Me.lblunidad.Text = "Categoria"
         '
+        'chktodo
+        '
+        Me.chktodo.AutoSize = True
+        Me.chktodo.Location = New System.Drawing.Point(384, 79)
+        Me.chktodo.Name = "chktodo"
+        Me.chktodo.Size = New System.Drawing.Size(91, 17)
+        Me.chktodo.TabIndex = 38
+        Me.chktodo.Text = "Mostrar todo :"
+        Me.chktodo.UseVisualStyleBackColor = True
+        '
         'VActividad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1022, 557)
+        Me.Controls.Add(Me.chktodo)
         Me.Controls.Add(Me.lblunidad)
         Me.Controls.Add(Me.cbocategoria)
         Me.Controls.Add(Me.lblconvenio)
@@ -337,4 +349,5 @@ Partial Class VActividad
     Friend WithEvents lblconvenio As Label
     Friend WithEvents cbocategoria As ComboBox
     Friend WithEvents lblunidad As Label
+    Friend WithEvents chktodo As CheckBox
 End Class

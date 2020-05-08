@@ -43,6 +43,7 @@ Partial Class VCategoriaC
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cboconvenio = New System.Windows.Forms.ComboBox()
         Me.txtbasico = New System.Windows.Forms.TextBox()
+        Me.chktodo = New System.Windows.Forms.CheckBox()
         CType(Me.dgvcategoria, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,7 +52,7 @@ Partial Class VCategoriaC
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(444, 75)
+        Me.Label4.Location = New System.Drawing.Point(543, 86)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 13)
         Me.Label4.TabIndex = 26
@@ -60,7 +61,7 @@ Partial Class VCategoriaC
         'txtfiltro
         '
         Me.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtfiltro.Location = New System.Drawing.Point(503, 73)
+        Me.txtfiltro.Location = New System.Drawing.Point(602, 84)
         Me.txtfiltro.Name = "txtfiltro"
         Me.txtfiltro.Size = New System.Drawing.Size(220, 20)
         Me.txtfiltro.TabIndex = 25
@@ -279,11 +280,22 @@ Partial Class VCategoriaC
         Me.txtbasico.Size = New System.Drawing.Size(121, 20)
         Me.txtbasico.TabIndex = 38
         '
+        'chktodo
+        '
+        Me.chktodo.AutoSize = True
+        Me.chktodo.Location = New System.Drawing.Point(370, 85)
+        Me.chktodo.Name = "chktodo"
+        Me.chktodo.Size = New System.Drawing.Size(91, 17)
+        Me.chktodo.TabIndex = 39
+        Me.chktodo.Text = "Mostrar todo :"
+        Me.chktodo.UseVisualStyleBackColor = True
+        '
         'VCategoriaC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1044, 552)
+        Me.Controls.Add(Me.chktodo)
         Me.Controls.Add(Me.txtbasico)
         Me.Controls.Add(Me.cboconvenio)
         Me.Controls.Add(Me.Label3)
@@ -336,4 +348,5 @@ Partial Class VCategoriaC
     Friend WithEvents Label3 As Label
     Friend WithEvents cboconvenio As ComboBox
     Friend WithEvents txtbasico As TextBox
+    Friend WithEvents chktodo As CheckBox
 End Class

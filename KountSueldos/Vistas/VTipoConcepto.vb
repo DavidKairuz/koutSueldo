@@ -147,6 +147,24 @@
 
     End Sub
 
+    Function ExisteReg() As Boolean
+        Dim res As Boolean
+        Try
+            If txtcod.Text.Trim <> "" Or txtcod.Text.Trim <> 0 Then
+                Dim id As Integer = txtcod.Text
+                If ADTipoConcepto.ExisteID(id) = True Then
+                    res = True
+                    MsgBox("Existe")
+                Else
+                    MsgBox("no Existe")
+                    res = False
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Return res
+    End Function
     Sub Guardar()
         Try
             If dgvtipoconcep.RowCount = 0 Then
@@ -155,20 +173,24 @@
                 If txtdescripcion.Text.Trim = "" Or txtcod.Text.Trim = "" Then
                     MsgBox("Debe seleccionar un registro", MsgBoxStyle.Critical, "Error")
                 Else
+                    If ExisteReg() = True Then
+                        If MsgBox("Seguro desea dar de modificar este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
+                            Dim id As Integer = dgvtipoconcep.CurrentRow.Cells(0).Value
+                            ADTipoConcepto.ModificarTipo_Concepto(id, txtdescripcion.Text)
+                            MsgBox("el registro se modifico exitosamente", MsgBoxStyle.Information, "Modificación")
+                            btnguardar.Enabled = False
+                        Else
+                            MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
+                            limpiar()
+                            'indice()
 
-                    If MsgBox("Seguro desea dar de modificar este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
-                        Dim id As Integer = dgvtipoconcep.CurrentRow.Cells(0).Value
-                        ADTipoConcepto.ModificarTipo_Concepto(id, txtdescripcion.Text)
-                        MsgBox("el registro se modifico exitosamente", MsgBoxStyle.Information, "Modificación")
+                        End If
                     Else
-                        MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
-                        limpiar()
-                        'indice()
-
+                        MsgBox("Debe seleccionar el boton agregar para un nuevo registro,Guardar es para modificar datos", MsgBoxStyle.Information, "Mensaje")
                     End If
                 End If
 
-            End If
+                End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -245,6 +267,7 @@
                     Case 2
 
                         Editar()
+                        btnguardar.Enabled = True
                         Return
                     Case 3
                         Eliminar()
@@ -263,5 +286,24 @@
             MsgBox(ex.Message)
         End Try
 
+    End Sub
+
+    Sub Mostrartodo() 'solovamos a mostrar los dados de baja
+        Try
+            If chktodo.Checked = True Then
+                dgvmanual(dgvtipoconcep)
+                ADTipoConcepto.MostrarTipo_ConceptoT(dgvtipoconcep)
+                btnAlta.Enabled = True
+            Else
+                Mostrardgv()
+                btnAlta.Enabled = False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Private Sub chktodo_CheckedChanged(sender As Object, e As EventArgs) Handles chktodo.CheckedChanged
+        Mostrartodo()
     End Sub
 End Class

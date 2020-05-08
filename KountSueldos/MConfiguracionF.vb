@@ -17,5 +17,13 @@
         dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgv.AutoResizeRows()
         dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.Coral
+    End Sub
+
+
+    Sub ConfigBotones(guarda As Button, alta As Button)
+        guarda.Enabled = False 'hace refencia a guardar
+        alta.Enabled = False ' hace referencia a alta
     End Sub
 End Module
