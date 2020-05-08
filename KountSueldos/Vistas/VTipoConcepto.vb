@@ -1,14 +1,11 @@
 ﻿Public Class VTipoConcepto
-    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
-
-    End Sub
 
     Private Sub VTipoConcepto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MConfiguracionF.TamañoForm(Me)
         dgvmanual(dgvtipoconcep)
         MConfiguracionF.configDGV(dgvtipoconcep)
         Mostrardgv()
-        ' indice()
+        indice()
     End Sub
 
     Sub Mostrardgv()
@@ -73,7 +70,15 @@
         txtdescripcion.Clear()
     End Sub
     Sub indice()
-        txtcod.Text = ADTipoConcepto.index()
+        Try
+            If ADTipoConcepto.index() = 0 Then
+                txtcod.Text = 1
+            Else
+                txtcod.Text = ADTipoConcepto.index()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
     Function DatosVacios() As Boolean
@@ -82,9 +87,9 @@
         Try
 
             If txtdescripcion.Text.Trim = "" Then
-                result = False
-            Else
                 result = True
+            Else
+                result = False
 
             End If
         Catch ex As Exception
@@ -108,13 +113,10 @@
                                     .estadobaja = 1
                                                           })
 
-
-
-
                     ADTipoConcepto.MostrarTipo_Concepto(dgvtipoconcep)
                     limpiar()
                     MsgBox("El registro ha sido agregado exitosamente", MsgBoxStyle.Information, "Gestión")
-                    indice()
+                    limpiar()
 
                 Else
                     MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
@@ -132,8 +134,17 @@
 
 
     Sub Editar()
-        txtcod.Text = CStr(dgvtipoconcep.CurrentRow.Cells(0).Value)
-        txtdescripcion.Text = CStr(dgvtipoconcep.CurrentRow.Cells(1).Value)
+        Try
+            If dgvtipoconcep.RowCount > 0 Then
+                txtcod.Text = CStr(dgvtipoconcep.CurrentRow.Cells(0).Value)
+                txtdescripcion.Text = CStr(dgvtipoconcep.CurrentRow.Cells(1).Value)
+            Else
+                MsgBox("No hay registros para editar", MsgBoxStyle.Information, "Mensaje")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Sub Guardar()
@@ -142,17 +153,24 @@
                 MsgBox("No hay registros para editar", MsgBoxStyle.Critical, "Error")
             Else
                 If txtdescripcion.Text.Trim = "" Or txtcod.Text.Trim = "" Then
-
+                    MsgBox("Debe seleccionar un registro", MsgBoxStyle.Critical, "Error")
                 Else
 
-                    Dim id As Integer = dgvtipoconcep.CurrentRow.Cells(0).Value
-                    ADTipoConcepto.ModificarTipo_Concepto(id, txtdescripcion.Text)
-                End If
+                    If MsgBox("Seguro desea dar de modificar este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
+                        Dim id As Integer = dgvtipoconcep.CurrentRow.Cells(0).Value
+                        ADTipoConcepto.ModificarTipo_Concepto(id, txtdescripcion.Text)
+                        MsgBox("el registro se modifico exitosamente", MsgBoxStyle.Information, "Modificación")
+                    Else
+                        MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
+                        limpiar()
+                        'indice()
 
+                    End If
+                End If
 
             End If
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
     End Sub
@@ -165,19 +183,21 @@
                 If MsgBox("Seguro desea dar de alta este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
 
                     Dim ide = dgvtipoconcep.CurrentRow().Cells(0).Value
-                    If ide <> 0 Then
-
+                    If ide <> 0 And txtdescripcion.Text.Trim <> "" Then
+                        'aca hay que hacer otra funcion y ver que no exista el registro o controlar se haya clickeado sobre editar 
 
                         ADTipoConcepto.DarAlta(ide)
                         ADTipoConcepto.MostrarTipo_Concepto(dgvtipoconcep)
                         MsgBox("Registro actualizado con éxito", MsgBoxStyle.Information, "Actualización")
-                        indice()
+                        limpiar()
+                        '  indice()
                     Else
                         MsgBox("Hubo un error al intentar acceder a la base de datos", MsgBoxStyle.Critical, "Error")
                     End If
                 Else
                     MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
                     limpiar()
+                    '   indice()
                 End If
             End If
         Catch ex As Exception
@@ -187,5 +207,61 @@
 
     Private Sub txtfiltro_TextChanged(sender As Object, e As EventArgs) Handles txtfiltro.TextChanged
         ADTipoConcepto.Filtra(txtfiltro, dgvtipoconcep)
+    End Sub
+
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+        Agregar()
+        dgvtipoconcep.DataSource = Nothing
+        Mostrardgv()
+        limpiar()
+        indice()
+    End Sub
+
+    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+        Guardar()
+        dgvtipoconcep.DataSource = Nothing
+        Mostrardgv()
+        limpiar()
+        indice()
+    End Sub
+
+    Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
+        Alta()
+        dgvtipoconcep.DataSource = Nothing
+        Mostrardgv()
+        indice()
+    End Sub
+
+    Private Sub btnlimpiar_Click(sender As Object, e As EventArgs) Handles btnlimpiar.Click
+        limpiar()
+        indice()
+    End Sub
+
+    Private Sub dgvtipoconcep_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvtipoconcep.CellContentClick
+        Try
+            If dgvtipoconcep.RowCount <> 0 Then
+
+                Select Case e.ColumnIndex
+                    Case 2
+
+                        Editar()
+                        Return
+                    Case 3
+                        Eliminar()
+                        Return
+
+                    Case 4
+                        MsgBox("Le dio check")
+                        Return
+
+                End Select
+            Else
+
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 End Class

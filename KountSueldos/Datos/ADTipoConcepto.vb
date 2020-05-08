@@ -82,10 +82,25 @@
         i = CInt(ext.ToString)
         If i > 0 Then
             Return i + 1
+        ElseIf IsDBNull(i) Then
+            i = 1
         Else
             i = 0
+
         End If
         Return i
     End Function
+
+
+    Shared Sub MostrarCombo(combo As ComboBox)
+        Dim uni = (From e In ctx.Tipo_Concepto
+                   Select e).ToList
+
+        combo.DataSource = uni
+        combo.DisplayMember = "descripcion"
+        combo.ValueMember = "id_tipoconcepto"
+        combo.SelectedValue = -1
+
+    End Sub
 
 End Class

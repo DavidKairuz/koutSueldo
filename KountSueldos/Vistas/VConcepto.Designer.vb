@@ -28,9 +28,10 @@ Partial Class VConcepto
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.txtcod = New System.Windows.Forms.TextBox()
-        Me.dgvconvenio = New System.Windows.Forms.DataGridView()
+        Me.dgvconcepto = New System.Windows.Forms.DataGridView()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
         Me.lbltitulo = New System.Windows.Forms.Label()
+        Me.pbcerrar = New System.Windows.Forms.PictureBox()
         Me.btnlimpiar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -38,8 +39,13 @@ Partial Class VConcepto
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btnAlta = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
-        Me.pbcerrar = New System.Windows.Forms.PictureBox()
-        CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.lbltipo = New System.Windows.Forms.Label()
+        Me.lblvalor = New System.Windows.Forms.Label()
+        Me.lblestado = New System.Windows.Forms.Label()
+        Me.cbotipoconcep = New System.Windows.Forms.ComboBox()
+        Me.txtvalor = New System.Windows.Forms.TextBox()
+        Me.cboestado = New System.Windows.Forms.ComboBox()
+        CType(Me.dgvconcepto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -64,7 +70,7 @@ Partial Class VConcepto
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(43, 207)
+        Me.Label2.Location = New System.Drawing.Point(43, 123)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 24
@@ -73,7 +79,7 @@ Partial Class VConcepto
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(66, 165)
+        Me.Label1.Location = New System.Drawing.Point(66, 77)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 23
@@ -81,7 +87,7 @@ Partial Class VConcepto
         '
         'txtdescripcion
         '
-        Me.txtdescripcion.Location = New System.Drawing.Point(127, 205)
+        Me.txtdescripcion.Location = New System.Drawing.Point(127, 117)
         Me.txtdescripcion.Multiline = True
         Me.txtdescripcion.Name = "txtdescripcion"
         Me.txtdescripcion.Size = New System.Drawing.Size(159, 32)
@@ -90,23 +96,23 @@ Partial Class VConcepto
         'txtcod
         '
         Me.txtcod.Enabled = False
-        Me.txtcod.Location = New System.Drawing.Point(127, 162)
+        Me.txtcod.Location = New System.Drawing.Point(127, 74)
         Me.txtcod.Name = "txtcod"
         Me.txtcod.Size = New System.Drawing.Size(159, 20)
         Me.txtcod.TabIndex = 21
         '
-        'dgvconvenio
+        'dgvconcepto
         '
-        Me.dgvconvenio.AllowUserToAddRows = False
-        Me.dgvconvenio.AllowUserToDeleteRows = False
-        Me.dgvconvenio.AllowUserToResizeColumns = False
-        Me.dgvconvenio.AllowUserToResizeRows = False
-        Me.dgvconvenio.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.dgvconvenio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvconvenio.Location = New System.Drawing.Point(370, 117)
-        Me.dgvconvenio.Name = "dgvconvenio"
-        Me.dgvconvenio.Size = New System.Drawing.Size(453, 427)
-        Me.dgvconvenio.TabIndex = 20
+        Me.dgvconcepto.AllowUserToAddRows = False
+        Me.dgvconcepto.AllowUserToDeleteRows = False
+        Me.dgvconcepto.AllowUserToResizeColumns = False
+        Me.dgvconcepto.AllowUserToResizeRows = False
+        Me.dgvconcepto.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.dgvconcepto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvconcepto.Location = New System.Drawing.Point(370, 117)
+        Me.dgvconcepto.Name = "dgvconcepto"
+        Me.dgvconcepto.Size = New System.Drawing.Size(453, 427)
+        Me.dgvconcepto.TabIndex = 20
         '
         'PanelSuperior
         '
@@ -129,6 +135,17 @@ Partial Class VConcepto
         Me.lbltitulo.Size = New System.Drawing.Size(79, 19)
         Me.lbltitulo.TabIndex = 33
         Me.lbltitulo.Text = " Concepto"
+        '
+        'pbcerrar
+        '
+        Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pbcerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.icon
+        Me.pbcerrar.Location = New System.Drawing.Point(895, 9)
+        Me.pbcerrar.Name = "pbcerrar"
+        Me.pbcerrar.Size = New System.Drawing.Size(29, 27)
+        Me.pbcerrar.TabIndex = 0
+        Me.pbcerrar.TabStop = False
         '
         'btnlimpiar
         '
@@ -230,22 +247,67 @@ Partial Class VConcepto
         Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnguardar.UseVisualStyleBackColor = True
         '
-        'pbcerrar
+        'lbltipo
         '
-        Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pbcerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.icon
-        Me.pbcerrar.Location = New System.Drawing.Point(895, 9)
-        Me.pbcerrar.Name = "pbcerrar"
-        Me.pbcerrar.Size = New System.Drawing.Size(29, 27)
-        Me.pbcerrar.TabIndex = 0
-        Me.pbcerrar.TabStop = False
+        Me.lbltipo.AutoSize = True
+        Me.lbltipo.Location = New System.Drawing.Point(62, 163)
+        Me.lbltipo.Name = "lbltipo"
+        Me.lbltipo.Size = New System.Drawing.Size(53, 26)
+        Me.lbltipo.TabIndex = 34
+        Me.lbltipo.Text = "Tipo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Concepto"
+        '
+        'lblvalor
+        '
+        Me.lblvalor.AutoSize = True
+        Me.lblvalor.Location = New System.Drawing.Point(66, 207)
+        Me.lblvalor.Name = "lblvalor"
+        Me.lblvalor.Size = New System.Drawing.Size(31, 13)
+        Me.lblvalor.TabIndex = 35
+        Me.lblvalor.Text = "Valor"
+        '
+        'lblestado
+        '
+        Me.lblestado.AutoSize = True
+        Me.lblestado.Location = New System.Drawing.Point(66, 238)
+        Me.lblestado.Name = "lblestado"
+        Me.lblestado.Size = New System.Drawing.Size(43, 26)
+        Me.lblestado.TabIndex = 36
+        Me.lblestado.Text = "Estado " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "R o NR"
+        '
+        'cbotipoconcep
+        '
+        Me.cbotipoconcep.FormattingEnabled = True
+        Me.cbotipoconcep.Location = New System.Drawing.Point(127, 169)
+        Me.cbotipoconcep.Name = "cbotipoconcep"
+        Me.cbotipoconcep.Size = New System.Drawing.Size(159, 21)
+        Me.cbotipoconcep.TabIndex = 37
+        '
+        'txtvalor
+        '
+        Me.txtvalor.Location = New System.Drawing.Point(128, 203)
+        Me.txtvalor.Name = "txtvalor"
+        Me.txtvalor.Size = New System.Drawing.Size(158, 20)
+        Me.txtvalor.TabIndex = 38
+        '
+        'cboestado
+        '
+        Me.cboestado.FormattingEnabled = True
+        Me.cboestado.Location = New System.Drawing.Point(127, 238)
+        Me.cboestado.Name = "cboestado"
+        Me.cboestado.Size = New System.Drawing.Size(159, 21)
+        Me.cboestado.TabIndex = 39
         '
         'VConcepto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1025, 555)
+        Me.Controls.Add(Me.cboestado)
+        Me.Controls.Add(Me.txtvalor)
+        Me.Controls.Add(Me.cbotipoconcep)
+        Me.Controls.Add(Me.lblestado)
+        Me.Controls.Add(Me.lblvalor)
+        Me.Controls.Add(Me.lbltipo)
         Me.Controls.Add(Me.btnlimpiar)
         Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.Button5)
@@ -259,12 +321,12 @@ Partial Class VConcepto
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtdescripcion)
         Me.Controls.Add(Me.txtcod)
-        Me.Controls.Add(Me.dgvconvenio)
+        Me.Controls.Add(Me.dgvconcepto)
         Me.Controls.Add(Me.PanelSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "VConcepto"
         Me.Text = "VConcepto"
-        CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvconcepto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSuperior.ResumeLayout(False)
         Me.PanelSuperior.PerformLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -286,8 +348,14 @@ Partial Class VConcepto
     Friend WithEvents Label1 As Label
     Friend WithEvents txtdescripcion As TextBox
     Friend WithEvents txtcod As TextBox
-    Friend WithEvents dgvconvenio As DataGridView
+    Friend WithEvents dgvconcepto As DataGridView
     Friend WithEvents PanelSuperior As Panel
     Friend WithEvents lbltitulo As Label
     Friend WithEvents pbcerrar As PictureBox
+    Friend WithEvents lbltipo As Label
+    Friend WithEvents lblvalor As Label
+    Friend WithEvents lblestado As Label
+    Friend WithEvents cbotipoconcep As ComboBox
+    Friend WithEvents txtvalor As TextBox
+    Friend WithEvents cboestado As ComboBox
 End Class

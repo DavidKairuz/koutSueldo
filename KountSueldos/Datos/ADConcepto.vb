@@ -5,7 +5,7 @@
     Shared Sub MostrarConcepto(grid As DataGridView)
         Dim bank = (From b In ctx.Concepto
                     Where b.estadobaja = True
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
@@ -13,7 +13,7 @@
 
     Shared Sub MostrarConceptoT(grid As DataGridView)
         Dim bank = (From b In ctx.Concepto
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
@@ -38,6 +38,14 @@
 
     End Sub
 
+    Shared Sub DarAlta(id As Integer)
+        Dim bn = (From b In ctx.Concepto
+                  Where b.id_concepto = id
+                  Select b).SingleOrDefault
+        bn.estadobaja = 1
+        ctx.SaveChanges()
+
+    End Sub
 
     Shared Sub ModificarConcepto(id As Integer, name As String, val As Decimal, est As Boolean, cod As Integer)
         Dim tipo = (From t In ctx.Concepto
