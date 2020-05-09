@@ -5,7 +5,7 @@
     Shared Sub MostrarConcepto(grid As DataGridView)
         Dim bank = (From b In ctx.Concepto
                     Where b.estadobaja = True
-                    Select b).ToList
+                    Select b.id_concepto, b.descripcion, Valor = b.valor, TipoConcepto = b.Tipo_Concepto.descripcion, b.codigo, estado = b.estado).ToList
         grid.DataSource = bank
     End Sub
 
@@ -47,7 +47,7 @@
 
     End Sub
 
-    Shared Sub ModificarConcepto(id As Integer, name As String, val As Decimal, est As Boolean, cod As Integer)
+    Shared Sub ModificarConcepto(id As Integer, name As String, val As Decimal, est As Char, cod As Integer, tip As Integer)
         Dim tipo = (From t In ctx.Concepto
                     Where t.id_concepto = id
                     Select t).SingleOrDefault
@@ -56,6 +56,7 @@
             .valor = val
             .estado = est
             .codigo = cod
+            .tipoconcepto = tip
         End With
 
         ctx.SaveChanges()

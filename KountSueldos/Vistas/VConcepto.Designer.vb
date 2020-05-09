@@ -31,14 +31,6 @@ Partial Class VConcepto
         Me.dgvconcepto = New System.Windows.Forms.DataGridView()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
         Me.lbltitulo = New System.Windows.Forms.Label()
-        Me.pbcerrar = New System.Windows.Forms.PictureBox()
-        Me.btnlimpiar = New System.Windows.Forms.Button()
-        Me.btnnuevo = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.btnAlta = New System.Windows.Forms.Button()
-        Me.btnguardar = New System.Windows.Forms.Button()
         Me.lbltipo = New System.Windows.Forms.Label()
         Me.lblvalor = New System.Windows.Forms.Label()
         Me.lblestado = New System.Windows.Forms.Label()
@@ -48,6 +40,11 @@ Partial Class VConcepto
         Me.chktodo = New System.Windows.Forms.CheckBox()
         Me.lblley = New System.Windows.Forms.Label()
         Me.txtley = New System.Windows.Forms.TextBox()
+        Me.btnlimpiar = New System.Windows.Forms.Button()
+        Me.btnnuevo = New System.Windows.Forms.Button()
+        Me.btnAlta = New System.Windows.Forms.Button()
+        Me.btnguardar = New System.Windows.Forms.Button()
+        Me.pbcerrar = New System.Windows.Forms.PictureBox()
         CType(Me.dgvconcepto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,7 +70,7 @@ Partial Class VConcepto
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(27, 119)
+        Me.Label2.Location = New System.Drawing.Point(28, 132)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 24
@@ -82,7 +79,7 @@ Partial Class VConcepto
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(50, 77)
+        Me.Label1.Location = New System.Drawing.Point(28, 90)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 23
@@ -90,7 +87,7 @@ Partial Class VConcepto
         '
         'txtdescripcion
         '
-        Me.txtdescripcion.Location = New System.Drawing.Point(127, 112)
+        Me.txtdescripcion.Location = New System.Drawing.Point(101, 127)
         Me.txtdescripcion.Multiline = True
         Me.txtdescripcion.Name = "txtdescripcion"
         Me.txtdescripcion.Size = New System.Drawing.Size(159, 32)
@@ -99,7 +96,7 @@ Partial Class VConcepto
         'txtcod
         '
         Me.txtcod.Enabled = False
-        Me.txtcod.Location = New System.Drawing.Point(127, 74)
+        Me.txtcod.Location = New System.Drawing.Point(101, 89)
         Me.txtcod.Name = "txtcod"
         Me.txtcod.Size = New System.Drawing.Size(159, 20)
         Me.txtcod.TabIndex = 21
@@ -112,9 +109,9 @@ Partial Class VConcepto
         Me.dgvconcepto.AllowUserToResizeRows = False
         Me.dgvconcepto.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.dgvconcepto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvconcepto.Location = New System.Drawing.Point(332, 117)
+        Me.dgvconcepto.Location = New System.Drawing.Point(287, 117)
         Me.dgvconcepto.Name = "dgvconcepto"
-        Me.dgvconcepto.Size = New System.Drawing.Size(505, 427)
+        Me.dgvconcepto.Size = New System.Drawing.Size(651, 427)
         Me.dgvconcepto.TabIndex = 20
         '
         'PanelSuperior
@@ -139,121 +136,10 @@ Partial Class VConcepto
         Me.lbltitulo.TabIndex = 33
         Me.lbltitulo.Text = " Concepto"
         '
-        'pbcerrar
-        '
-        Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pbcerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.icon
-        Me.pbcerrar.Location = New System.Drawing.Point(895, 9)
-        Me.pbcerrar.Name = "pbcerrar"
-        Me.pbcerrar.Size = New System.Drawing.Size(29, 27)
-        Me.pbcerrar.TabIndex = 0
-        Me.pbcerrar.TabStop = False
-        '
-        'btnlimpiar
-        '
-        Me.btnlimpiar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnlimpiar.Image = Global.KountSueldos.My.Resources.Resources.clean
-        Me.btnlimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnlimpiar.Location = New System.Drawing.Point(118, 446)
-        Me.btnlimpiar.Name = "btnlimpiar"
-        Me.btnlimpiar.Size = New System.Drawing.Size(101, 37)
-        Me.btnlimpiar.TabIndex = 33
-        Me.btnlimpiar.Text = "Limpiar"
-        Me.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnlimpiar.UseVisualStyleBackColor = False
-        '
-        'btnnuevo
-        '
-        Me.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.web
-        Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnnuevo.Location = New System.Drawing.Point(10, 389)
-        Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(101, 37)
-        Me.btnnuevo.TabIndex = 32
-        Me.btnnuevo.Text = "Nuevo"
-        Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnnuevo.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Image = Global.KountSueldos.My.Resources.Resources.pdf1
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(851, 183)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(87, 37)
-        Me.Button5.TabIndex = 31
-        Me.Button5.Text = "PDF"
-        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Image = Global.KountSueldos.My.Resources.Resources.tecnologia
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(851, 121)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(87, 37)
-        Me.Button4.TabIndex = 30
-        Me.Button4.Text = "Imprimir"
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Image = Global.KountSueldos.My.Resources.Resources.logo
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(851, 242)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(87, 37)
-        Me.Button3.TabIndex = 29
-        Me.Button3.Text = "Excel"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'btnAlta
-        '
-        Me.btnAlta.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAlta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAlta.Image = Global.KountSueldos.My.Resources.Resources.edit
-        Me.btnAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAlta.Location = New System.Drawing.Point(225, 389)
-        Me.btnAlta.Name = "btnAlta"
-        Me.btnAlta.Size = New System.Drawing.Size(101, 37)
-        Me.btnAlta.TabIndex = 28
-        Me.btnAlta.Text = "Alta"
-        Me.btnAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnAlta.UseVisualStyleBackColor = False
-        '
-        'btnguardar
-        '
-        Me.btnguardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnguardar.Image = Global.KountSueldos.My.Resources.Resources.web
-        Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnguardar.Location = New System.Drawing.Point(118, 389)
-        Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(101, 37)
-        Me.btnguardar.TabIndex = 27
-        Me.btnguardar.Text = "Guardar"
-        Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnguardar.UseVisualStyleBackColor = True
-        '
         'lbltipo
         '
         Me.lbltipo.AutoSize = True
-        Me.lbltipo.Location = New System.Drawing.Point(37, 199)
+        Me.lbltipo.Location = New System.Drawing.Point(28, 212)
         Me.lbltipo.Name = "lbltipo"
         Me.lbltipo.Size = New System.Drawing.Size(53, 26)
         Me.lbltipo.TabIndex = 34
@@ -262,7 +148,7 @@ Partial Class VConcepto
         'lblvalor
         '
         Me.lblvalor.AutoSize = True
-        Me.lblvalor.Location = New System.Drawing.Point(59, 243)
+        Me.lblvalor.Location = New System.Drawing.Point(28, 256)
         Me.lblvalor.Name = "lblvalor"
         Me.lblvalor.Size = New System.Drawing.Size(31, 13)
         Me.lblvalor.TabIndex = 35
@@ -271,7 +157,7 @@ Partial Class VConcepto
         'lblestado
         '
         Me.lblestado.AutoSize = True
-        Me.lblestado.Location = New System.Drawing.Point(47, 274)
+        Me.lblestado.Location = New System.Drawing.Point(28, 287)
         Me.lblestado.Name = "lblestado"
         Me.lblestado.Size = New System.Drawing.Size(43, 26)
         Me.lblestado.TabIndex = 36
@@ -280,14 +166,14 @@ Partial Class VConcepto
         'cbotipoconcep
         '
         Me.cbotipoconcep.FormattingEnabled = True
-        Me.cbotipoconcep.Location = New System.Drawing.Point(127, 200)
+        Me.cbotipoconcep.Location = New System.Drawing.Point(101, 215)
         Me.cbotipoconcep.Name = "cbotipoconcep"
         Me.cbotipoconcep.Size = New System.Drawing.Size(159, 21)
         Me.cbotipoconcep.TabIndex = 37
         '
         'txtvalor
         '
-        Me.txtvalor.Location = New System.Drawing.Point(128, 239)
+        Me.txtvalor.Location = New System.Drawing.Point(102, 254)
         Me.txtvalor.Name = "txtvalor"
         Me.txtvalor.Size = New System.Drawing.Size(158, 20)
         Me.txtvalor.TabIndex = 38
@@ -295,7 +181,7 @@ Partial Class VConcepto
         'cboestado
         '
         Me.cboestado.FormattingEnabled = True
-        Me.cboestado.Location = New System.Drawing.Point(127, 277)
+        Me.cboestado.Location = New System.Drawing.Point(101, 292)
         Me.cboestado.Name = "cboestado"
         Me.cboestado.Size = New System.Drawing.Size(159, 21)
         Me.cboestado.TabIndex = 39
@@ -313,7 +199,7 @@ Partial Class VConcepto
         'lblley
         '
         Me.lblley.AutoSize = True
-        Me.lblley.Location = New System.Drawing.Point(66, 165)
+        Me.lblley.Location = New System.Drawing.Point(28, 178)
         Me.lblley.Name = "lblley"
         Me.lblley.Size = New System.Drawing.Size(24, 13)
         Me.lblley.TabIndex = 42
@@ -321,10 +207,79 @@ Partial Class VConcepto
         '
         'txtley
         '
-        Me.txtley.Location = New System.Drawing.Point(127, 162)
+        Me.txtley.Location = New System.Drawing.Point(101, 177)
         Me.txtley.Name = "txtley"
         Me.txtley.Size = New System.Drawing.Size(159, 20)
         Me.txtley.TabIndex = 41
+        '
+        'btnlimpiar
+        '
+        Me.btnlimpiar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnlimpiar.Image = Global.KountSueldos.My.Resources.Resources.clean
+        Me.btnlimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnlimpiar.Location = New System.Drawing.Point(46, 419)
+        Me.btnlimpiar.Name = "btnlimpiar"
+        Me.btnlimpiar.Size = New System.Drawing.Size(95, 37)
+        Me.btnlimpiar.TabIndex = 33
+        Me.btnlimpiar.Text = "Limpiar"
+        Me.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnlimpiar.UseVisualStyleBackColor = False
+        '
+        'btnnuevo
+        '
+        Me.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.web
+        Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnnuevo.Location = New System.Drawing.Point(46, 353)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(95, 37)
+        Me.btnnuevo.TabIndex = 32
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnnuevo.UseVisualStyleBackColor = True
+        '
+        'btnAlta
+        '
+        Me.btnAlta.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnAlta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAlta.Image = Global.KountSueldos.My.Resources.Resources.edit
+        Me.btnAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAlta.Location = New System.Drawing.Point(165, 419)
+        Me.btnAlta.Name = "btnAlta"
+        Me.btnAlta.Size = New System.Drawing.Size(95, 37)
+        Me.btnAlta.TabIndex = 28
+        Me.btnAlta.Text = "Alta"
+        Me.btnAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAlta.UseVisualStyleBackColor = False
+        '
+        'btnguardar
+        '
+        Me.btnguardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnguardar.Image = Global.KountSueldos.My.Resources.Resources.web
+        Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnguardar.Location = New System.Drawing.Point(165, 353)
+        Me.btnguardar.Name = "btnguardar"
+        Me.btnguardar.Size = New System.Drawing.Size(95, 37)
+        Me.btnguardar.TabIndex = 27
+        Me.btnguardar.Text = "Guardar"
+        Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnguardar.UseVisualStyleBackColor = True
+        '
+        'pbcerrar
+        '
+        Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pbcerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.interfaz
+        Me.pbcerrar.Location = New System.Drawing.Point(895, 9)
+        Me.pbcerrar.Name = "pbcerrar"
+        Me.pbcerrar.Size = New System.Drawing.Size(29, 27)
+        Me.pbcerrar.TabIndex = 0
+        Me.pbcerrar.TabStop = False
         '
         'VConcepto
         '
@@ -342,9 +297,6 @@ Partial Class VConcepto
         Me.Controls.Add(Me.lbltipo)
         Me.Controls.Add(Me.btnlimpiar)
         Me.Controls.Add(Me.btnnuevo)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.btnAlta)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.Label4)
@@ -369,9 +321,6 @@ Partial Class VConcepto
 
     Friend WithEvents btnlimpiar As Button
     Friend WithEvents btnnuevo As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
     Friend WithEvents btnAlta As Button
     Friend WithEvents btnguardar As Button
     Friend WithEvents Label4 As Label

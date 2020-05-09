@@ -246,7 +246,7 @@ Partial Class VEmpresa
         '
         Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pbcerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.icon
+        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.interfaz
         Me.pbcerrar.Location = New System.Drawing.Point(895, 9)
         Me.pbcerrar.Name = "pbcerrar"
         Me.pbcerrar.Size = New System.Drawing.Size(29, 27)

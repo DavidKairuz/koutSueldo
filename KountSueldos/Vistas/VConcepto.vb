@@ -23,10 +23,10 @@
         tipoconceto.HeaderText = "Tipo Concepto"
 
         dgv.Columns.Add("id_concepto", "Código")
-        dgv.Columns.Add("descripcion", "Concepto")
+        dgv.Columns.Add("descripcion", "Nombre")
         dgv.Columns.Add("valor", "Valor")
         dgv.Columns.Add(tipoconceto)
-        dgv.Columns.Add("codigo", "Ley Nº")
+        dgv.Columns.Add("codigo", "Ley")
         dgv.Columns.Add("estado", "Tipo")
         'dgv.Columns.Add(valor)
 
@@ -48,9 +48,9 @@
         dgv.Columns(0).DataPropertyName = "id_concepto"
         dgv.Columns(1).DataPropertyName = "descripcion"
         dgv.Columns(2).DataPropertyName = "Valor"
-        dgv.Columns(3).DataPropertyName = "Tipo Concepto"
-        dgv.Columns(4).DataPropertyName = "Ley Nº"
-        dgv.Columns(5).DataPropertyName = "Tipo"
+        dgv.Columns(3).DataPropertyName = "TipoConcepto"
+        dgv.Columns(4).DataPropertyName = "codigo"
+        dgv.Columns(5).DataPropertyName = "estado"
         dgv.Columns(6).DataPropertyName = "Editar"
         dgv.Columns(7).DataPropertyName = "Eliminar"
         '  dgv.Columns(7).DataPropertyName = "estadobaja"
@@ -99,6 +99,7 @@
         txtvalor.Clear()
         cboestado.SelectedValue = -1
         cbotipoconcep.SelectedValue = -1
+        txtley.Clear()
     End Sub
 
 
@@ -169,9 +170,9 @@
                 txtcod.Text = CStr(dgvconcepto.CurrentRow.Cells(0).Value)
                 txtdescripcion.Text = dgvconcepto.CurrentRow.Cells(1).Value
                 txtvalor.Text = dgvconcepto.CurrentRow.Cells(2).Value
-                cbotipoconcep.SelectedValue = dgvconcepto.CurrentRow.Cells(3).Value
+                cbotipoconcep.Text = dgvconcepto.CurrentRow.Cells(3).Value
                 txtley.Text = dgvconcepto.CurrentRow.Cells(4).Value
-                cboestado.SelectedValue = dgvconcepto.CurrentRow.Cells(5).Value
+                cboestado.Text = dgvconcepto.CurrentRow.Cells(5).Value
             Else
                 MsgBox("No hay registros para editar", MsgBoxStyle.Exclamation, "Error")
             End If
@@ -216,7 +217,8 @@
 
                             Dim id As Integer = dgvconcepto.CurrentRow.Cells(0).Value
                             Dim bas As Decimal = 0
-                            ' ADConcepto.ModificarConcepto(id, txtdescripcion.Text, bas)
+
+                            ADConcepto.ModificarConcepto(txtcod.Text, txtdescripcion.Text, txtvalor.Text, cboestado.Text, txtley.Text, cbotipoconcep.SelectedValue)
                             MsgBox("el registro se modifico exitosamente", MsgBoxStyle.Information, "Modificación")
                             limpiar()
                             indice()
@@ -263,23 +265,24 @@
         End Try
     End Sub
 
-    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
-        Agregar()
+    Sub Refrescar()
         dgvconcepto.DataSource = Nothing
         Mostrardgv()
-
+        limpiar()
+    End Sub
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+        Agregar()
+        Refrescar()
     End Sub
 
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Guardar()
-        dgvconcepto.DataSource = Nothing
-        Mostrardgv()
+        Refrescar()
     End Sub
 
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
         Alta()
-        dgvconcepto.DataSource = Nothing
-        Mostrardgv()
+        Refrescar()
     End Sub
 
     Private Sub btnlimpiar_Click(sender As Object, e As EventArgs) Handles btnlimpiar.Click

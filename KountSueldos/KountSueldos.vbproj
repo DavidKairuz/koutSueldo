@@ -428,6 +428,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.vb</LastGenOutput>
     </Content>
+    <None Include="Resources\neww.png" />
+    <None Include="Resources\interfaz.png" />
     <None Include="Resources\clean.png" />
     <None Include="Resources\pdf1.png" />
     <None Include="Resources\pdf.png" />

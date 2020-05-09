@@ -102,36 +102,129 @@
 
     End Sub
 
+    Function ExisteReg() As Boolean
+        Dim res As Boolean
+        Try
+            If txtcod.Text.Trim <> "" Or txtcod.Text.Trim <> 0 Then
+                Dim id As Integer = txtcod.Text
+                If ADConvenio.ExisteID(id) = True Then
+                    res = True
+                    MsgBox("Existe")
+                Else
+                    MsgBox("no Existe")
+                    res = False
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Return res
+    End Function
+
+    Sub Guardar()
+        Try
+            If dgvconvenio.RowCount = 0 Then
+                MsgBox("No hay registros para modificar", MsgBoxStyle.Critical, "Error")
+            Else
+                If txtdescripcion.Text.Trim = "" Or txtcod.Text.Trim = "" Then
+                    MsgBox("Debe seleccionar un registro", MsgBoxStyle.Critical, "Error")
+                Else
+                    If ExisteReg() = True Then
+
+                        If MsgBox("Seguro desea dar de modificar este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
+
+                            Dim id As Integer = dgvconvenio.CurrentRow.Cells(0).Value
+                            Dim bas As Decimal = 0
+
+                            ADConvenio.ModificarConvenio(txtcod.Text, txtdescripcion.Text)
+                            MsgBox("el registro se modifico exitosamente", MsgBoxStyle.Information, "Modificación")
+                            limpiar()
+                            indice()
+                        Else
+                            MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
+                            limpiar()
+                            indice()
+                        End If
+                    Else
+                        MsgBox("Debe seleccionar el boton agregar para un nuevo registro,Guardar es para modificar datos", MsgBoxStyle.Information, "Mensaje")
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+    Sub Alta()
+        Try
+            If dgvconvenio.RowCount = 0 Then
+                MsgBox("No hay registros para dar de alta", MsgBoxStyle.Critical, "Error")
+            Else
+
+                If MsgBox("Seguro desea dar de alta este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
+
+                    Dim ide = dgvconvenio.CurrentRow().Cells(0).Value
+                    If ide <> 0 Then
+                        ADConcepto.DarAlta(ide)
+                        ADConcepto.MostrarConcepto(dgvconvenio)
+                        MsgBox("Registro actualizado con éxito", MsgBoxStyle.Information, "Actualización")
+                        indice()
+                    Else
+                        MsgBox("Hubo un error al intentar acceder a la base de datos", MsgBoxStyle.Critical, "Error")
+                    End If
+                Else
+                    MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
+                    limpiar()
+                    indice()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
     Sub limpiar()
         txtcod.Clear()
         txtdescripcion.Clear()
     End Sub
-    Sub indice()
-        txtcod.Text = ADConvenio.index()
 
+    Sub indice()
+        If ADConvenio.index() = 0 Then
+            txtcod.Text = 1
+        Else
+            txtcod.Text = ADConvenio.index
+        End If
     End Sub
+
+
+    Sub Editar()
+        Try
+            If dgvconvenio.RowCount > 0 Then
+                txtcod.Text = CStr(dgvconvenio.CurrentRow.Cells(0).Value)
+                txtdescripcion.Text = CStr(dgvconvenio.CurrentRow.Cells(1).Value)
+            Else
+                MsgBox("No hay registros para editar", MsgBoxStyle.Exclamation, "Error")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub dgvtipo_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvconvenio.CellContentClick
 
         Try
             If validar.DatagridVacio(dgvconvenio) = False Then
 
-
                 Select Case e.ColumnIndex
                     Case 2
-
-                        txtcod.Text = CStr(dgvconvenio.CurrentRow.Cells(0).Value)
-                        txtdescripcion.Text = CStr(dgvconvenio.CurrentRow.Cells(1).Value)
-
+                        Editar()
                         Return
                     Case 3
                         Eliminar()
                         Return
-
                     Case 4
-
                         MsgBox("Le dio check")
                         Return
-
                 End Select
             Else
 
@@ -140,8 +233,6 @@
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
-
     End Sub
 
     Private Sub txtfiltro_TextChanged(sender As Object, e As EventArgs) Handles txtfiltro.TextChanged
@@ -150,9 +241,46 @@
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         Agregar()
+        Refrescar()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnlimpiar.Click
         limpiar()
+    End Sub
+
+    Sub Refrescar()
+        dgvconvenio.DataSource = Nothing
+        Mostrardgv()
+        limpiar()
+    End Sub
+
+    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+        Guardar()
+        Refrescar()
+    End Sub
+
+    Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
+        Alta()
+        Refrescar()
+    End Sub
+
+    Sub Mostrartodo() 'solovamos a mostrar los dados de baja
+        Try
+            If chktodo.Checked = True Then
+                dgvmanual(dgvconvenio)
+                ADConvenio.MostrarConvenioT(dgvconvenio)
+                btnAlta.Enabled = True
+            Else
+                Mostrardgv()
+                btnAlta.Enabled = False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub chktodo_CheckedChanged(sender As Object, e As EventArgs) Handles chktodo.CheckedChanged
+        Mostrartodo()
     End Sub
 End Class

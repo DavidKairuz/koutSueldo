@@ -86,4 +86,25 @@
         cbo.ValueMember = "id_convenio"
         cbo.SelectedValue = -1
     End Sub
+
+    Shared Function ExisteID(id As Integer) As Boolean
+        Dim result As Boolean = False
+        If ctx.Convenio.Any(Function(o) o.id_convenio = id) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
+
+    Shared Function ExisteIDEstado(id As Integer) As Boolean
+        Dim result As Boolean = False
+        If ctx.Convenio.Any(Function(o) o.id_convenio = id) And (ctx.Convenio.Any(Function(o) o.estadobaja = True)) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
+
 End Class

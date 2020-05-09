@@ -48,7 +48,7 @@ Partial Class VEmpleado
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(544, 78)
+        Me.Label4.Location = New System.Drawing.Point(594, 110)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 13)
         Me.Label4.TabIndex = 41
@@ -57,7 +57,7 @@ Partial Class VEmpleado
         'txtfiltro
         '
         Me.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtfiltro.Location = New System.Drawing.Point(603, 76)
+        Me.txtfiltro.Location = New System.Drawing.Point(653, 108)
         Me.txtfiltro.Name = "txtfiltro"
         Me.txtfiltro.Size = New System.Drawing.Size(220, 20)
         Me.txtfiltro.TabIndex = 40
@@ -104,9 +104,9 @@ Partial Class VEmpleado
         Me.dgvunidad.AllowUserToResizeRows = False
         Me.dgvunidad.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.dgvunidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvunidad.Location = New System.Drawing.Point(370, 112)
+        Me.dgvunidad.Location = New System.Drawing.Point(368, 147)
         Me.dgvunidad.Name = "dgvunidad"
-        Me.dgvunidad.Size = New System.Drawing.Size(453, 427)
+        Me.dgvunidad.Size = New System.Drawing.Size(614, 392)
         Me.dgvunidad.TabIndex = 35
         '
         'PanelSuperior
@@ -135,7 +135,7 @@ Partial Class VEmpleado
         '
         Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pbcerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.icon
+        Me.pbcerrar.Image = Global.KountSueldos.My.Resources.Resources.interfaz
         Me.pbcerrar.Location = New System.Drawing.Point(895, 9)
         Me.pbcerrar.Name = "pbcerrar"
         Me.pbcerrar.Size = New System.Drawing.Size(29, 27)
@@ -149,9 +149,9 @@ Partial Class VEmpleado
         Me.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnlimpiar.Image = Global.KountSueldos.My.Resources.Resources.clean
         Me.btnlimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnlimpiar.Location = New System.Drawing.Point(127, 370)
+        Me.btnlimpiar.Location = New System.Drawing.Point(69, 451)
         Me.btnlimpiar.Name = "btnlimpiar"
-        Me.btnlimpiar.Size = New System.Drawing.Size(101, 37)
+        Me.btnlimpiar.Size = New System.Drawing.Size(95, 37)
         Me.btnlimpiar.TabIndex = 48
         Me.btnlimpiar.Text = "Limpiar"
         Me.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -163,9 +163,9 @@ Partial Class VEmpleado
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.web
         Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnnuevo.Location = New System.Drawing.Point(19, 313)
+        Me.btnnuevo.Location = New System.Drawing.Point(69, 396)
         Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(101, 37)
+        Me.btnnuevo.Size = New System.Drawing.Size(95, 37)
         Me.btnnuevo.TabIndex = 47
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -177,9 +177,9 @@ Partial Class VEmpleado
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.Image = Global.KountSueldos.My.Resources.Resources.pdf1
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(837, 174)
+        Me.Button5.Location = New System.Drawing.Point(653, 51)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(101, 37)
+        Me.Button5.Size = New System.Drawing.Size(95, 37)
         Me.Button5.TabIndex = 46
         Me.Button5.Text = "PDF"
         Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -191,9 +191,9 @@ Partial Class VEmpleado
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Image = Global.KountSueldos.My.Resources.Resources.tecnologia
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(837, 112)
+        Me.Button4.Location = New System.Drawing.Point(539, 51)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(101, 37)
+        Me.Button4.Size = New System.Drawing.Size(95, 37)
         Me.Button4.TabIndex = 45
         Me.Button4.Text = "Imprimir"
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -205,9 +205,9 @@ Partial Class VEmpleado
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Image = Global.KountSueldos.My.Resources.Resources.logo
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(837, 233)
+        Me.Button3.Location = New System.Drawing.Point(766, 51)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(101, 37)
+        Me.Button3.Size = New System.Drawing.Size(95, 37)
         Me.Button3.TabIndex = 44
         Me.Button3.Text = "Excel"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -220,9 +220,9 @@ Partial Class VEmpleado
         Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAlta.Image = Global.KountSueldos.My.Resources.Resources.edit
         Me.btnAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAlta.Location = New System.Drawing.Point(234, 313)
+        Me.btnAlta.Location = New System.Drawing.Point(177, 451)
         Me.btnAlta.Name = "btnAlta"
-        Me.btnAlta.Size = New System.Drawing.Size(101, 37)
+        Me.btnAlta.Size = New System.Drawing.Size(95, 37)
         Me.btnAlta.TabIndex = 43
         Me.btnAlta.Text = "Alta"
         Me.btnAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -234,9 +234,9 @@ Partial Class VEmpleado
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Image = Global.KountSueldos.My.Resources.Resources.web
         Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnguardar.Location = New System.Drawing.Point(127, 313)
+        Me.btnguardar.Location = New System.Drawing.Point(177, 396)
         Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(101, 37)
+        Me.btnguardar.Size = New System.Drawing.Size(95, 37)
         Me.btnguardar.TabIndex = 42
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -245,7 +245,7 @@ Partial Class VEmpleado
         'chktodo
         '
         Me.chktodo.AutoSize = True
-        Me.chktodo.Location = New System.Drawing.Point(380, 76)
+        Me.chktodo.Location = New System.Drawing.Point(430, 108)
         Me.chktodo.Name = "chktodo"
         Me.chktodo.Size = New System.Drawing.Size(91, 17)
         Me.chktodo.TabIndex = 49
@@ -259,9 +259,9 @@ Partial Class VEmpleado
         Me.ClientSize = New System.Drawing.Size(1029, 561)
         Me.Controls.Add(Me.chktodo)
         Me.Controls.Add(Me.btnlimpiar)
-        Me.Controls.Add(Me.btnnuevo)
-        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.btnAlta)
         Me.Controls.Add(Me.btnguardar)
