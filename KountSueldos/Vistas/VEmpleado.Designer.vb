@@ -22,76 +22,106 @@ Partial Class VEmpleado
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.txtfiltro = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtdescripcion = New System.Windows.Forms.TextBox()
+        Me.txtdireccion = New System.Windows.Forms.TextBox()
         Me.txtcod = New System.Windows.Forms.TextBox()
         Me.dgvunidad = New System.Windows.Forms.DataGridView()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
         Me.lbltitulo = New System.Windows.Forms.Label()
-        Me.pbcerrar = New System.Windows.Forms.PictureBox()
-        Me.btnlimpiar = New System.Windows.Forms.Button()
-        Me.btnnuevo = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.btnAlta = New System.Windows.Forms.Button()
-        Me.btnguardar = New System.Windows.Forms.Button()
         Me.chktodo = New System.Windows.Forms.CheckBox()
+        Me.Pestaña1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtfiltrocuil = New System.Windows.Forms.TextBox()
+        Me.rbapellido = New System.Windows.Forms.RadioButton()
+        Me.rbcuil = New System.Windows.Forms.RadioButton()
+        Me.txtfechanac = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.txtnail = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txttelefono = New System.Windows.Forms.TextBox()
+        Me.txtapellido = New System.Windows.Forms.TextBox()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
+        Me.txtcuil = New System.Windows.Forms.TextBox()
+        Me.Pestaña2 = New System.Windows.Forms.TabPage()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.txtactividad = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.cboobra = New System.Windows.Forms.ComboBox()
+        Me.cboestadocivil = New System.Windows.Forms.ComboBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.mkhijos = New System.Windows.Forms.MaskedTextBox()
+        Me.txtcategoria = New System.Windows.Forms.TextBox()
+        Me.txtempresa = New System.Windows.Forms.TextBox()
+        Me.txtfechae = New System.Windows.Forms.TextBox()
+        Me.txtfechai = New System.Windows.Forms.TextBox()
+        Me.Pestaña3 = New System.Windows.Forms.TabPage()
+        Me.btndesplazar = New System.Windows.Forms.Button()
+        Me.btnnuevo = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.btnguardar = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnlimpiar = New System.Windows.Forms.Button()
+        Me.btnAlta = New System.Windows.Forms.Button()
+        Me.pbcerrar = New System.Windows.Forms.PictureBox()
         CType(Me.dgvunidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
+        Me.Pestaña1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.Pestaña2.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(594, 110)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 13)
-        Me.Label4.TabIndex = 41
-        Me.Label4.Text = "Buscar"
         '
         'txtfiltro
         '
         Me.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtfiltro.Location = New System.Drawing.Point(653, 108)
+        Me.txtfiltro.Location = New System.Drawing.Point(403, 36)
         Me.txtfiltro.Name = "txtfiltro"
-        Me.txtfiltro.Size = New System.Drawing.Size(220, 20)
+        Me.txtfiltro.Size = New System.Drawing.Size(148, 20)
         Me.txtfiltro.TabIndex = 40
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(43, 202)
+        Me.Label2.Location = New System.Drawing.Point(28, 312)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(63, 13)
+        Me.Label2.Size = New System.Drawing.Size(52, 13)
         Me.Label2.TabIndex = 39
-        Me.Label2.Text = "Descripción"
+        Me.Label2.Text = "Dirección"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(66, 160)
+        Me.Label1.Location = New System.Drawing.Point(28, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 38
         Me.Label1.Text = "Código"
         '
-        'txtdescripcion
+        'txtdireccion
         '
-        Me.txtdescripcion.Location = New System.Drawing.Point(127, 200)
-        Me.txtdescripcion.Multiline = True
-        Me.txtdescripcion.Name = "txtdescripcion"
-        Me.txtdescripcion.Size = New System.Drawing.Size(159, 32)
-        Me.txtdescripcion.TabIndex = 37
+        Me.txtdireccion.Location = New System.Drawing.Point(94, 308)
+        Me.txtdireccion.Name = "txtdireccion"
+        Me.txtdireccion.Size = New System.Drawing.Size(216, 20)
+        Me.txtdireccion.TabIndex = 37
         '
         'txtcod
         '
         Me.txtcod.Enabled = False
-        Me.txtcod.Location = New System.Drawing.Point(127, 157)
+        Me.txtcod.Location = New System.Drawing.Point(94, 21)
         Me.txtcod.Name = "txtcod"
         Me.txtcod.Size = New System.Drawing.Size(159, 20)
         Me.txtcod.TabIndex = 36
@@ -104,9 +134,9 @@ Partial Class VEmpleado
         Me.dgvunidad.AllowUserToResizeRows = False
         Me.dgvunidad.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.dgvunidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvunidad.Location = New System.Drawing.Point(368, 147)
+        Me.dgvunidad.Location = New System.Drawing.Point(343, 83)
         Me.dgvunidad.Name = "dgvunidad"
-        Me.dgvunidad.Size = New System.Drawing.Size(614, 392)
+        Me.dgvunidad.Size = New System.Drawing.Size(672, 337)
         Me.dgvunidad.TabIndex = 35
         '
         'PanelSuperior
@@ -131,6 +161,484 @@ Partial Class VEmpleado
         Me.lbltitulo.TabIndex = 33
         Me.lbltitulo.Text = "Empleado"
         '
+        'chktodo
+        '
+        Me.chktodo.AutoSize = True
+        Me.chktodo.Location = New System.Drawing.Point(24, 29)
+        Me.chktodo.Name = "chktodo"
+        Me.chktodo.Size = New System.Drawing.Size(91, 17)
+        Me.chktodo.TabIndex = 49
+        Me.chktodo.Text = "Mostrar todo :"
+        Me.chktodo.UseVisualStyleBackColor = True
+        '
+        'Pestaña1
+        '
+        Me.Pestaña1.Controls.Add(Me.TabPage1)
+        Me.Pestaña1.Controls.Add(Me.Pestaña2)
+        Me.Pestaña1.Controls.Add(Me.Pestaña3)
+        Me.Pestaña1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Pestaña1.Location = New System.Drawing.Point(0, 45)
+        Me.Pestaña1.Name = "Pestaña1"
+        Me.Pestaña1.SelectedIndex = 0
+        Me.Pestaña1.Size = New System.Drawing.Size(1029, 516)
+        Me.Pestaña1.TabIndex = 50
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.btndesplazar)
+        Me.TabPage1.Controls.Add(Me.GroupBox1)
+        Me.TabPage1.Controls.Add(Me.txtfechanac)
+        Me.TabPage1.Controls.Add(Me.Label17)
+        Me.TabPage1.Controls.Add(Me.Label16)
+        Me.TabPage1.Controls.Add(Me.txtnail)
+        Me.TabPage1.Controls.Add(Me.Label7)
+        Me.TabPage1.Controls.Add(Me.Label6)
+        Me.TabPage1.Controls.Add(Me.Label5)
+        Me.TabPage1.Controls.Add(Me.Label3)
+        Me.TabPage1.Controls.Add(Me.txttelefono)
+        Me.TabPage1.Controls.Add(Me.txtapellido)
+        Me.TabPage1.Controls.Add(Me.txtnombre)
+        Me.TabPage1.Controls.Add(Me.txtcuil)
+        Me.TabPage1.Controls.Add(Me.btnnuevo)
+        Me.TabPage1.Controls.Add(Me.Button4)
+        Me.TabPage1.Controls.Add(Me.Button5)
+        Me.TabPage1.Controls.Add(Me.btnguardar)
+        Me.TabPage1.Controls.Add(Me.Button3)
+        Me.TabPage1.Controls.Add(Me.btnlimpiar)
+        Me.TabPage1.Controls.Add(Me.btnAlta)
+        Me.TabPage1.Controls.Add(Me.txtcod)
+        Me.TabPage1.Controls.Add(Me.txtdireccion)
+        Me.TabPage1.Controls.Add(Me.Label1)
+        Me.TabPage1.Controls.Add(Me.dgvunidad)
+        Me.TabPage1.Controls.Add(Me.Label2)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1021, 490)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Pestaña 1"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.txtfiltrocuil)
+        Me.GroupBox1.Controls.Add(Me.rbapellido)
+        Me.GroupBox1.Controls.Add(Me.rbcuil)
+        Me.GroupBox1.Controls.Add(Me.txtfiltro)
+        Me.GroupBox1.Controls.Add(Me.chktodo)
+        Me.GroupBox1.Location = New System.Drawing.Point(343, 21)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(672, 65)
+        Me.GroupBox1.TabIndex = 65
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Buscar Por : "
+        '
+        'txtfiltrocuil
+        '
+        Me.txtfiltrocuil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtfiltrocuil.Location = New System.Drawing.Point(158, 36)
+        Me.txtfiltrocuil.Name = "txtfiltrocuil"
+        Me.txtfiltrocuil.Size = New System.Drawing.Size(148, 20)
+        Me.txtfiltrocuil.TabIndex = 64
+        '
+        'rbapellido
+        '
+        Me.rbapellido.AutoSize = True
+        Me.rbapellido.Location = New System.Drawing.Point(403, 13)
+        Me.rbapellido.Name = "rbapellido"
+        Me.rbapellido.Size = New System.Drawing.Size(62, 17)
+        Me.rbapellido.TabIndex = 63
+        Me.rbapellido.TabStop = True
+        Me.rbapellido.Text = "Apellido"
+        Me.rbapellido.UseVisualStyleBackColor = True
+        '
+        'rbcuil
+        '
+        Me.rbcuil.AutoSize = True
+        Me.rbcuil.Location = New System.Drawing.Point(158, 13)
+        Me.rbcuil.Name = "rbcuil"
+        Me.rbcuil.Size = New System.Drawing.Size(49, 17)
+        Me.rbcuil.TabIndex = 62
+        Me.rbcuil.TabStop = True
+        Me.rbcuil.Text = "CUIL"
+        Me.rbcuil.UseVisualStyleBackColor = True
+        '
+        'txtfechanac
+        '
+        Me.txtfechanac.Location = New System.Drawing.Point(94, 267)
+        Me.txtfechanac.Name = "txtfechanac"
+        Me.txtfechanac.Size = New System.Drawing.Size(130, 20)
+        Me.txtfechanac.TabIndex = 60
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(28, 260)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(60, 26)
+        Me.Label17.TabIndex = 61
+        Me.Label17.Text = "Fecha " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Nacimiento"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(28, 221)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(35, 13)
+        Me.Label16.TabIndex = 59
+        Me.Label16.Text = "E-mail"
+        '
+        'txtnail
+        '
+        Me.txtnail.Location = New System.Drawing.Point(94, 226)
+        Me.txtnail.Name = "txtnail"
+        Me.txtnail.Size = New System.Drawing.Size(148, 20)
+        Me.txtnail.TabIndex = 58
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(28, 182)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(49, 13)
+        Me.Label7.TabIndex = 57
+        Me.Label7.Text = "Telefono"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(28, 143)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(44, 13)
+        Me.Label6.TabIndex = 56
+        Me.Label6.Text = "Apellido"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(28, 104)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(44, 13)
+        Me.Label5.TabIndex = 55
+        Me.Label5.Text = "Nombre"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(28, 63)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(31, 13)
+        Me.Label3.TabIndex = 54
+        Me.Label3.Text = "CUIL"
+        '
+        'txttelefono
+        '
+        Me.txttelefono.Location = New System.Drawing.Point(94, 185)
+        Me.txttelefono.Name = "txttelefono"
+        Me.txttelefono.Size = New System.Drawing.Size(165, 20)
+        Me.txttelefono.TabIndex = 53
+        '
+        'txtapellido
+        '
+        Me.txtapellido.Location = New System.Drawing.Point(94, 144)
+        Me.txtapellido.Name = "txtapellido"
+        Me.txtapellido.Size = New System.Drawing.Size(165, 20)
+        Me.txtapellido.TabIndex = 52
+        '
+        'txtnombre
+        '
+        Me.txtnombre.Location = New System.Drawing.Point(94, 103)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(165, 20)
+        Me.txtnombre.TabIndex = 51
+        '
+        'txtcuil
+        '
+        Me.txtcuil.Location = New System.Drawing.Point(94, 62)
+        Me.txtcuil.Name = "txtcuil"
+        Me.txtcuil.Size = New System.Drawing.Size(165, 20)
+        Me.txtcuil.TabIndex = 50
+        '
+        'Pestaña2
+        '
+        Me.Pestaña2.Controls.Add(Me.Label15)
+        Me.Pestaña2.Controls.Add(Me.txtactividad)
+        Me.Pestaña2.Controls.Add(Me.Label14)
+        Me.Pestaña2.Controls.Add(Me.Label13)
+        Me.Pestaña2.Controls.Add(Me.cboobra)
+        Me.Pestaña2.Controls.Add(Me.cboestadocivil)
+        Me.Pestaña2.Controls.Add(Me.Label12)
+        Me.Pestaña2.Controls.Add(Me.Label11)
+        Me.Pestaña2.Controls.Add(Me.Label10)
+        Me.Pestaña2.Controls.Add(Me.Label9)
+        Me.Pestaña2.Controls.Add(Me.Label8)
+        Me.Pestaña2.Controls.Add(Me.mkhijos)
+        Me.Pestaña2.Controls.Add(Me.txtcategoria)
+        Me.Pestaña2.Controls.Add(Me.txtempresa)
+        Me.Pestaña2.Controls.Add(Me.txtfechae)
+        Me.Pestaña2.Controls.Add(Me.txtfechai)
+        Me.Pestaña2.Location = New System.Drawing.Point(4, 22)
+        Me.Pestaña2.Name = "Pestaña2"
+        Me.Pestaña2.Padding = New System.Windows.Forms.Padding(3)
+        Me.Pestaña2.Size = New System.Drawing.Size(1021, 490)
+        Me.Pestaña2.TabIndex = 1
+        Me.Pestaña2.Text = "Pestaña 2"
+        Me.Pestaña2.UseVisualStyleBackColor = True
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(63, 287)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(51, 13)
+        Me.Label15.TabIndex = 15
+        Me.Label15.Text = "Actividad"
+        '
+        'txtactividad
+        '
+        Me.txtactividad.Location = New System.Drawing.Point(142, 284)
+        Me.txtactividad.Name = "txtactividad"
+        Me.txtactividad.Size = New System.Drawing.Size(128, 20)
+        Me.txtactividad.TabIndex = 14
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(63, 231)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(52, 13)
+        Me.Label14.TabIndex = 13
+        Me.Label14.Text = "Categoria"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(63, 186)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(48, 13)
+        Me.Label13.TabIndex = 12
+        Me.Label13.Text = "Empresa"
+        '
+        'cboobra
+        '
+        Me.cboobra.FormattingEnabled = True
+        Me.cboobra.Location = New System.Drawing.Point(535, 131)
+        Me.cboobra.Name = "cboobra"
+        Me.cboobra.Size = New System.Drawing.Size(100, 21)
+        Me.cboobra.TabIndex = 11
+        '
+        'cboestadocivil
+        '
+        Me.cboestadocivil.FormattingEnabled = True
+        Me.cboestadocivil.Location = New System.Drawing.Point(535, 176)
+        Me.cboestadocivil.Name = "cboestadocivil"
+        Me.cboestadocivil.Size = New System.Drawing.Size(100, 21)
+        Me.cboestadocivil.TabIndex = 10
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(63, 94)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(75, 13)
+        Me.Label12.TabIndex = 9
+        Me.Label12.Text = "Fecha Ingreso"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(63, 139)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(73, 13)
+        Me.Label11.TabIndex = 8
+        Me.Label11.Text = "Fecha Egreso"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(450, 135)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(62, 13)
+        Me.Label10.TabIndex = 7
+        Me.Label10.Text = "Obra Social"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(455, 179)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(61, 13)
+        Me.Label9.TabIndex = 6
+        Me.Label9.Text = "Estado civil"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(465, 221)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(30, 13)
+        Me.Label8.TabIndex = 5
+        Me.Label8.Text = "Hijos"
+        '
+        'mkhijos
+        '
+        Me.mkhijos.Location = New System.Drawing.Point(535, 214)
+        Me.mkhijos.Name = "mkhijos"
+        Me.mkhijos.Size = New System.Drawing.Size(100, 20)
+        Me.mkhijos.TabIndex = 4
+        '
+        'txtcategoria
+        '
+        Me.txtcategoria.Location = New System.Drawing.Point(142, 231)
+        Me.txtcategoria.Name = "txtcategoria"
+        Me.txtcategoria.Size = New System.Drawing.Size(128, 20)
+        Me.txtcategoria.TabIndex = 3
+        '
+        'txtempresa
+        '
+        Me.txtempresa.Location = New System.Drawing.Point(142, 183)
+        Me.txtempresa.Name = "txtempresa"
+        Me.txtempresa.Size = New System.Drawing.Size(128, 20)
+        Me.txtempresa.TabIndex = 2
+        '
+        'txtfechae
+        '
+        Me.txtfechae.Location = New System.Drawing.Point(142, 136)
+        Me.txtfechae.Name = "txtfechae"
+        Me.txtfechae.Size = New System.Drawing.Size(128, 20)
+        Me.txtfechae.TabIndex = 1
+        '
+        'txtfechai
+        '
+        Me.txtfechai.Location = New System.Drawing.Point(142, 91)
+        Me.txtfechai.Name = "txtfechai"
+        Me.txtfechai.Size = New System.Drawing.Size(128, 20)
+        Me.txtfechai.TabIndex = 0
+        '
+        'Pestaña3
+        '
+        Me.Pestaña3.Location = New System.Drawing.Point(4, 22)
+        Me.Pestaña3.Name = "Pestaña3"
+        Me.Pestaña3.Padding = New System.Windows.Forms.Padding(3)
+        Me.Pestaña3.Size = New System.Drawing.Size(1021, 490)
+        Me.Pestaña3.TabIndex = 2
+        Me.Pestaña3.Text = "Pestaña3"
+        Me.Pestaña3.UseVisualStyleBackColor = True
+        '
+        'btndesplazar
+        '
+        Me.btndesplazar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btndesplazar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btndesplazar.Image = Global.KountSueldos.My.Resources.Resources.derecha
+        Me.btndesplazar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btndesplazar.Location = New System.Drawing.Point(912, 435)
+        Me.btndesplazar.Name = "btndesplazar"
+        Me.btndesplazar.Size = New System.Drawing.Size(95, 37)
+        Me.btndesplazar.TabIndex = 66
+        Me.btndesplazar.Text = "Siguiente"
+        Me.btndesplazar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btndesplazar.UseVisualStyleBackColor = True
+        '
+        'btnnuevo
+        '
+        Me.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.neww1
+        Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnnuevo.Location = New System.Drawing.Point(21, 370)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(95, 37)
+        Me.btnnuevo.TabIndex = 47
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnnuevo.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Image = Global.KountSueldos.My.Resources.Resources.tecnologia
+        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button4.Location = New System.Drawing.Point(455, 445)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(95, 37)
+        Me.Button4.TabIndex = 45
+        Me.Button4.Text = "Imprimir"
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Image = Global.KountSueldos.My.Resources.Resources.pdf1
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.Location = New System.Drawing.Point(569, 445)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(95, 37)
+        Me.Button5.TabIndex = 46
+        Me.Button5.Text = "PDF"
+        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'btnguardar
+        '
+        Me.btnguardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnguardar.Image = Global.KountSueldos.My.Resources.Resources.web
+        Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnguardar.Location = New System.Drawing.Point(129, 370)
+        Me.btnguardar.Name = "btnguardar"
+        Me.btnguardar.Size = New System.Drawing.Size(95, 37)
+        Me.btnguardar.TabIndex = 42
+        Me.btnguardar.Text = "Guardar"
+        Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnguardar.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Image = Global.KountSueldos.My.Resources.Resources.logo
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(682, 445)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(95, 37)
+        Me.Button3.TabIndex = 44
+        Me.Button3.Text = "Excel"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'btnlimpiar
+        '
+        Me.btnlimpiar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnlimpiar.Image = Global.KountSueldos.My.Resources.Resources.clean
+        Me.btnlimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnlimpiar.Location = New System.Drawing.Point(21, 425)
+        Me.btnlimpiar.Name = "btnlimpiar"
+        Me.btnlimpiar.Size = New System.Drawing.Size(95, 37)
+        Me.btnlimpiar.TabIndex = 48
+        Me.btnlimpiar.Text = "Limpiar"
+        Me.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnlimpiar.UseVisualStyleBackColor = False
+        '
+        'btnAlta
+        '
+        Me.btnAlta.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnAlta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAlta.Image = Global.KountSueldos.My.Resources.Resources.edit
+        Me.btnAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAlta.Location = New System.Drawing.Point(129, 425)
+        Me.btnAlta.Name = "btnAlta"
+        Me.btnAlta.Size = New System.Drawing.Size(95, 37)
+        Me.btnAlta.TabIndex = 43
+        Me.btnAlta.Text = "Alta"
+        Me.btnAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAlta.UseVisualStyleBackColor = False
+        '
         'pbcerrar
         '
         Me.pbcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -142,136 +650,12 @@ Partial Class VEmpleado
         Me.pbcerrar.TabIndex = 0
         Me.pbcerrar.TabStop = False
         '
-        'btnlimpiar
-        '
-        Me.btnlimpiar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnlimpiar.Image = Global.KountSueldos.My.Resources.Resources.clean
-        Me.btnlimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnlimpiar.Location = New System.Drawing.Point(69, 451)
-        Me.btnlimpiar.Name = "btnlimpiar"
-        Me.btnlimpiar.Size = New System.Drawing.Size(95, 37)
-        Me.btnlimpiar.TabIndex = 48
-        Me.btnlimpiar.Text = "Limpiar"
-        Me.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnlimpiar.UseVisualStyleBackColor = False
-        '
-        'btnnuevo
-        '
-        Me.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.web
-        Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnnuevo.Location = New System.Drawing.Point(69, 396)
-        Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(95, 37)
-        Me.btnnuevo.TabIndex = 47
-        Me.btnnuevo.Text = "Nuevo"
-        Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnnuevo.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Image = Global.KountSueldos.My.Resources.Resources.pdf1
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(653, 51)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(95, 37)
-        Me.Button5.TabIndex = 46
-        Me.Button5.Text = "PDF"
-        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Image = Global.KountSueldos.My.Resources.Resources.tecnologia
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(539, 51)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(95, 37)
-        Me.Button4.TabIndex = 45
-        Me.Button4.Text = "Imprimir"
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Image = Global.KountSueldos.My.Resources.Resources.logo
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(766, 51)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(95, 37)
-        Me.Button3.TabIndex = 44
-        Me.Button3.Text = "Excel"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'btnAlta
-        '
-        Me.btnAlta.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAlta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAlta.Image = Global.KountSueldos.My.Resources.Resources.edit
-        Me.btnAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAlta.Location = New System.Drawing.Point(177, 451)
-        Me.btnAlta.Name = "btnAlta"
-        Me.btnAlta.Size = New System.Drawing.Size(95, 37)
-        Me.btnAlta.TabIndex = 43
-        Me.btnAlta.Text = "Alta"
-        Me.btnAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnAlta.UseVisualStyleBackColor = False
-        '
-        'btnguardar
-        '
-        Me.btnguardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnguardar.Image = Global.KountSueldos.My.Resources.Resources.web
-        Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnguardar.Location = New System.Drawing.Point(177, 396)
-        Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(95, 37)
-        Me.btnguardar.TabIndex = 42
-        Me.btnguardar.Text = "Guardar"
-        Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnguardar.UseVisualStyleBackColor = True
-        '
-        'chktodo
-        '
-        Me.chktodo.AutoSize = True
-        Me.chktodo.Location = New System.Drawing.Point(430, 108)
-        Me.chktodo.Name = "chktodo"
-        Me.chktodo.Size = New System.Drawing.Size(91, 17)
-        Me.chktodo.TabIndex = 49
-        Me.chktodo.Text = "Mostrar todo :"
-        Me.chktodo.UseVisualStyleBackColor = True
-        '
         'VEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1029, 561)
-        Me.Controls.Add(Me.chktodo)
-        Me.Controls.Add(Me.btnlimpiar)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.btnnuevo)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.btnAlta)
-        Me.Controls.Add(Me.btnguardar)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtfiltro)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtdescripcion)
-        Me.Controls.Add(Me.txtcod)
-        Me.Controls.Add(Me.dgvunidad)
+        Me.Controls.Add(Me.Pestaña1)
         Me.Controls.Add(Me.PanelSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "VEmpleado"
@@ -279,9 +663,15 @@ Partial Class VEmpleado
         CType(Me.dgvunidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSuperior.ResumeLayout(False)
         Me.PanelSuperior.PerformLayout()
+        Me.Pestaña1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.Pestaña2.ResumeLayout(False)
+        Me.Pestaña2.PerformLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -292,15 +682,51 @@ Partial Class VEmpleado
     Friend WithEvents Button3 As Button
     Friend WithEvents btnAlta As Button
     Friend WithEvents btnguardar As Button
-    Friend WithEvents Label4 As Label
     Friend WithEvents txtfiltro As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtdescripcion As TextBox
+    Friend WithEvents txtdireccion As TextBox
     Friend WithEvents txtcod As TextBox
     Friend WithEvents dgvunidad As DataGridView
     Friend WithEvents PanelSuperior As Panel
     Friend WithEvents lbltitulo As Label
     Friend WithEvents pbcerrar As PictureBox
     Friend WithEvents chktodo As CheckBox
+    Friend WithEvents Pestaña1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents Pestaña2 As TabPage
+    Friend WithEvents txtcuil As TextBox
+    Friend WithEvents Pestaña3 As TabPage
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txttelefono As TextBox
+    Friend WithEvents txtapellido As TextBox
+    Friend WithEvents txtnombre As TextBox
+    Friend WithEvents cboestadocivil As ComboBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents mkhijos As MaskedTextBox
+    Friend WithEvents txtcategoria As TextBox
+    Friend WithEvents txtempresa As TextBox
+    Friend WithEvents txtfechae As TextBox
+    Friend WithEvents txtfechai As TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents cboobra As ComboBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents txtnail As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents txtactividad As TextBox
+    Friend WithEvents txtfechanac As TextBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents rbapellido As RadioButton
+    Friend WithEvents rbcuil As RadioButton
+    Friend WithEvents txtfiltrocuil As TextBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents btndesplazar As Button
 End Class

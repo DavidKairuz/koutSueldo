@@ -1,7 +1,7 @@
 ﻿Public Class VBanco
     Dim ADBanco As ADBanco = New ADBanco
     Dim validar As Validar = New Validar
-    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) 
         Agregar()
     End Sub
 

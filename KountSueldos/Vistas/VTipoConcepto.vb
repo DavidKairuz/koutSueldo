@@ -231,7 +231,7 @@
         ADTipoConcepto.Filtra(txtfiltro, dgvtipoconcep)
     End Sub
 
-    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) 
         Agregar()
         dgvtipoconcep.DataSource = Nothing
         Mostrardgv()

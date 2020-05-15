@@ -41,10 +41,10 @@ Partial Class VConcepto
         Me.lblley = New System.Windows.Forms.Label()
         Me.txtley = New System.Windows.Forms.TextBox()
         Me.btnlimpiar = New System.Windows.Forms.Button()
-        Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnAlta = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.pbcerrar = New System.Windows.Forms.PictureBox()
+        Me.btnnuevo = New System.Windows.Forms.Button()
         CType(Me.dgvconcepto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,6 +111,7 @@ Partial Class VConcepto
         Me.dgvconcepto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvconcepto.Location = New System.Drawing.Point(287, 117)
         Me.dgvconcepto.Name = "dgvconcepto"
+        Me.dgvconcepto.RowHeadersVisible = False
         Me.dgvconcepto.Size = New System.Drawing.Size(651, 427)
         Me.dgvconcepto.TabIndex = 20
         '
@@ -227,20 +228,6 @@ Partial Class VConcepto
         Me.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnlimpiar.UseVisualStyleBackColor = False
         '
-        'btnnuevo
-        '
-        Me.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.web
-        Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnnuevo.Location = New System.Drawing.Point(46, 353)
-        Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(95, 37)
-        Me.btnnuevo.TabIndex = 32
-        Me.btnnuevo.Text = "Nuevo"
-        Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnnuevo.UseVisualStyleBackColor = True
-        '
         'btnAlta
         '
         Me.btnAlta.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -281,11 +268,26 @@ Partial Class VConcepto
         Me.pbcerrar.TabIndex = 0
         Me.pbcerrar.TabStop = False
         '
+        'btnnuevo
+        '
+        Me.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.neww1
+        Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnnuevo.Location = New System.Drawing.Point(46, 353)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(95, 37)
+        Me.btnnuevo.TabIndex = 48
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnnuevo.UseVisualStyleBackColor = True
+        '
         'VConcepto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(950, 611)
+        Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.lblley)
         Me.Controls.Add(Me.txtley)
         Me.Controls.Add(Me.chktodo)
@@ -296,7 +298,6 @@ Partial Class VConcepto
         Me.Controls.Add(Me.lblvalor)
         Me.Controls.Add(Me.lbltipo)
         Me.Controls.Add(Me.btnlimpiar)
-        Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.btnAlta)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.Label4)
@@ -320,7 +321,6 @@ Partial Class VConcepto
     End Sub
 
     Friend WithEvents btnlimpiar As Button
-    Friend WithEvents btnnuevo As Button
     Friend WithEvents btnAlta As Button
     Friend WithEvents btnguardar As Button
     Friend WithEvents Label4 As Label
@@ -342,4 +342,5 @@ Partial Class VConcepto
     Friend WithEvents chktodo As CheckBox
     Friend WithEvents lblley As Label
     Friend WithEvents txtley As TextBox
+    Friend WithEvents btnnuevo As Button
 End Class

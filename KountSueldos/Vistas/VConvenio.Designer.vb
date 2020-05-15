@@ -33,10 +33,10 @@ Partial Class VConvenio
         Me.txtfiltro = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnlimpiar = New System.Windows.Forms.Button()
-        Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnAlta = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.chktodo = New System.Windows.Forms.CheckBox()
+        Me.btnnuevo = New System.Windows.Forms.Button()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -154,20 +154,6 @@ Partial Class VConvenio
         Me.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnlimpiar.UseVisualStyleBackColor = False
         '
-        'btnnuevo
-        '
-        Me.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.web
-        Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnnuevo.Location = New System.Drawing.Point(33, 327)
-        Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(95, 37)
-        Me.btnnuevo.TabIndex = 17
-        Me.btnnuevo.Text = "Nuevo"
-        Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnnuevo.UseVisualStyleBackColor = True
-        '
         'btnAlta
         '
         Me.btnAlta.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -207,14 +193,28 @@ Partial Class VConvenio
         Me.chktodo.Text = "Mostrar todo :"
         Me.chktodo.UseVisualStyleBackColor = True
         '
+        'btnnuevo
+        '
+        Me.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.neww1
+        Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnnuevo.Location = New System.Drawing.Point(33, 327)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(95, 37)
+        Me.btnnuevo.TabIndex = 48
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnnuevo.UseVisualStyleBackColor = True
+        '
         'VConvenio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(950, 611)
+        Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.chktodo)
         Me.Controls.Add(Me.btnlimpiar)
-        Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.btnAlta)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.Label4)
@@ -250,7 +250,7 @@ Partial Class VConvenio
     Friend WithEvents btnAlta As Button
     Friend WithEvents pbcerrar As PictureBox
     Friend WithEvents lbltitulo As Label
-    Friend WithEvents btnnuevo As Button
     Friend WithEvents btnlimpiar As Button
     Friend WithEvents chktodo As CheckBox
+    Friend WithEvents btnnuevo As Button
 End Class

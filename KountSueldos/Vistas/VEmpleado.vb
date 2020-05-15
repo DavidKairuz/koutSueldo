@@ -3,7 +3,7 @@
 
     End Sub
 
-    Private Sub dgvunidad_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvunidad.CellContentClick
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
 
     End Sub
 End Class

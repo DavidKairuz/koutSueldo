@@ -33,13 +33,10 @@ Partial Class VTipoConcepto
         Me.lbltitulo = New System.Windows.Forms.Label()
         Me.pbcerrar = New System.Windows.Forms.PictureBox()
         Me.btnlimpiar = New System.Windows.Forms.Button()
-        Me.btnnuevo = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.btnAlta = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.chktodo = New System.Windows.Forms.CheckBox()
+        Me.btnnuevo = New System.Windows.Forms.Button()
         CType(Me.dgvtipoconcep, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -157,62 +154,6 @@ Partial Class VTipoConcepto
         Me.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnlimpiar.UseVisualStyleBackColor = False
         '
-        'btnnuevo
-        '
-        Me.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.web
-        Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnnuevo.Location = New System.Drawing.Point(19, 311)
-        Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(101, 37)
-        Me.btnnuevo.TabIndex = 32
-        Me.btnnuevo.Text = "Nuevo"
-        Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnnuevo.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Image = Global.KountSueldos.My.Resources.Resources.pdf1
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(837, 172)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(101, 37)
-        Me.Button5.TabIndex = 31
-        Me.Button5.Text = "PDF"
-        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Image = Global.KountSueldos.My.Resources.Resources.tecnologia
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(837, 110)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(101, 37)
-        Me.Button4.TabIndex = 30
-        Me.Button4.Text = "Imprimir"
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Image = Global.KountSueldos.My.Resources.Resources.logo
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(837, 231)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(101, 37)
-        Me.Button3.TabIndex = 29
-        Me.Button3.Text = "Excel"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button3.UseVisualStyleBackColor = True
-        '
         'btnAlta
         '
         Me.btnAlta.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -254,17 +195,28 @@ Partial Class VTipoConcepto
         Me.chktodo.Text = "Mostrar todo :"
         Me.chktodo.UseVisualStyleBackColor = True
         '
+        'btnnuevo
+        '
+        Me.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.neww1
+        Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnnuevo.Location = New System.Drawing.Point(26, 311)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(95, 37)
+        Me.btnnuevo.TabIndex = 48
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnnuevo.UseVisualStyleBackColor = True
+        '
         'VTipoConcepto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(994, 567)
+        Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.chktodo)
         Me.Controls.Add(Me.btnlimpiar)
-        Me.Controls.Add(Me.btnnuevo)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.btnAlta)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.Label4)
@@ -288,10 +240,6 @@ Partial Class VTipoConcepto
     End Sub
 
     Friend WithEvents btnlimpiar As Button
-    Friend WithEvents btnnuevo As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
     Friend WithEvents btnAlta As Button
     Friend WithEvents btnguardar As Button
     Friend WithEvents Label4 As Label
@@ -305,4 +253,5 @@ Partial Class VTipoConcepto
     Friend WithEvents lbltitulo As Label
     Friend WithEvents pbcerrar As PictureBox
     Friend WithEvents chktodo As CheckBox
+    Friend WithEvents btnnuevo As Button
 End Class

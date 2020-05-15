@@ -239,7 +239,7 @@
         ADConvenio.Filtra(txtfiltro, dgvconvenio)
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+    Private Sub Button6_Click(sender As Object, e As EventArgs) 
         Agregar()
         Refrescar()
     End Sub

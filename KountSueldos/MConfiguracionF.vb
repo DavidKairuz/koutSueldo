@@ -19,6 +19,7 @@
         dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
         dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Coral
+        dgv.RowHeadersVisible = False
     End Sub
 
 

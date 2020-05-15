@@ -33,7 +33,6 @@ Partial Class VActividad
         Me.lbltitulo = New System.Windows.Forms.Label()
         Me.pbcerrar = New System.Windows.Forms.PictureBox()
         Me.btnlimpiar = New System.Windows.Forms.Button()
-        Me.btnnuevo = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -44,6 +43,7 @@ Partial Class VActividad
         Me.cbocategoria = New System.Windows.Forms.ComboBox()
         Me.lblunidad = New System.Windows.Forms.Label()
         Me.chktodo = New System.Windows.Forms.CheckBox()
+        Me.btnnuevo = New System.Windows.Forms.Button()
         CType(Me.dgvactividad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -162,20 +162,6 @@ Partial Class VActividad
         Me.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnlimpiar.UseVisualStyleBackColor = False
         '
-        'btnnuevo
-        '
-        Me.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.web
-        Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnnuevo.Location = New System.Drawing.Point(20, 342)
-        Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(101, 37)
-        Me.btnnuevo.TabIndex = 32
-        Me.btnnuevo.Text = "Nuevo"
-        Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnnuevo.UseVisualStyleBackColor = True
-        '
         'Button5
         '
         Me.Button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -291,18 +277,32 @@ Partial Class VActividad
         Me.chktodo.Text = "Mostrar todo :"
         Me.chktodo.UseVisualStyleBackColor = True
         '
+        'btnnuevo
+        '
+        Me.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.neww1
+        Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnnuevo.Location = New System.Drawing.Point(22, 342)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(95, 37)
+        Me.btnnuevo.TabIndex = 48
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnnuevo.UseVisualStyleBackColor = True
+        '
         'VActividad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1022, 557)
+        Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.chktodo)
         Me.Controls.Add(Me.lblunidad)
         Me.Controls.Add(Me.cbocategoria)
         Me.Controls.Add(Me.lblconvenio)
         Me.Controls.Add(Me.cboconvenio)
         Me.Controls.Add(Me.btnlimpiar)
-        Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
@@ -329,7 +329,6 @@ Partial Class VActividad
     End Sub
 
     Friend WithEvents btnlimpiar As Button
-    Friend WithEvents btnnuevo As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Button3 As Button
@@ -350,4 +349,5 @@ Partial Class VActividad
     Friend WithEvents cbocategoria As ComboBox
     Friend WithEvents lblunidad As Label
     Friend WithEvents chktodo As CheckBox
+    Friend WithEvents btnnuevo As Button
 End Class

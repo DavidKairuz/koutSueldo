@@ -23,7 +23,6 @@ Partial Class VRemuneraciones
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.btnlimpiar = New System.Windows.Forms.Button()
-        Me.btnnuevo = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -40,6 +39,7 @@ Partial Class VRemuneraciones
         Me.lbltitulo = New System.Windows.Forms.Label()
         Me.pbcerrar = New System.Windows.Forms.PictureBox()
         Me.chktodo = New System.Windows.Forms.CheckBox()
+        Me.btnnuevo = New System.Windows.Forms.Button()
         CType(Me.dgvunidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,20 +59,6 @@ Partial Class VRemuneraciones
         Me.btnlimpiar.Text = "Limpiar"
         Me.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnlimpiar.UseVisualStyleBackColor = False
-        '
-        'btnnuevo
-        '
-        Me.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.web
-        Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnnuevo.Location = New System.Drawing.Point(19, 305)
-        Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(101, 37)
-        Me.btnnuevo.TabIndex = 47
-        Me.btnnuevo.Text = "Nuevo"
-        Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnnuevo.UseVisualStyleBackColor = True
         '
         'Button5
         '
@@ -252,14 +238,28 @@ Partial Class VRemuneraciones
         Me.chktodo.Text = "Mostrar todo :"
         Me.chktodo.UseVisualStyleBackColor = True
         '
+        'btnnuevo
+        '
+        Me.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.neww1
+        Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnnuevo.Location = New System.Drawing.Point(26, 305)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(95, 37)
+        Me.btnnuevo.TabIndex = 50
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnnuevo.UseVisualStyleBackColor = True
+        '
         'VRemuneraciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1027, 539)
+        Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.chktodo)
         Me.Controls.Add(Me.btnlimpiar)
-        Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
@@ -286,7 +286,6 @@ Partial Class VRemuneraciones
     End Sub
 
     Friend WithEvents btnlimpiar As Button
-    Friend WithEvents btnnuevo As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Button3 As Button
@@ -303,4 +302,5 @@ Partial Class VRemuneraciones
     Friend WithEvents lbltitulo As Label
     Friend WithEvents pbcerrar As PictureBox
     Friend WithEvents chktodo As CheckBox
+    Friend WithEvents btnnuevo As Button
 End Class

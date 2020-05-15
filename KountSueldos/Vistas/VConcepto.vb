@@ -270,7 +270,7 @@
         Mostrardgv()
         limpiar()
     End Sub
-    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs)
         Agregar()
         Refrescar()
     End Sub
@@ -340,5 +340,9 @@
 
     Private Sub chktodo_CheckedChanged(sender As Object, e As EventArgs) Handles chktodo.CheckedChanged
         Mostrartodo()
+    End Sub
+
+    Private Sub btnnuevo_Click_1(sender As Object, e As EventArgs) Handles btnnuevo.Click
+
     End Sub
 End Class

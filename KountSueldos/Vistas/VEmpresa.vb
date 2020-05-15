@@ -132,7 +132,7 @@
         txtdescripcion.Text = CStr(dgvempresa.CurrentRow.Cells(1).Value)
     End Sub
 
-    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) 
 
     End Sub
 End Class

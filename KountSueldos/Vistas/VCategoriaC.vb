@@ -229,7 +229,7 @@
         End Try
     End Sub
 
-    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs)
         Agregar()
         limpiar()
         indice()
