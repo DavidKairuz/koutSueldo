@@ -39,8 +39,6 @@
         dgv.Columns(2).DataPropertyName = "Editar"
         dgv.Columns(3).DataPropertyName = "Eliminar"
         dgv.Columns(4).DataPropertyName = "estadobaja"
-        dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.Aquamarine
     End Sub
 
     Private Sub pbcerrar_Click(sender As Object, e As EventArgs) Handles pbcerrar.Click
@@ -183,20 +181,32 @@
         End Try
     End Sub
 
-    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) 
+
+    Sub Refrescar()
+        dgvrazon.DataSource = Nothing
+        Mostrardgv()
+        limpiar()
+        indice()
+    End Sub
+
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs)
         Agregar()
+        Refrescar()
     End Sub
 
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Guardar()
+        Refrescar()
     End Sub
 
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
         Alta()
+        Refrescar()
     End Sub
 
     Private Sub btnlimpiar_Click(sender As Object, e As EventArgs) Handles btnlimpiar.Click
         limpiar()
+        indice()
     End Sub
 
     Private Sub txtfiltro_TextChanged(sender As Object, e As EventArgs) Handles txtfiltro.TextChanged

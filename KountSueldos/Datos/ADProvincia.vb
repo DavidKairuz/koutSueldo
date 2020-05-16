@@ -88,4 +88,18 @@
         End If
         Return i
     End Function
+
+
+    Shared Sub MostrarCombo(combo As ComboBox)
+        Dim uni = (From e In ctx.Provincia
+                   Select e).ToList
+
+        combo.DataSource = uni
+        combo.DisplayMember = "descripcion"
+        combo.ValueMember = "id_provincia"
+        combo.SelectedValue = -1
+
+    End Sub
+
+
 End Class

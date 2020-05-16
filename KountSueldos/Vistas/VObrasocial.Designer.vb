@@ -28,7 +28,7 @@ Partial Class VObrasocial
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.txtcod = New System.Windows.Forms.TextBox()
-        Me.dgvconvenio = New System.Windows.Forms.DataGridView()
+        Me.dgvobras = New System.Windows.Forms.DataGridView()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
         Me.lbltitulo = New System.Windows.Forms.Label()
         Me.pbcerrar = New System.Windows.Forms.PictureBox()
@@ -40,7 +40,7 @@ Partial Class VObrasocial
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.chktodo = New System.Windows.Forms.CheckBox()
         Me.btnnuevo = New System.Windows.Forms.Button()
-        CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvobras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -96,18 +96,18 @@ Partial Class VObrasocial
         Me.txtcod.Size = New System.Drawing.Size(159, 20)
         Me.txtcod.TabIndex = 21
         '
-        'dgvconvenio
+        'dgvobras
         '
-        Me.dgvconvenio.AllowUserToAddRows = False
-        Me.dgvconvenio.AllowUserToDeleteRows = False
-        Me.dgvconvenio.AllowUserToResizeColumns = False
-        Me.dgvconvenio.AllowUserToResizeRows = False
-        Me.dgvconvenio.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.dgvconvenio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvconvenio.Location = New System.Drawing.Point(370, 117)
-        Me.dgvconvenio.Name = "dgvconvenio"
-        Me.dgvconvenio.Size = New System.Drawing.Size(453, 427)
-        Me.dgvconvenio.TabIndex = 20
+        Me.dgvobras.AllowUserToAddRows = False
+        Me.dgvobras.AllowUserToDeleteRows = False
+        Me.dgvobras.AllowUserToResizeColumns = False
+        Me.dgvobras.AllowUserToResizeRows = False
+        Me.dgvobras.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.dgvobras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvobras.Location = New System.Drawing.Point(370, 117)
+        Me.dgvobras.Name = "dgvobras"
+        Me.dgvobras.Size = New System.Drawing.Size(453, 427)
+        Me.dgvobras.TabIndex = 20
         '
         'PanelSuperior
         '
@@ -271,12 +271,12 @@ Partial Class VObrasocial
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtdescripcion)
         Me.Controls.Add(Me.txtcod)
-        Me.Controls.Add(Me.dgvconvenio)
+        Me.Controls.Add(Me.dgvobras)
         Me.Controls.Add(Me.PanelSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "VObrasocial"
         Me.Text = "VObrasocial"
-        CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvobras, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSuperior.ResumeLayout(False)
         Me.PanelSuperior.PerformLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -297,7 +297,7 @@ Partial Class VObrasocial
     Friend WithEvents Label1 As Label
     Friend WithEvents txtdescripcion As TextBox
     Friend WithEvents txtcod As TextBox
-    Friend WithEvents dgvconvenio As DataGridView
+    Friend WithEvents dgvobras As DataGridView
     Friend WithEvents PanelSuperior As Panel
     Friend WithEvents lbltitulo As Label
     Friend WithEvents pbcerrar As PictureBox

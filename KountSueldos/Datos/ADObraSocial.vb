@@ -5,7 +5,7 @@
     Shared Sub MostrarObra_Social(grid As DataGridView)
         Dim bank = (From b In ctx.Obra_Social
                     Where b.estadobaja = True
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
@@ -13,7 +13,7 @@
 
     Shared Sub MostrarObra_SocialT(grid As DataGridView)
         Dim bank = (From b In ctx.Obra_Social
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
@@ -38,6 +38,15 @@
 
     End Sub
 
+
+    Shared Sub DarAlta(id As Integer)
+        Dim bn = (From b In ctx.Obra_Social
+                  Where b.id_obrasocial = id
+                  Select b).SingleOrDefault
+        bn.estadobaja = 1
+        ctx.SaveChanges()
+
+    End Sub
 
     Shared Sub ModificarObra_Social(id As Integer, name As String)
         Dim tipo = (From t In ctx.Obra_Social
@@ -79,4 +88,26 @@
         End If
         Return i
     End Function
+
+    Shared Function ExisteID(id As Integer) As Boolean
+        Dim result As Boolean = False
+        If ctx.Obra_Social.Any(Function(o) o.id_obrasocial = id) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
+
+    Shared Function ExisteIDEstado(id As Integer) As Boolean
+        Dim result As Boolean = False
+        If ctx.Obra_Social.Any(Function(o) o.id_obrasocial = id) And (ctx.Obra_Social.Any(Function(o) o.estadobaja = True)) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
+
+
 End Class

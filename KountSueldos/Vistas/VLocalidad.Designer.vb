@@ -28,7 +28,7 @@ Partial Class VLocalidad
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.txtcod = New System.Windows.Forms.TextBox()
-        Me.dgvconvenio = New System.Windows.Forms.DataGridView()
+        Me.dgvlocalidad = New System.Windows.Forms.DataGridView()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
         Me.lbltitulo = New System.Windows.Forms.Label()
         Me.pbcerrar = New System.Windows.Forms.PictureBox()
@@ -37,7 +37,9 @@ Partial Class VLocalidad
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.chktodo = New System.Windows.Forms.CheckBox()
         Me.btnnuevo = New System.Windows.Forms.Button()
-        CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.cboprovincia = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        CType(Me.dgvlocalidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -62,7 +64,7 @@ Partial Class VLocalidad
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(43, 211)
+        Me.Label2.Location = New System.Drawing.Point(34, 195)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 24
@@ -71,7 +73,7 @@ Partial Class VLocalidad
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(66, 169)
+        Me.Label1.Location = New System.Drawing.Point(34, 99)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 23
@@ -79,7 +81,7 @@ Partial Class VLocalidad
         '
         'txtdescripcion
         '
-        Me.txtdescripcion.Location = New System.Drawing.Point(127, 209)
+        Me.txtdescripcion.Location = New System.Drawing.Point(114, 191)
         Me.txtdescripcion.Multiline = True
         Me.txtdescripcion.Name = "txtdescripcion"
         Me.txtdescripcion.Size = New System.Drawing.Size(159, 32)
@@ -88,23 +90,23 @@ Partial Class VLocalidad
         'txtcod
         '
         Me.txtcod.Enabled = False
-        Me.txtcod.Location = New System.Drawing.Point(127, 166)
+        Me.txtcod.Location = New System.Drawing.Point(114, 96)
         Me.txtcod.Name = "txtcod"
         Me.txtcod.Size = New System.Drawing.Size(159, 20)
         Me.txtcod.TabIndex = 21
         '
-        'dgvconvenio
+        'dgvlocalidad
         '
-        Me.dgvconvenio.AllowUserToAddRows = False
-        Me.dgvconvenio.AllowUserToDeleteRows = False
-        Me.dgvconvenio.AllowUserToResizeColumns = False
-        Me.dgvconvenio.AllowUserToResizeRows = False
-        Me.dgvconvenio.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.dgvconvenio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvconvenio.Location = New System.Drawing.Point(370, 121)
-        Me.dgvconvenio.Name = "dgvconvenio"
-        Me.dgvconvenio.Size = New System.Drawing.Size(453, 427)
-        Me.dgvconvenio.TabIndex = 20
+        Me.dgvlocalidad.AllowUserToAddRows = False
+        Me.dgvlocalidad.AllowUserToDeleteRows = False
+        Me.dgvlocalidad.AllowUserToResizeColumns = False
+        Me.dgvlocalidad.AllowUserToResizeRows = False
+        Me.dgvlocalidad.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.dgvlocalidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvlocalidad.Location = New System.Drawing.Point(370, 121)
+        Me.dgvlocalidad.Name = "dgvlocalidad"
+        Me.dgvlocalidad.Size = New System.Drawing.Size(453, 427)
+        Me.dgvlocalidad.TabIndex = 20
         '
         'PanelSuperior
         '
@@ -124,9 +126,9 @@ Partial Class VLocalidad
         Me.lbltitulo.ForeColor = System.Drawing.Color.White
         Me.lbltitulo.Location = New System.Drawing.Point(42, 17)
         Me.lbltitulo.Name = "lbltitulo"
-        Me.lbltitulo.Size = New System.Drawing.Size(78, 19)
+        Me.lbltitulo.Size = New System.Drawing.Size(75, 19)
         Me.lbltitulo.TabIndex = 33
-        Me.lbltitulo.Text = " Convenio"
+        Me.lbltitulo.Text = "Localidad"
         '
         'pbcerrar
         '
@@ -207,11 +209,30 @@ Partial Class VLocalidad
         Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnnuevo.UseVisualStyleBackColor = True
         '
+        'cboprovincia
+        '
+        Me.cboprovincia.FormattingEnabled = True
+        Me.cboprovincia.Location = New System.Drawing.Point(114, 143)
+        Me.cboprovincia.Name = "cboprovincia"
+        Me.cboprovincia.Size = New System.Drawing.Size(156, 21)
+        Me.cboprovincia.TabIndex = 49
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(34, 143)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(51, 13)
+        Me.Label3.TabIndex = 50
+        Me.Label3.Text = "Provincia"
+        '
         'VLocalidad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1023, 558)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.cboprovincia)
         Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.chktodo)
         Me.Controls.Add(Me.btnlimpiar)
@@ -223,12 +244,12 @@ Partial Class VLocalidad
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtdescripcion)
         Me.Controls.Add(Me.txtcod)
-        Me.Controls.Add(Me.dgvconvenio)
+        Me.Controls.Add(Me.dgvlocalidad)
         Me.Controls.Add(Me.PanelSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "VLocalidad"
         Me.Text = "VLocalidad"
-        CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvlocalidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSuperior.ResumeLayout(False)
         Me.PanelSuperior.PerformLayout()
         CType(Me.pbcerrar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -246,10 +267,12 @@ Partial Class VLocalidad
     Friend WithEvents Label1 As Label
     Friend WithEvents txtdescripcion As TextBox
     Friend WithEvents txtcod As TextBox
-    Friend WithEvents dgvconvenio As DataGridView
+    Friend WithEvents dgvlocalidad As DataGridView
     Friend WithEvents PanelSuperior As Panel
     Friend WithEvents lbltitulo As Label
     Friend WithEvents pbcerrar As PictureBox
     Friend WithEvents chktodo As CheckBox
     Friend WithEvents btnnuevo As Button
+    Friend WithEvents cboprovincia As ComboBox
+    Friend WithEvents Label3 As Label
 End Class
