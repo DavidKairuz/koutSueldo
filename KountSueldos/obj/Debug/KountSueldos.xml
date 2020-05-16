@@ -32,6 +32,11 @@ KountSueldos
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:KountSueldos.My.Resources.Resources.derecha">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:KountSueldos.My.Resources.Resources.edit">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -52,6 +57,11 @@ KountSueldos
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:KountSueldos.My.Resources.Resources.Izquierda">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:KountSueldos.My.Resources.Resources.logo">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -63,6 +73,11 @@ KountSueldos
 </summary>
 </member>
 <member name="P:KountSueldos.My.Resources.Resources.neww">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:KountSueldos.My.Resources.Resources.neww1">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

@@ -27,4 +27,10 @@
         guarda.Enabled = False 'hace refencia a guardar
         alta.Enabled = False ' hace referencia a alta
     End Sub
+
+
+
+
+
+
 End Module

@@ -5,7 +5,7 @@
     Shared Sub MostrarEstado_Civil(grid As DataGridView)
         Dim bank = (From b In ctx.Estado_Civil
                     Where b.estadobaja = True
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
@@ -13,7 +13,7 @@
 
     Shared Sub MostrarEstado_CivilT(grid As DataGridView)
         Dim bank = (From b In ctx.Estado_Civil
-                    Select b)
+                    Select b).ToList
         grid.DataSource = bank
     End Sub
 
@@ -38,6 +38,15 @@
 
     End Sub
 
+
+    Shared Sub DarAlta(id As Integer)
+        Dim bn = (From b In ctx.Estado_Civil
+                  Where b.id_estadociv = id
+                  Select b).SingleOrDefault
+        bn.estadobaja = 1
+        ctx.SaveChanges()
+
+    End Sub
 
     Shared Sub ModificarEstado_Civil(id As Integer, name As String)
         Dim tipo = (From t In ctx.Estado_Civil
@@ -79,4 +88,26 @@
         End If
         Return i
     End Function
+
+
+    Shared Function ExisteID(id As Integer) As Boolean
+        Dim result As Boolean = False
+        If ctx.Estado_Civil.Any(Function(o) o.id_estadociv = id) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
+
+    Shared Function ExisteIDEstado(id As Integer) As Boolean
+        Dim result As Boolean = False
+        If ctx.Estado_Civil.Any(Function(o) o.id_estadociv = id) And (ctx.Estado_Civil.Any(Function(o) o.estadobaja = True)) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
+
 End Class

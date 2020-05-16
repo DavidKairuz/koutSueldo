@@ -1,5 +1,23 @@
 ﻿Public Class VTipoConcepto
+    Dim formPosition As New Point
+    Dim mouseAction As New Boolean
 
+
+
+    Private Sub frmPA_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
+        formPosition = New Point(Cursor.Position.X - Location.X, Cursor.Position.Y - Location.Y)
+        mouseAction = True
+    End Sub
+
+    Private Sub frmPA_MouseMove(sender As Object, e As MouseEventArgs) Handles MyBase.MouseMove
+        If mouseAction = True Then
+            Location = New Point(Cursor.Position.X - formPosition.X, Cursor.Position.Y - formPosition.Y)
+        End If
+    End Sub
+
+    Private Sub frmPA_MouseUp(sender As Object, e As MouseEventArgs) Handles MyBase.MouseUp
+        mouseAction = False
+    End Sub
     Private Sub VTipoConcepto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MConfiguracionF.TamañoForm(Me)
         dgvmanual(dgvtipoconcep)
@@ -190,7 +208,7 @@
                     End If
                 End If
 
-                End If
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -231,7 +249,7 @@
         ADTipoConcepto.Filtra(txtfiltro, dgvtipoconcep)
     End Sub
 
-    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) 
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs)
         Agregar()
         dgvtipoconcep.DataSource = Nothing
         Mostrardgv()
@@ -305,5 +323,9 @@
     End Sub
     Private Sub chktodo_CheckedChanged(sender As Object, e As EventArgs) Handles chktodo.CheckedChanged
         Mostrartodo()
+    End Sub
+
+    Private Sub btnnuevo_Click_1(sender As Object, e As EventArgs) Handles btnnuevo.Click
+
     End Sub
 End Class

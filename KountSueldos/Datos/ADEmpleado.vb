@@ -5,7 +5,7 @@
     Shared Sub MostrarEmpleado(grid As DataGridView)
         Dim emp = (From b In ctx.Empleado
                    Where b.estadobaja = True
-                   Select b)
+                   Select b).ToList
         grid.DataSource = emp
     End Sub
 
@@ -13,7 +13,7 @@
 
     Shared Sub MostrarEmpleadoT(grid As DataGridView)
         Dim emp = (From b In ctx.Empleado
-                   Select b)
+                   Select b).ToList
         grid.DataSource = emp
     End Sub
 
@@ -34,6 +34,16 @@
                   Where b.id_empleado = id
                   Select b).SingleOrDefault
         bn.estadobaja = 0
+        ctx.SaveChanges()
+
+    End Sub
+
+
+    Shared Sub DarAlta(id As Integer)
+        Dim bn = (From b In ctx.Empleado
+                  Where b.id_empleado = id
+                  Select b).SingleOrDefault
+        bn.estadobaja = 1
         ctx.SaveChanges()
 
     End Sub
