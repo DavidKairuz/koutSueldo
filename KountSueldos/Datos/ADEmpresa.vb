@@ -39,6 +39,16 @@
     End Sub
 
 
+    Shared Sub DarAlta(id As Integer)
+        Dim bn = (From b In ctx.Empresa
+                  Where b.id_empresa = id
+                  Select b).SingleOrDefault
+        bn.estadobaja = 1
+        ctx.SaveChanges()
+
+    End Sub
+
+
     Shared Sub ModificarEmpresa(id As Integer, name As String, dir As String, tel As String, cuit As String, prov As Integer, razon As Integer)
         Dim tipo = (From t In ctx.Empresa
                     Where t.id_empresa = id
@@ -85,4 +95,26 @@
         End If
         Return i
     End Function
+
+    Shared Function ExisteID(id As Integer) As Boolean
+        Dim result As Boolean = False
+        If ctx.Empresa.Any(Function(o) o.id_empresa = id) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
+
+    Shared Function ExisteIDEstado(id As Integer) As Boolean
+        Dim result As Boolean = False
+        If ctx.Empresa.Any(Function(o) o.id_empresa = id) And (ctx.Empresa.Any(Function(o) o.estadobaja = True)) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
+
+
 End Class

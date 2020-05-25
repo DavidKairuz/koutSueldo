@@ -32,7 +32,7 @@ Partial Class VEmpresa
         Me.txtfiltro = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtdescripcion = New System.Windows.Forms.TextBox()
+        Me.txtnombrefsia = New System.Windows.Forms.TextBox()
         Me.txtcod = New System.Windows.Forms.TextBox()
         Me.dgvempresa = New System.Windows.Forms.DataGridView()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
@@ -64,7 +64,7 @@ Partial Class VEmpresa
         Me.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnlimpiar.Image = Global.KountSueldos.My.Resources.Resources.clean
         Me.btnlimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnlimpiar.Location = New System.Drawing.Point(139, 476)
+        Me.btnlimpiar.Location = New System.Drawing.Point(128, 473)
         Me.btnlimpiar.Name = "btnlimpiar"
         Me.btnlimpiar.Size = New System.Drawing.Size(101, 37)
         Me.btnlimpiar.TabIndex = 48
@@ -135,7 +135,7 @@ Partial Class VEmpresa
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Image = Global.KountSueldos.My.Resources.Resources.web
         Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnguardar.Location = New System.Drawing.Point(139, 419)
+        Me.btnguardar.Location = New System.Drawing.Point(130, 419)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(101, 37)
         Me.btnguardar.TabIndex = 42
@@ -178,12 +178,12 @@ Partial Class VEmpresa
         Me.Label1.TabIndex = 38
         Me.Label1.Text = "Código"
         '
-        'txtdescripcion
+        'txtnombrefsia
         '
-        Me.txtdescripcion.Location = New System.Drawing.Point(104, 119)
-        Me.txtdescripcion.Name = "txtdescripcion"
-        Me.txtdescripcion.Size = New System.Drawing.Size(159, 20)
-        Me.txtdescripcion.TabIndex = 37
+        Me.txtnombrefsia.Location = New System.Drawing.Point(104, 119)
+        Me.txtnombrefsia.Name = "txtnombrefsia"
+        Me.txtnombrefsia.Size = New System.Drawing.Size(159, 20)
+        Me.txtnombrefsia.TabIndex = 37
         '
         'txtcod
         '
@@ -390,7 +390,7 @@ Partial Class VEmpresa
         Me.Controls.Add(Me.txtfiltro)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtdescripcion)
+        Me.Controls.Add(Me.txtnombrefsia)
         Me.Controls.Add(Me.txtcod)
         Me.Controls.Add(Me.dgvempresa)
         Me.Controls.Add(Me.PanelSuperior)
@@ -416,7 +416,7 @@ Partial Class VEmpresa
     Friend WithEvents txtfiltro As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtdescripcion As TextBox
+    Friend WithEvents txtnombrefsia As TextBox
     Friend WithEvents txtcod As TextBox
     Friend WithEvents dgvempresa As DataGridView
     Friend WithEvents PanelSuperior As Panel

@@ -33,7 +33,7 @@
 
 
 
-    Private Sub rbcuil_CheckedChanged(sender As Object, e As EventArgs) Handles rbcuil.CheckedChanged
+    Private Sub rbcuil_CheckedChanged(sender As Object, e As EventArgs) 
         Elegirfiltro()
     End Sub
 
@@ -339,7 +339,7 @@
         'dtpnacimiento.Select
     End Sub
 
-    Private Sub dgvempleado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvempleado.CellContentClick
+    Private Sub dgvempleado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) 
         Try
             If validar.DatagridVacio(dgvempleado) = False Then
 
@@ -384,5 +384,11 @@
         Limpiar()
     End Sub
 
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
 
+    End Sub
+
+    Private Sub Pestaña2_Click(sender As Object, e As EventArgs) Handles Pestaña2.Click
+
+    End Sub
 End Class
