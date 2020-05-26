@@ -4,7 +4,6 @@
 
     Shared Sub MostrarEmpresa(grid As DataGridView)
         Dim emp = (From b In ctx.Empresa
-                   Where b.estadobaja = True
                    Select b).ToList
         grid.DataSource = emp
     End Sub
@@ -19,8 +18,13 @@
 
 
     Shared Sub AgregarEmpresa(obj As Empresa)
-        ctx.Empresa.Add(obj)
-        ctx.SaveChanges()
+        Try
+            ctx.Empresa.Add(obj)
+            ctx.SaveChanges()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Shared Sub Eliminar(obj As Empresa)
@@ -49,7 +53,7 @@
     End Sub
 
 
-    Shared Sub ModificarEmpresa(id As Integer, name As String, dir As String, tel As String, cuit As String, prov As Integer, razon As Integer)
+    Shared Sub ModificarEmpresa(id As Integer, name As String, dir As String, tel As String, mail As String, cuit As String, prov As Integer, razon As Integer)
         Dim tipo = (From t In ctx.Empresa
                     Where t.id_empresa = id
                     Select t).SingleOrDefault
@@ -57,6 +61,7 @@
             .nombrefantasia = name
             .direccion = dir
             .telefono = tel
+            .email = mail
             .cuitE = cuit
             .provincia = prov
             .id_razonsocial = razon
@@ -86,13 +91,18 @@
 
     Shared Function index() As Integer
         Dim i As Integer
-        Dim ext = (From ex In ctx.Empresa Order By ex.id_empresa Descending Select ex).First().id_empresa
-        i = CInt(ext.ToString)
-        If i > 0 Then
-            Return i + 1
-        Else
-            i = 0
-        End If
+        Try
+
+            Dim ext = (From ex In ctx.Empresa Order By ex.id_empresa Descending Select ex).First().id_empresa
+            i = CInt(ext.ToString)
+            If i > 0 Then
+                Return i + 1
+            Else
+                i = 0
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
         Return i
     End Function
 

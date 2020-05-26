@@ -18,7 +18,7 @@
         dgv.AutoResizeRows()
         dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
         dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Coral
+        '  dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Coral
         dgv.RowHeadersVisible = False
     End Sub
 
@@ -27,7 +27,6 @@
         guarda.Enabled = False 'hace refencia a guardar
         alta.Enabled = False ' hace referencia a alta
     End Sub
-
 
 
 

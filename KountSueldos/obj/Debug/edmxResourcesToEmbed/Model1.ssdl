@@ -98,14 +98,14 @@
       <PropertyRef Name="id_empresa" />
     </Key>
     <Property Name="id_empresa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombrefantasia" Type="nvarchar" MaxLength="100" />
-    <Property Name="direccion" Type="nvarchar" MaxLength="100" />
+    <Property Name="nombrefantasia" Type="varchar" MaxLength="100" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" />
     <Property Name="telefono" Type="varchar" MaxLength="10" />
     <Property Name="cuitE" Type="varchar" MaxLength="12" />
     <Property Name="provincia" Type="int" />
     <Property Name="estadobaja" Type="bit" />
     <Property Name="id_razonsocial" Type="int" />
-    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Empresa_Sucursal">
     <Key>

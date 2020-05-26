@@ -47,11 +47,10 @@
 
         dgv.Columns(0).DataPropertyName = "id_obrasocial"
         dgv.Columns(1).DataPropertyName = "descripcion"
-        dgv.Columns(2).DataPropertyName = "estadobaja"
-        dgv.Columns(3).DataPropertyName = "estado"
-        dgv.Columns(4).DataPropertyName = "Editar"
-        dgv.Columns(5).DataPropertyName = "Eliminar"
-        dgv.Columns(2).Visible = False
+        dgv.Columns(4).DataPropertyName = "estado"
+        dgv.Columns(2).DataPropertyName = "Editar"
+        dgv.Columns(3).DataPropertyName = "Eliminar"
+        'dgv.Columns(2).Visible = False
 
     End Sub
 

@@ -79,13 +79,18 @@
 
     Function index() As Integer
         Dim i As Integer
-        Dim ext = (From ex In ctx.Obra_Social Order By ex.id_obrasocial Descending Select ex).First().id_obrasocial
-        i = CInt(ext.ToString)
-        If i > 0 Then
-            Return i + 1
-        Else
-            i = 0
-        End If
+        Try
+            Dim ext = (From ex In ctx.Obra_Social Order By ex.id_obrasocial Descending Select ex).First().id_obrasocial
+            i = CInt(ext.ToString)
+            If i > 0 Then
+                Return i + 1
+            Else
+                i = 0
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
         Return i
     End Function
 

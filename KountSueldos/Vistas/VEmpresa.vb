@@ -1,22 +1,58 @@
 ﻿Public Class VEmpresa
+    Dim ADEmpresa As ADEmpresa = New ADEmpresa
+    Dim validar As Validar = New Validar
+
+    ' Dim Empresa As EEmpresa = New EEmpresa
+
     Private Sub VEmpresa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MConfiguracionF.TamañoForm(Me)
         dgvmanual(dgvempresa)
         MConfiguracionF.configDGV(dgvempresa)
         Mostrardgv()
-        ' indice()
+        MostrarComboProvincia()
+        MostrarComboRazonsocial()
+        indice()
     End Sub
 
     Sub Mostrardgv()
         ADEmpresa.MostrarEmpresa(dgvempresa)
     End Sub
+
+    Sub MostrarComboProvincia()
+        MConfiguracionF.configCombobox(cboprovincia)
+        Dim ADProvincia As New ADProvincia
+        ADProvincia.MostrarCombo(cboprovincia)
+    End Sub
+
+    Sub MostrarComboRazonsocial()
+        MConfiguracionF.configCombobox(cborazonsoc)
+        Dim ADRazonSocial As New ADRazonSocial
+        ADRazonSocial.MostrarCombo(cborazonsoc)
+    End Sub
+
+
     Sub dgvmanual(dgv As DataGridView)
 
         dgv.AutoGenerateColumns = False
         dgv.Columns.Clear()
 
+        Dim provinciacol As New DataGridViewTextBoxColumn
+        provinciacol.Name = "provincia"
+        provinciacol.HeaderText = "Provincia"
+
+        Dim razonsocialcol As New DataGridViewTextBoxColumn
+        razonsocialcol.Name = "razonsocial"
+        razonsocialcol.HeaderText = "RazonSocial"
+
         dgv.Columns.Add("id_empresa", "Código")
-        dgv.Columns.Add("nombre_fantasia", "Nombre")
+        dgv.Columns.Add("nombrefantasia", "Nombre")
+        dgv.Columns.Add("direccion", "Dirección")
+        dgv.Columns.Add("telefono", "Telefono")
+        dgv.Columns.Add("email", "E-mail")
+        dgv.Columns.Add("ciuE", "CUIT")
+        ' dgv.Columns.Add(provinciacol)
+        'dgv.Columns.Add(razonsocialcol)
+
 
         Dim btnck As New DataGridViewCheckBoxColumn
         btnck.Name = "estado"
@@ -33,12 +69,18 @@
         dgv.Columns.Add(btnd)
         dgv.Columns.Add(btnck)
         dgv.Columns(0).DataPropertyName = "id_empresa"
-        dgv.Columns(1).DataPropertyName = "Nombre"
-        dgv.Columns(2).DataPropertyName = "Editar"
-        dgv.Columns(3).DataPropertyName = "Eliminar"
-        dgv.Columns(4).DataPropertyName = "estadobaja"
-        dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.Aquamarine
+        dgv.Columns(1).DataPropertyName = "nombrefantasia"
+        dgv.Columns(2).DataPropertyName = "direccion"
+        dgv.Columns(3).DataPropertyName = "telefono"
+        dgv.Columns(4).DataPropertyName = "email"
+        dgv.Columns(5).DataPropertyName = "cuitE"
+        '  dgv.Columns(6).DataPropertyName = "provincia"
+        ' dgv.Columns(7).DataPropertyName = "razonsocial"
+        dgv.Columns(6).DataPropertyName = "Editar"
+        dgv.Columns(7).DataPropertyName = "Eliminar"
+        '  dgv.Columns(10).DataPropertyName = "estadobaja"
+        ' dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        '  dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.Aquamarine
     End Sub
 
     Private Sub pbcerrar_Click(sender As Object, e As EventArgs) Handles pbcerrar.Click
@@ -57,6 +99,7 @@
             Else
                 MsgBox("Operación cancelada", MsgBoxStyle.Critical, "Cancelación")
                 limpiar()
+                indice()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -102,6 +145,22 @@
         Return result
     End Function
 
+    Function ConvertirCuit(palabra As String) As String
+        Dim texto1 As String = ""
+        Try
+            If palabra <> "" Then
+                texto1 = palabra
+                texto1 = texto1.Replace("-", "")
+            Else
+                texto1 = "00000000000"
+
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        Return texto1
+    End Function
     Sub Agregar()
         If DatosVacios() = True Then
             MsgBox("Debe completar todos los campos", MsgBoxStyle.Information, "Aviso")
@@ -111,16 +170,14 @@
             If (ADEmpresa.Existe(txtnombrefsia.Text) = False) Then
 
                 If MsgBox("Seguro agregar este registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
-
+                    Dim cuit As String = ConvertirCuit(mkcuit.Text)
                     ADEmpresa.AgregarEmpresa(New Empresa() With
                                     {
-                                    .nombrefantasia = txtnombrefsia.Text,
-                                    .direccion = txtdireccion.Text,
-                                     .email = txtemail.Text,
-                                    .telefono = txttelefono.Text,
-                                    .cuitE = mkcuit.Text,
-                                    .provincia = cboprovincia.SelectedValue,
-                                    .id_razonsocial = cborazonsoc.SelectedValue,
+                                    .nombrefantasia = CStr(txtnombrefsia.Text),
+                                    .direccion = CStr(txtdireccion.Text),
+                                    .email = CStr(txtemail.Text),
+                                    .telefono = CStr(txttelefono.Text),
+                                    .cuitE = cuit,
                                     .estadobaja = 1
                                                           })
 
@@ -142,6 +199,8 @@
         End If
 
     End Sub
+
+
 
     Function ExisteReg() As Boolean
         Dim res As Boolean
@@ -177,7 +236,7 @@
                             Dim id As Integer = dgvempresa.CurrentRow.Cells(0).Value
                             Dim bas As Decimal = 0
 
-                            ADEmpresa.ModificarEmpresa(txtcod.Text, txtnombrefsia.Text, txtdireccion.Text, txtemail.Text, txttelefono.Text, mkcuit.Text, cboprovincia.SelectedValue, cborazonsoc.SelectedValue)
+                            ADEmpresa.ModificarEmpresa(txtcod.Text, txtnombrefsia.Text, txtdireccion.Text, txttelefono.Text, txtemail.Text, mkcuit.Text, cboprovincia.SelectedValue, cborazonsoc.SelectedValue)
 
                             MsgBox("el registro se modifico exitosamente", MsgBoxStyle.Information, "Modificación")
                             limpiar()
@@ -199,7 +258,10 @@
     End Sub
 
 
-
+    Sub codigoaguradr()
+        '  .provincia = cboprovincia.SelectedValue,
+        '.id_razonsocial = cborazonsoc.SelectedValue,
+    End Sub
     Sub Alta()
         Try
             If dgvempresa.RowCount = 0 Then
@@ -240,10 +302,11 @@
                 txtcod.Text = CStr(dgvempresa.CurrentRow.Cells(0).Value)
                 txtnombrefsia.Text = CStr(dgvempresa.CurrentRow.Cells(1).Value)
                 txtdireccion.Text = dgvempresa.CurrentRow.Cells(2).Value
-                txtemail.Text = dgvempresa.CurrentRow.Cells(3).Value
-                mkcuit.Text = dgvempresa.CurrentRow.Cells(4).Value
-                cboprovincia.Text = dgvempresa.CurrentRow.Cells(5).Value
-                cborazonsoc.Text = dgvempresa.CurrentRow.Cells(6).Value
+                txttelefono.Text = dgvempresa.CurrentRow.Cells(3).Value
+                txtemail.Text = dgvempresa.CurrentRow.Cells(4).Value
+                mkcuit.Text = dgvempresa.CurrentRow.Cells(5).Value
+                '  cboprovincia.Text = dgvempresa.CurrentRow.Cells(6).Value
+                ' cborazonsoc.Text = dgvempresa.CurrentRow.Cells(7).Value
             Else
                 MsgBox("No hay registros para editar", MsgBoxStyle.Exclamation, "Error")
             End If
@@ -255,10 +318,6 @@
     End Sub
 
 
-
-    Private Sub btnnuevo_Click(sender As Object, e As EventArgs)
-
-    End Sub
 
     Private Sub dgvempresa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvempresa.CellContentClick
         Try
@@ -309,19 +368,24 @@
     End Sub
 
     Private Sub btnnuevo_Click_1(sender As Object, e As EventArgs) Handles btnnuevo.Click
+
         Agregar()
+        Refrescar()
     End Sub
 
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Guardar()
+        Refrescar()
     End Sub
 
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
         Alta()
+        Refrescar()
     End Sub
 
     Private Sub btnlimpiar_Click(sender As Object, e As EventArgs) Handles btnlimpiar.Click
         limpiar()
+        Refrescar()
     End Sub
 
     Private Sub txtfiltro_TextChanged(sender As Object, e As EventArgs) Handles txtfiltro.TextChanged

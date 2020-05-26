@@ -25,7 +25,6 @@ C:\Users\david\Documents\Visual Studio 2015\Projects\KountSueldos\KountSueldos\b
 C:\Users\david\Documents\Visual Studio 2015\Projects\KountSueldos\KountSueldos\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\david\Documents\Visual Studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.exe
 C:\Users\david\Documents\Visual Studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.pdb
-C:\Users\david\Documents\Visual Studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.vbprojResolveAssemblyReference.cache
 C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.VEmpleado.resources
 C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.VEmpresa.resources
 C:\Users\david\documents\visual studio 2015\Projects\KountSueldos\KountSueldos\obj\Debug\KountSueldos.VLiquidacion.resources

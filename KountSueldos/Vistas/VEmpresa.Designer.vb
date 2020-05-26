@@ -64,10 +64,10 @@ Partial Class VEmpresa
         Me.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnlimpiar.Image = Global.KountSueldos.My.Resources.Resources.clean
         Me.btnlimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnlimpiar.Location = New System.Drawing.Point(128, 473)
+        Me.btnlimpiar.Location = New System.Drawing.Point(48, 473)
         Me.btnlimpiar.Name = "btnlimpiar"
-        Me.btnlimpiar.Size = New System.Drawing.Size(101, 37)
-        Me.btnlimpiar.TabIndex = 48
+        Me.btnlimpiar.Size = New System.Drawing.Size(95, 37)
+        Me.btnlimpiar.TabIndex = 13
         Me.btnlimpiar.Text = "Limpiar"
         Me.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnlimpiar.UseVisualStyleBackColor = False
@@ -78,10 +78,10 @@ Partial Class VEmpresa
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.Image = Global.KountSueldos.My.Resources.Resources.pdf1
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(837, 175)
+        Me.Button5.Location = New System.Drawing.Point(629, 471)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(101, 37)
-        Me.Button5.TabIndex = 46
+        Me.Button5.TabIndex = 9
         Me.Button5.Text = "PDF"
         Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button5.UseVisualStyleBackColor = True
@@ -92,10 +92,10 @@ Partial Class VEmpresa
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Image = Global.KountSueldos.My.Resources.Resources.tecnologia
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(837, 113)
+        Me.Button4.Location = New System.Drawing.Point(512, 471)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(101, 37)
-        Me.Button4.TabIndex = 45
+        Me.Button4.TabIndex = 8
         Me.Button4.Text = "Imprimir"
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button4.UseVisualStyleBackColor = True
@@ -106,10 +106,10 @@ Partial Class VEmpresa
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Image = Global.KountSueldos.My.Resources.Resources.logo
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(837, 234)
+        Me.Button3.Location = New System.Drawing.Point(745, 471)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(101, 37)
-        Me.Button3.TabIndex = 44
+        Me.Button3.TabIndex = 10
         Me.Button3.Text = "Excel"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button3.UseVisualStyleBackColor = True
@@ -121,10 +121,10 @@ Partial Class VEmpresa
         Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAlta.Image = Global.KountSueldos.My.Resources.Resources.edit
         Me.btnAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAlta.Location = New System.Drawing.Point(246, 419)
+        Me.btnAlta.Location = New System.Drawing.Point(158, 473)
         Me.btnAlta.Name = "btnAlta"
-        Me.btnAlta.Size = New System.Drawing.Size(101, 37)
-        Me.btnAlta.TabIndex = 43
+        Me.btnAlta.Size = New System.Drawing.Size(95, 37)
+        Me.btnAlta.TabIndex = 14
         Me.btnAlta.Text = "Alta"
         Me.btnAlta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnAlta.UseVisualStyleBackColor = False
@@ -135,10 +135,10 @@ Partial Class VEmpresa
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Image = Global.KountSueldos.My.Resources.Resources.web
         Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnguardar.Location = New System.Drawing.Point(130, 419)
+        Me.btnguardar.Location = New System.Drawing.Point(157, 421)
         Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(101, 37)
-        Me.btnguardar.TabIndex = 42
+        Me.btnguardar.Size = New System.Drawing.Size(95, 37)
+        Me.btnguardar.TabIndex = 12
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnguardar.UseVisualStyleBackColor = True
@@ -163,7 +163,7 @@ Partial Class VEmpresa
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(43, 119)
+        Me.Label2.Location = New System.Drawing.Point(17, 120)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(47, 26)
         Me.Label2.TabIndex = 39
@@ -172,7 +172,7 @@ Partial Class VEmpresa
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(50, 84)
+        Me.Label1.Location = New System.Drawing.Point(17, 85)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 38
@@ -180,15 +180,16 @@ Partial Class VEmpresa
         '
         'txtnombrefsia
         '
-        Me.txtnombrefsia.Location = New System.Drawing.Point(104, 119)
+        Me.txtnombrefsia.Location = New System.Drawing.Point(75, 119)
+        Me.txtnombrefsia.MaxLength = 50
         Me.txtnombrefsia.Name = "txtnombrefsia"
         Me.txtnombrefsia.Size = New System.Drawing.Size(159, 20)
-        Me.txtnombrefsia.TabIndex = 37
+        Me.txtnombrefsia.TabIndex = 1
         '
         'txtcod
         '
         Me.txtcod.Enabled = False
-        Me.txtcod.Location = New System.Drawing.Point(104, 82)
+        Me.txtcod.Location = New System.Drawing.Point(75, 82)
         Me.txtcod.Name = "txtcod"
         Me.txtcod.Size = New System.Drawing.Size(159, 20)
         Me.txtcod.TabIndex = 36
@@ -201,9 +202,9 @@ Partial Class VEmpresa
         Me.dgvempresa.AllowUserToResizeRows = False
         Me.dgvempresa.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.dgvempresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvempresa.Location = New System.Drawing.Point(370, 113)
+        Me.dgvempresa.Location = New System.Drawing.Point(283, 113)
         Me.dgvempresa.Name = "dgvempresa"
-        Me.dgvempresa.Size = New System.Drawing.Size(453, 427)
+        Me.dgvempresa.Size = New System.Drawing.Size(657, 324)
         Me.dgvempresa.TabIndex = 35
         '
         'PanelSuperior
@@ -214,7 +215,7 @@ Partial Class VEmpresa
         Me.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelSuperior.Location = New System.Drawing.Point(0, 0)
         Me.PanelSuperior.Name = "PanelSuperior"
-        Me.PanelSuperior.Size = New System.Drawing.Size(1027, 45)
+        Me.PanelSuperior.Size = New System.Drawing.Size(950, 45)
         Me.PanelSuperior.TabIndex = 34
         '
         'lbltitulo
@@ -242,7 +243,7 @@ Partial Class VEmpresa
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(38, 159)
+        Me.Label3.Location = New System.Drawing.Point(17, 160)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(52, 13)
         Me.Label3.TabIndex = 50
@@ -250,15 +251,16 @@ Partial Class VEmpresa
         '
         'txtdireccion
         '
-        Me.txtdireccion.Location = New System.Drawing.Point(104, 156)
+        Me.txtdireccion.Location = New System.Drawing.Point(75, 156)
+        Me.txtdireccion.MaxLength = 50
         Me.txtdireccion.Name = "txtdireccion"
-        Me.txtdireccion.Size = New System.Drawing.Size(243, 20)
-        Me.txtdireccion.TabIndex = 49
+        Me.txtdireccion.Size = New System.Drawing.Size(186, 20)
+        Me.txtdireccion.TabIndex = 2
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(41, 232)
+        Me.Label5.Location = New System.Drawing.Point(17, 233)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(49, 13)
         Me.Label5.TabIndex = 52
@@ -266,15 +268,16 @@ Partial Class VEmpresa
         '
         'txttelefono
         '
-        Me.txttelefono.Location = New System.Drawing.Point(104, 230)
+        Me.txttelefono.Location = New System.Drawing.Point(75, 230)
+        Me.txttelefono.MaxLength = 10
         Me.txttelefono.Name = "txttelefono"
         Me.txttelefono.Size = New System.Drawing.Size(159, 20)
-        Me.txttelefono.TabIndex = 51
+        Me.txttelefono.TabIndex = 4
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(58, 272)
+        Me.Label6.Location = New System.Drawing.Point(17, 273)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(32, 13)
         Me.Label6.TabIndex = 54
@@ -283,15 +286,15 @@ Partial Class VEmpresa
         'cboprovincia
         '
         Me.cboprovincia.FormattingEnabled = True
-        Me.cboprovincia.Location = New System.Drawing.Point(104, 304)
+        Me.cboprovincia.Location = New System.Drawing.Point(75, 304)
         Me.cboprovincia.Name = "cboprovincia"
         Me.cboprovincia.Size = New System.Drawing.Size(159, 21)
-        Me.cboprovincia.TabIndex = 55
+        Me.cboprovincia.TabIndex = 6
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(55, 197)
+        Me.Label7.Location = New System.Drawing.Point(17, 198)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(35, 13)
         Me.Label7.TabIndex = 57
@@ -299,15 +302,16 @@ Partial Class VEmpresa
         '
         'txtemail
         '
-        Me.txtemail.Location = New System.Drawing.Point(104, 193)
+        Me.txtemail.Location = New System.Drawing.Point(75, 193)
+        Me.txtemail.MaxLength = 50
         Me.txtemail.Name = "txtemail"
-        Me.txtemail.Size = New System.Drawing.Size(243, 20)
-        Me.txtemail.TabIndex = 56
+        Me.txtemail.Size = New System.Drawing.Size(186, 20)
+        Me.txtemail.TabIndex = 3
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(39, 307)
+        Me.Label8.Location = New System.Drawing.Point(17, 308)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(51, 13)
         Me.Label8.TabIndex = 58
@@ -316,26 +320,27 @@ Partial Class VEmpresa
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(17, 350)
+        Me.Label9.Location = New System.Drawing.Point(17, 351)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(73, 13)
+        Me.Label9.Size = New System.Drawing.Size(39, 26)
         Me.Label9.TabIndex = 60
-        Me.Label9.Text = "Razón Social "
+        Me.Label9.Text = "Razón" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Social "
         '
         'cborazonsoc
         '
         Me.cborazonsoc.FormattingEnabled = True
-        Me.cborazonsoc.Location = New System.Drawing.Point(104, 347)
+        Me.cborazonsoc.Location = New System.Drawing.Point(75, 347)
         Me.cborazonsoc.Name = "cborazonsoc"
         Me.cborazonsoc.Size = New System.Drawing.Size(159, 21)
-        Me.cborazonsoc.TabIndex = 59
+        Me.cborazonsoc.TabIndex = 7
         '
         'mkcuit
         '
-        Me.mkcuit.Location = New System.Drawing.Point(104, 269)
+        Me.mkcuit.Location = New System.Drawing.Point(75, 269)
+        Me.mkcuit.Mask = "99-99999999-9"
         Me.mkcuit.Name = "mkcuit"
         Me.mkcuit.Size = New System.Drawing.Size(159, 20)
-        Me.mkcuit.TabIndex = 61
+        Me.mkcuit.TabIndex = 5
         '
         'chktodo
         '
@@ -353,10 +358,10 @@ Partial Class VEmpresa
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Image = Global.KountSueldos.My.Resources.Resources.neww1
         Me.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnnuevo.Location = New System.Drawing.Point(20, 419)
+        Me.btnnuevo.Location = New System.Drawing.Point(50, 421)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(95, 37)
-        Me.btnnuevo.TabIndex = 63
+        Me.btnnuevo.TabIndex = 11
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnnuevo.UseVisualStyleBackColor = True
@@ -365,9 +370,11 @@ Partial Class VEmpresa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1027, 562)
+        Me.ClientSize = New System.Drawing.Size(950, 600)
         Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.chktodo)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.mkcuit)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.cborazonsoc)
@@ -381,9 +388,7 @@ Partial Class VEmpresa
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtdireccion)
         Me.Controls.Add(Me.btnlimpiar)
-        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.btnAlta)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.Label4)
